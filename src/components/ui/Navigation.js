@@ -8,7 +8,7 @@ import IconButton from 'material-ui/IconButton'
 import FlatButton from 'material-ui/FlatButton'
 
 
-const TITLE = 'Student Evaluations'
+const TITLE = 'Legal Joe'
 
 class Navigation extends PureComponent {
   static propTypes = {

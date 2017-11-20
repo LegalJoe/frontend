@@ -1,0 +1,7 @@
+.headerContainer {
+  min-height: 50vh;
+  width: 100vw;
+  padding-top: 300px;
+  padding-left: 100px;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}

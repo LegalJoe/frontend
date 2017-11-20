@@ -7,64 +7,27 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
+import './Home.css'
 
-const dialogStyle = {
-  width: '400px',
-  margin: '50px auto',
-  padding: '2rem',
-}
-
-const buttonStyle = {
-  float: 'left',
-  marginLeft: '3rem',
-}
-
-export class Home extends PureComponent {
-  static propTypes = {
-    push: PropTypes.func.isRequired,
-    signIn: PropTypes.func.isRequired,
-    signedIn: PropTypes.bool,
-  }
+class Home extends PureComponent {
 
   componentWillMount() {
     const { replace, signedIn } = this.props
     if (signedIn) replace('/')
   }
 
-  submitForm(event) {
-    event.preventDefault()
-    const user = {
-      email: this.refs.email.getValue(),
-      password: this.refs.password.getValue(),
-    }
-    this.props.signIn(user)
-  }
 
   render() {
     return (
-      <Paper style={ dialogStyle }>
-        <Title content="Sign In" level={2} />
-
-        <form onSubmit={this.submitForm.bind(this)}>
-          <div className="input">
-            <TextField ref="email" type="email" hintText="Email address" />
-          </div>
-          <div className="input">
-            <TextField ref="password" type="password" hintText="Password"  />
-          </div>
-        </form>
+      <div className="headerContainer">
+        <Title content="AI Powered Legal Contract Analysis."/>
+        <h2>We help you identify legal risks and problem areas in contracts in a matter of minutes.</h2>
         <RaisedButton
-          style={ buttonStyle }
-          onClick={ this.submitForm.bind(this) }
-          label="Sign in"
+          label="Upload contract"
           primary={true} />
-      </Paper>
+      </div>
     )
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
-  signedIn: !!currentUser && !!currentUser._id,
-})
-
-export default connect(mapStateToProps, { signIn, replace, push })(Home)
+export default Home
