@@ -10,6 +10,12 @@ import FlatButton from 'material-ui/FlatButton'
 
 const TITLE = 'Legal Joe'
 
+const navStyle = {
+  backgroundColor: 'transparent',
+  position: 'fixed',
+  boxShadow: 'none',
+}
+
 class Navigation extends PureComponent {
   static propTypes = {
     signedIn: PropTypes.bool.isRequired,
@@ -31,6 +37,7 @@ class Navigation extends PureComponent {
     return (
       <AppBar
         title={TITLE}
+        style={navStyle}
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
         iconElementRight={signedIn ?
           <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
