@@ -7,6 +7,8 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
+import DrawerUploadContract from './Drawer'
+import UploadForm from './UploadForm'
 import './Home.css'
 import Points from './Points'
 
@@ -25,9 +27,9 @@ class Home extends PureComponent {
         <div className="headerText">
           <Title content="AI Powered Legal Contract Analysis."/>
           <h2>We help you identify legal risks and problem areas in contracts in a matter of minutes.</h2>
-          <RaisedButton
-            label="Upload contract"
-            primary={true} />
+          <DrawerUploadContract>
+            <UploadForm />
+          </DrawerUploadContract>
         </div>
       </div>
           <Points />

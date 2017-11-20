@@ -1,8 +1,15 @@
-import React, { PureComponent } from 'react'import Drawer from 'material-ui/Drawer';
+import React, { PureComponent } from 'react'
+import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
+import UploadForm from './UploadForm'
 
-export default class DrawerOpenRightExample extends PureComponent {
+const drawerStyles = {
+  display: 'flex',
+  alignItems: 'center',
+}
+
+export default class DrawerUploadContract extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -10,16 +17,22 @@ export default class DrawerOpenRightExample extends PureComponent {
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
+  handleClose = () => this.setState({open: false});
 
   render() {
     return (
       <div>
         <RaisedButton
-          label="Toggle Drawer"
+          label="Upload contract"
+          primary={true}
           onClick={this.handleToggle}
         />
-        <Drawer width={200} openSecondary={true} open={this.state.open} >
-          <AppBar title="AppBar" />
+        <Drawer
+          width={400}
+          openSecondary={true}
+          onRequestChange={(open) => this.setState({open})}
+          open={this.state.open} >
+          <UploadForm />
         </Drawer>
       </div>
     );
