@@ -1,4 +1,12 @@
 h1 {
   font-size: 3em;
+  color: #880e4f;
+}
+
+.header {
   color: white;
+}
+
+.intro {
+  text-align: center;
 }
