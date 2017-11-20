@@ -10,6 +10,7 @@ import Title from '../components/ui/Title'
 import DrawerUploadContract from './Drawer'
 import UploadForm from './UploadForm'
 import './Home.css'
+import Points from './Points'
 
 class Home extends PureComponent {
 
@@ -21,6 +22,7 @@ class Home extends PureComponent {
 
   render() {
     return (
+      <div className="pageContent">
       <div className="headerContainer">
         <div className="headerText">
           <Title content="AI Powered Legal Contract Analysis."/>
@@ -29,6 +31,8 @@ class Home extends PureComponent {
             <UploadForm />
           </DrawerUploadContract>
         </div>
+      </div>
+          <Points />
       </div>
     )
   }
