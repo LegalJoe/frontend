@@ -16,7 +16,7 @@ class BottomCta extends PureComponent {
     return(
       <div className="ctaContainer">
         <SubTitle content={ this.props.subTitle } />
-        <UploadForm primary={false} />
+        <UploadForm title="Upload your contract now" titleClass="bottomCta" primary={false} />
       </div>
     )
   }

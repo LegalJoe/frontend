@@ -34,7 +34,7 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <UploadForm primary={true}/>
+          <UploadForm title="Upload your contract" primary={true}/>
         </Drawer>
       </div>
     );
