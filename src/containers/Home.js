@@ -9,9 +9,6 @@ import signIn from '../actions/user/sign-in'
 import Header from './Header'
 import Examples from './Examples'
 import BottomCta from './BottomCta'
-
-
-
 import './Home.css'
 import Points from './Points'
 
@@ -27,8 +24,8 @@ class Home extends PureComponent {
     return (
       <div className="pageContent">
         <Header
-          title="AI Powered Legal Contract Analysis."
-          subTitle="We help you identify legal risks and problem areas in contracts in a matter of minutes."
+          title="Contract Analyse"
+          subTitle="Ik ben Joe, ik laat je binnen 24 uur weten wat een ZZP contract voor jou betekent.(Ik zorg dat je altijd aan de slag kunt na een opdracht)"
         />
         <Points />
         <Examples title="Examples"/>

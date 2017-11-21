@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import DrawerUploadContract from './Drawer'
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
+import SubTitle from '../components/ui/SubTitle'
 
 
 class Header extends PureComponent {
@@ -15,7 +16,7 @@ class Header extends PureComponent {
       <div className="headerContainer">
         <div className="headerText">
           <Title content={ this.props.title } className="header"/>
-          <h2>{ this.props.subTitle }</h2>
+          <SubTitle content={ this.props.subTitle } />
         </div>
         <DrawerUploadContract>
             <UploadForm />

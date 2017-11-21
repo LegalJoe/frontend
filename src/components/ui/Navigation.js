@@ -14,6 +14,7 @@ const navStyle = {
   backgroundColor: 'transparent',
   position: 'fixed',
   boxShadow: 'none',
+  textShadow:'-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
 }
 
 class Navigation extends PureComponent {
