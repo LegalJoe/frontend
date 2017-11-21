@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
+import FlatButton from 'material-ui/FlatButton'
 
 const dialogStyle = {
   width: '400px',
@@ -34,10 +35,15 @@ export class SignIn extends PureComponent {
   submitForm(event) {
     event.preventDefault()
     const user = {
-      email: this.refs.email.getValue(),
+      username: this.refs.username.getValue(),
       password: this.refs.password.getValue(),
     }
     this.props.signIn(user)
+  }
+
+
+  signUp() {
+    this.props.push('/sign-up')
   }
 
   render() {
@@ -47,12 +53,15 @@ export class SignIn extends PureComponent {
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
-            <TextField ref="email" type="email" hintText="Email address" />
+            <TextField ref="username" type="username" hintText="Username" />
           </div>
           <div className="input">
             <TextField ref="password" type="password" hintText="Password"  />
           </div>
         </form>
+        <FlatButton
+          onClick={ this.signUp.bind(this) }
+          label="Sign up" />
         <RaisedButton
           style={ buttonStyle }
           onClick={ this.submitForm.bind(this) }
@@ -64,7 +73,7 @@ export class SignIn extends PureComponent {
 }
 
 const mapStateToProps = ({ currentUser }) => ({
-  signedIn: !!currentUser && !!currentUser._id,
+  signedIn: !!currentUser && !!currentUser.id,
 })
 
 export default connect(mapStateToProps, { signIn, replace, push })(SignIn)

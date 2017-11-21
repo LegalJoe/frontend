@@ -19,7 +19,6 @@ class Home extends PureComponent {
     if (signedIn) replace('/')
   }
 
-
   render() {
     return (
       <div className="pageContent">

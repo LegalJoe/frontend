@@ -27,7 +27,12 @@ class Navigation extends PureComponent {
   signOut = (event) => {
     event.preventDefault()
     this.props.signOut()
+    this.props.push('/')
   }
+
+  signUp = () => {
+  this.props.push('/sign-up')
+}
 
   goHome = () => {
     this.props.push('/')
@@ -41,16 +46,16 @@ class Navigation extends PureComponent {
         style={navStyle}
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
         iconElementRight={signedIn ?
-          <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
-          null
-        }
-      />
+        <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
+        <FlatButton label="Sign up" onClick={this.signUp} />
+       }
+     />
     )
   }
 }
 
 const mapStateToProps = ({ currentUser }) => ({
-  signedIn: (!!currentUser && !!currentUser._id)
+  signedIn: (!!currentUser && !!currentUser.id)
 })
 
 export default connect(mapStateToProps, { push, signOut })(Navigation)

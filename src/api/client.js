@@ -13,8 +13,8 @@ export default class ApiClient {
     this.options = { ...this.defaultOptions, ...options }
   }
 
-  authenticate(email, password) {
-    return this.post('/sessions', { email, password })
+  authenticate(username, password) {
+    return this.post('/sessions', { username, password })
   }
 
   signOut() {
