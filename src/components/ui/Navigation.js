@@ -54,7 +54,7 @@ class Navigation extends PureComponent {
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
           >
-            <MenuItem primaryText="Profile" />
+            <MenuItem primaryText="Profiel" />
             <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
           </IconMenu> :
         <FlatButton label="Sign up" onClick={this.signUp} />
