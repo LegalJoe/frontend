@@ -24,6 +24,7 @@ class Navigation extends PureComponent {
     signedIn: PropTypes.bool.isRequired,
     push: PropTypes.func.isRequired,
     signOut: PropTypes.func.isRequired,
+    style: PropTypes.string
   }
 
   signOut = (event) => {
@@ -45,7 +46,7 @@ class Navigation extends PureComponent {
     return (
       <AppBar
         title={TITLE}
-        style={navStyle}
+        style={ this.props.style }
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
         iconElementRight={signedIn ?
           <IconMenu

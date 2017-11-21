@@ -1,0 +1,15 @@
+.profileContent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileForm {
+  min-width: 60%;
+}
+
+.input {
+  min-width: 80%;
+}
