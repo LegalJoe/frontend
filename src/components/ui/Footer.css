@@ -2,4 +2,7 @@
   height: 160px;
   background-color: rgb(52, 56, 61);
   padding-top: 65px;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
 }

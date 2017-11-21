@@ -3,7 +3,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // Colors
 
 export const blakka       = '#a81f1f'
-export const green        = '#00AA86'
+export const green        = '#B72327'
 export const red          = '#5c93ed'
 export const darkRed      = '#C1272D'
 export const white        = '#ffffff'
@@ -12,6 +12,7 @@ export const darkGrey     = '#757575'
 export const grey         = '#DEDEDE'
 export const grey50       = 'rgba(222, 222, 222, 0.5)'
 export const grey30       = 'rgba(222, 222, 222, 0.7)'
+
 
 // Palette
 export const palette = {
@@ -23,7 +24,7 @@ export const palette = {
   alternateTextColor: white,
   canvasColor: white,
   borderColor: grey,
-  disabledColor: grey30
+  disabledColor: grey30,
 }
 
 export default getMuiTheme({ palette })
