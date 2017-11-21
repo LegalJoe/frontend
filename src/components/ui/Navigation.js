@@ -6,7 +6,9 @@ import signOut from '../../actions/user/sign-out'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import FlatButton from 'material-ui/FlatButton'
-
+import MenuItem from 'material-ui/MenuItem'
+import IconMenu from 'material-ui/IconMenu'
+import Reorder from 'material-ui/svg-icons/action/reorder'
 
 const TITLE = 'Legal Joe'
 
@@ -32,7 +34,7 @@ class Navigation extends PureComponent {
 
   signUp = () => {
   this.props.push('/sign-up')
-}
+  }
 
   goHome = () => {
     this.props.push('/')
@@ -46,7 +48,16 @@ class Navigation extends PureComponent {
         style={navStyle}
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
         iconElementRight={signedIn ?
-        <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
+          <IconMenu
+            iconButtonElement={
+              <IconButton><Reorder /></IconButton>
+            }
+            targetOrigin={{horizontal: 'right', vertical: 'top'}}
+            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+          >
+            <MenuItem primaryText="Profile" />
+            <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
+          </IconMenu> :
         <FlatButton label="Sign up" onClick={this.signUp} />
        }
      />
