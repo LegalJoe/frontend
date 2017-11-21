@@ -2,10 +2,8 @@ import React, { PureComponent } from 'react'
 import Title from '../components/ui/Title'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
+import Drawer from './Drawer.js'
 
-const formStyles = {
-  marginLeft: '50px',
-}
 
 export default class UploadForm extends PureComponent {
 
@@ -13,7 +11,7 @@ export default class UploadForm extends PureComponent {
     return (
       <div>
         <Title content="Upload your Contract"/>
-        <form style={formStyles}>
+        <form>
           <div className="input">
             <TextField ref="name" type="text" hintText="Name" />
           </div>

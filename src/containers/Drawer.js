@@ -6,7 +6,7 @@ import UploadForm from './UploadForm'
 
 const drawerStyles = {
   display: 'flex',
-  alignItems: 'center',
+  paddingLeft: '40px',
 }
 
 export default class DrawerUploadContract extends PureComponent {
@@ -31,7 +31,9 @@ export default class DrawerUploadContract extends PureComponent {
           width={400}
           openSecondary={true}
           onRequestChange={(open) => this.setState({open})}
-          open={this.state.open} >
+          open={this.state.open}
+          containerStyle={drawerStyles}
+        >
           <UploadForm />
         </Drawer>
       </div>

@@ -1,0 +1,14 @@
+.pointContainer {
+  margin: 15px;
+  padding: 10px;
+  width: 280px;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  color: rgba(0,0,0,0.65);
+}
+
+.pointTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

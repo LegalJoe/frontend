@@ -23,15 +23,15 @@ class Home extends PureComponent {
   render() {
     return (
       <div className="pageContent">
-      <div className="headerContainer">
-        <div className="headerText">
-          <Title content="AI Powered Legal Contract Analysis."/>
-          <h2>We help you identify legal risks and problem areas in contracts in a matter of minutes.</h2>
-          <DrawerUploadContract>
-            <UploadForm />
-          </DrawerUploadContract>
+        <div className="headerContainer">
+          <div className="headerText">
+            <Title className="header" content="AI Powered Legal Contract Analysis."/>
+            <h2>We help you identify legal risks and problem areas in contracts in a matter of minutes.</h2>
+            <DrawerUploadContract>
+              <UploadForm />
+            </DrawerUploadContract>
+          </div>
         </div>
-      </div>
           <Points />
       </div>
     )
