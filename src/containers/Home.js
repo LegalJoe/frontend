@@ -6,9 +6,12 @@ import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
-import Title from '../components/ui/Title'
-import DrawerUploadContract from './Drawer'
-import UploadForm from './UploadForm'
+import Header from './Header'
+import Examples from './Examples'
+import BottomCta from './BottomCta'
+
+
+
 import './Home.css'
 import Points from './Points'
 
@@ -23,16 +26,13 @@ class Home extends PureComponent {
   render() {
     return (
       <div className="pageContent">
-        <div className="headerContainer">
-          <div className="headerText">
-            <Title className="header" content="AI Powered Legal Contract Analysis."/>
-            <h2>We help you identify legal risks and problem areas in contracts in a matter of minutes.</h2>
-            <DrawerUploadContract>
-              <UploadForm />
-            </DrawerUploadContract>
-          </div>
-        </div>
-          <Points />
+        <Header
+          title="AI Powered Legal Contract Analysis."
+          subTitle="We help you identify legal risks and problem areas in contracts in a matter of minutes."
+        />
+        <Points />
+        <Examples title="Examples"/>
+        <BottomCta title="Upload your contract now"/>
       </div>
     )
   }

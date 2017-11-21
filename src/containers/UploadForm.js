@@ -3,14 +3,17 @@ import Title from '../components/ui/Title'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 import Drawer from './Drawer.js'
+import PropTypes from 'prop-types'
 
 
 export default class UploadForm extends PureComponent {
-
+  static propTypes = {
+    primary: PropTypes.boolean,
+  }
   render() {
     return (
       <div>
-        <Title content="Upload your Contract"/>
+        <Title content="Upload your contract" className='bottomCta'/>
         <form>
           <div className="input">
             <TextField ref="name" type="text" hintText="Name" />
@@ -23,7 +26,7 @@ export default class UploadForm extends PureComponent {
           </div>
           <RaisedButton
             label="Upload"
-            primary={true} />
+            primary={this.props.primary} />
         </form>
       </div>
 
