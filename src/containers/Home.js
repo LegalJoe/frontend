@@ -9,8 +9,15 @@ import signIn from '../actions/user/sign-in'
 import Header from './Header'
 import Examples from './Examples'
 import BottomCta from './BottomCta'
+import Navigation from '../components/ui/Navigation'
 import './Home.css'
 import Points from './Points'
+
+const navStyle = {
+  backgroundColor: 'transparent',
+  position: 'fixed',
+  boxShadow: 'none',
+}
 
 class Home extends PureComponent {
 
@@ -21,14 +28,17 @@ class Home extends PureComponent {
 
   render() {
     return (
-      <div className="pageContent">
-        <Header
-          title="AI Powered Legal Contract Analysis."
-          subTitle="We help you identify legal risks and problem areas in contracts in a matter of minutes."
-        />
-        <Points />
-        <Examples title="Examples"/>
-        <BottomCta title="Upload your contract now"/>
+      <div>
+        <Navigation style={navStyle} />
+        <div className="pageContent">
+          <Header
+            title="AI Powered Legal Contract Analysis."
+            subTitle="We help you identify legal risks and problem areas in contracts in a matter of minutes."
+          />
+          <Points />
+          <Examples title="Examples"/>
+          <BottomCta title="Upload your contract now"/>
+        </div>
       </div>
     )
   }

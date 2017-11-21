@@ -7,16 +7,23 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
+import Navigation from '../components/ui/Navigation'
 
 const dialogStyle = {
   width: '400px',
-  margin: '50px auto',
+  margin: '200px auto',
   padding: '2rem',
 }
 
 const buttonStyle = {
   float: 'left',
   marginLeft: '3rem',
+}
+
+const navStyle = {
+  position: 'fixed',
+  left: '0',
+  top: '0',
 }
 
 export class SignIn extends PureComponent {
@@ -42,23 +49,26 @@ export class SignIn extends PureComponent {
 
   render() {
     return (
-      <Paper style={ dialogStyle }>
-        <Title content="Sign In" level={2} />
+      <div>
+        <Navigation style={navStyle} />
+        <Paper style={ dialogStyle }>
+          <Title content="Sign In" level={2} />
 
-        <form onSubmit={this.submitForm.bind(this)}>
-          <div className="input">
-            <TextField ref="email" type="email" hintText="Email address" />
-          </div>
-          <div className="input">
-            <TextField ref="password" type="password" hintText="Password"  />
-          </div>
-        </form>
-        <RaisedButton
-          style={ buttonStyle }
-          onClick={ this.submitForm.bind(this) }
-          label="Sign in"
-          primary={true} />
-      </Paper>
+          <form onSubmit={this.submitForm.bind(this)}>
+            <div className="input">
+              <TextField ref="email" type="email" hintText="Email address" />
+            </div>
+            <div className="input">
+              <TextField ref="password" type="password" hintText="Password"  />
+            </div>
+          </form>
+          <RaisedButton
+            style={ buttonStyle }
+            onClick={ this.submitForm.bind(this) }
+            label="Sign in"
+            primary={true} />
+        </Paper>
+      </div>
     )
   }
 }
