@@ -9,11 +9,14 @@ import PropTypes from 'prop-types'
 export default class UploadForm extends PureComponent {
   static propTypes = {
     primary: PropTypes.boolean,
+    title: PropTypes.string,
+    titleClass: PropTypes.string
   }
+
   render() {
     return (
       <div>
-        <Title content="Upload your contract" className='bottomCta'/>
+        <Title content={this.props.title} className={this.props.titleClass}/>
         <form>
           <div className="input">
             <TextField ref="name" type="text" hintText="Name" />
