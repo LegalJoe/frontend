@@ -28,7 +28,7 @@ export default class UploadForm extends PureComponent {
             <TextField ref="contract" type="text" multiLine={true} rows={5} hintText="Copy/Paste your contract in here"  />
           </div>
           <RaisedButton
-            label="Upload"
+            label="Start Analyse"
             primary={this.props.primary} />
         </form>
       </div>
