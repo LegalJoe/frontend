@@ -28,17 +28,14 @@ class Home extends PureComponent {
 
   render() {
     return (
-      <div>
-        <Navigation style={navStyle} />
-        <div className="pageContent">
-          <Header
-            title="AI Powered Legal Contract Analysis."
-            subTitle="We help you identify legal risks and problem areas in contracts in a matter of minutes."
-          />
-          <Points />
-          <Examples title="Examples"/>
-          <BottomCta title="Upload your contract now"/>
-        </div>
+      <div className="pageContent">
+        <Header
+          title="Contract Analyse"
+          subTitle="Ik ben Joe, ik laat je binnen 24 uur weten wat een ZZP contract voor jou betekent.(Ik zorg dat je altijd aan de slag kunt na een opdracht)"
+        />
+        <Points />
+        <Examples title="Examples"/>
+        <BottomCta title="Upload your contract now"/>
       </div>
     )
   }

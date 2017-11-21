@@ -6,8 +6,18 @@ import signOut from '../../actions/user/sign-out'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import FlatButton from 'material-ui/FlatButton'
+import MenuItem from 'material-ui/MenuItem'
+import IconMenu from 'material-ui/IconMenu'
+import Reorder from 'material-ui/svg-icons/action/reorder'
 
 const TITLE = 'Legal Joe'
+
+const navStyle = {
+  backgroundColor: 'transparent',
+  position: 'fixed',
+  boxShadow: 'none',
+  textShadow:'-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+}
 
 class Navigation extends PureComponent {
   static propTypes = {
@@ -20,6 +30,11 @@ class Navigation extends PureComponent {
   signOut = (event) => {
     event.preventDefault()
     this.props.signOut()
+    this.props.push('/')
+  }
+
+  signUp = () => {
+  this.props.push('/sign-up')
   }
 
   goHome = () => {
@@ -34,16 +49,25 @@ class Navigation extends PureComponent {
         style={ this.props.style }
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
         iconElementRight={signedIn ?
-          <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
-          null
-        }
-      />
+          <IconMenu
+            iconButtonElement={
+              <IconButton><Reorder /></IconButton>
+            }
+            targetOrigin={{horizontal: 'right', vertical: 'top'}}
+            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+          >
+            <MenuItem primaryText="Profile" />
+            <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
+          </IconMenu> :
+        <FlatButton label="Sign up" onClick={this.signUp} />
+       }
+     />
     )
   }
 }
 
 const mapStateToProps = ({ currentUser }) => ({
-  signedIn: (!!currentUser && !!currentUser._id)
+  signedIn: (!!currentUser && !!currentUser.id)
 })
 
 export default connect(mapStateToProps, { push, signOut })(Navigation)

@@ -8,6 +8,8 @@ const drawerStyles = {
   display: 'flex',
   paddingLeft: '40px',
 }
+const buttonStyle = {
+}
 
 export default class DrawerUploadContract extends PureComponent {
 
@@ -23,9 +25,10 @@ export default class DrawerUploadContract extends PureComponent {
     return (
       <div>
         <RaisedButton
-          label="Upload contract"
+          label="Start Analyse"
           primary={true}
           onClick={this.handleToggle}
+          style={buttonStyle}
         />
         <Drawer
           width={400}
@@ -34,7 +37,7 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <UploadForm title="Upload your contract" primary={true}/>
+          <UploadForm title="Upload je contract" primary={true}/>
         </Drawer>
       </div>
     );
