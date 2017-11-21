@@ -3,12 +3,11 @@ import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import UploadForm from './UploadForm'
+import {desiredColor} from '../styles/theme'
 
 const drawerStyles = {
   display: 'flex',
   paddingLeft: '40px',
-}
-const buttonStyle = {
 }
 
 export default class DrawerUploadContract extends PureComponent {
@@ -26,9 +25,8 @@ export default class DrawerUploadContract extends PureComponent {
       <div>
         <RaisedButton
           label="Start Analyse"
-          primary={true}
+          alternateTextColor={true}
           onClick={this.handleToggle}
-          style={buttonStyle}
         />
         <Drawer
           width={400}
@@ -37,7 +35,7 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <UploadForm title="Upload je contract" primary={true}/>
+          <UploadForm title="Upload je contract" titleClass="boom" primary={true}/>
         </Drawer>
       </div>
     );

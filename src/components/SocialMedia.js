@@ -4,7 +4,7 @@ import { SocialIcons } from 'react-social-icons';
 
 var urls = [
   'https://www.linkedin.com/in/edouard-dopper-0426856/',
-  'https://www.twitter.com/'
+  'https://twitter.com/realdonaldtrump'
 ];
 
 
