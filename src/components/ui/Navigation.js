@@ -43,6 +43,10 @@ class Navigation extends PureComponent {
     this.props.push('/admin')
   }
 
+  goToProfile = () => {
+    this.props.push('/user-profile')
+  }
+
   render() {
     const { signedIn } = this.props
     return (
@@ -60,7 +64,7 @@ class Navigation extends PureComponent {
           >
            {this.props.admin ?
             <MenuItem primaryText="Edit" onClick={this.goToAdmin.bind(this)}/> :
-            <MenuItem primaryText="Profiel" />}
+            <MenuItem primaryText="Profiel" onClick={this.goToProfile.bind(this)}/>}
             <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
           </IconMenu> :
         <FlatButton label="Sign up" onClick={this.signUp} />
