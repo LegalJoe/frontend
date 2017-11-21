@@ -6,7 +6,6 @@ import Navigation from './components/ui/Navigation'
 import Routes from './routes'
 import Footer from './components/ui/Footer'
 
-
 class App extends Component {
   static childContextTypes = {
     muiTheme: PropTypes.object.isRequired,
@@ -20,6 +19,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="App">
+          <Navigation />
           <Routes />
           <Footer />
         </div>

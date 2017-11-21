@@ -9,15 +9,8 @@ import signIn from '../actions/user/sign-in'
 import Header from './Header'
 import Examples from './Examples'
 import BottomCta from './BottomCta'
-import Navigation from '../components/ui/Navigation'
 import './Home.css'
 import Points from './Points'
-
-const navStyle = {
-  backgroundColor: 'transparent',
-  position: 'fixed',
-  boxShadow: 'none',
-}
 
 class Home extends PureComponent {
 
