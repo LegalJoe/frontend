@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import TextField from 'material-ui/TextField'
-import RaisedButton from 'material-ui/RaisedButton'
 import Title from '../components/ui/Title'
 import Point from './Point'
 import './Points.css'
