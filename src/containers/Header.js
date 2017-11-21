@@ -19,6 +19,7 @@ class Header extends PureComponent {
           <Title content={ this.props.title } className="header"/>
           <SubTitle content={ this.props.subTitle } />
           <p className="explanation">Ik zoek afwijkende clausules in jouw contract, zoals concurrentiebedingen, onredelijke aansprakelijkheid & vrijwaringen.</p>
+          <hr/>
         </div>
         <br/>
         <DrawerUploadContract>
