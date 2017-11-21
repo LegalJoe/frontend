@@ -13,7 +13,6 @@ import Reorder from 'material-ui/svg-icons/action/reorder'
 const TITLE = 'Legal Joe'
 
 const navStyle = {
-  backgroundColor: 'transparent',
   position: 'fixed',
   boxShadow: 'none',
   textShadow:'-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
