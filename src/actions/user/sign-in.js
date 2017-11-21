@@ -12,11 +12,11 @@ export const USER_SIGNED_IN = 'USER_SIGNED_IN'
 
 const api = new API()
 
-export default ({ email, password}) => {
+export default ({ username, password}) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-    api.authenticate(email, password)
+    api.authenticate(username, password)
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
@@ -25,7 +25,6 @@ export default ({ email, password}) => {
 
         api.storeToken(jwt)
 
-        // Redirect programatically to the Lobby
         dispatch(replace('/'))
 
         return api.get('/users/me')
