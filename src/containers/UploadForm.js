@@ -20,13 +20,13 @@ export default class UploadForm extends PureComponent {
         <Title content={this.props.title} className={this.props.titleClass}/>
         <form>
           <div className="input">
-            <TextField ref="name" type="text" hintText="Name" />
+            <TextField ref="name" type="text" hintText="Naam" />
           </div>
           <div className="input">
-            <TextField ref="email" type="email" hintText="Email address" />
+            <TextField ref="email" type="email" hintText="Email" />
           </div>
           <div className="input">
-            <TextField ref="contract" type="text" multiLine={true} rows={5} hintText="Copy/Paste your contract in here"  />
+            <TextField ref="contract" type="text" multiLine={true} rows={5} hintText="Copy/Paste je contract hier"  />
           </div>
           <RaisedButton
             label="Start Analyse"
