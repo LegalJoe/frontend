@@ -9,9 +9,6 @@ import signIn from '../actions/user/sign-in'
 import Header from './Header'
 import Examples from './Examples'
 import BottomCta from './BottomCta'
-
-
-
 import './Home.css'
 import Points from './Points'
 
@@ -21,7 +18,6 @@ class Home extends PureComponent {
     const { replace, signedIn } = this.props
     if (signedIn) replace('/')
   }
-
 
   render() {
     return (
