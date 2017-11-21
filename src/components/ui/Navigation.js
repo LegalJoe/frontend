@@ -15,6 +15,8 @@ const TITLE = 'Legal Joe'
 const navStyle = {
   position: 'fixed',
   boxShadow: 'none',
+  left: '0',
+  top: '0',
   textShadow:'-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
 }
 
