@@ -1,31 +1,24 @@
-var style = {
-    backgroundColor: "#F8F8F8",
-    borderTop: "1px solid #E7E7E7",
-    textAlign: "center",
-    padding: "20px",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
-    height: "60px",
-    width: "100%",
-}
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import './Footer.css'
+import LegalSpeak from '../LegalSpeak'
+import SocialMedia from '../SocialMedia'
 
-var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
-  width: '100%',
-}
+class Footer extends PureComponent {
+  static propTypes = {
+    content: PropTypes.string.isRequired,
+    email: PropTypes.string,
+    className: PropTypes.string,
+  }
 
-function Footer({ children }) {
-    return (
-        <div>
-            <div style={phantom} />
-            <div style={style}>
-                { children }
-            </div>
-        </div>
+  render() {
+    return(
+      <div className="footerContainer">
+        <LegalSpeak className="legalities" content="LegalJoe is een initiatief van Edouard Dopper die een voorliefde heeft voor Legal tech in samenwerking met AI applied. Joe is een AI bot."/>
+        <SocialMedia/>
+      </div>
     )
+  }
 }
 
 export default Footer
