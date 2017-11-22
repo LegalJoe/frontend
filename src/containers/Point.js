@@ -17,6 +17,7 @@ class Point extends PureComponent {
           { this.props.content }
         </p>
      </div>
+
     )
   }
 }

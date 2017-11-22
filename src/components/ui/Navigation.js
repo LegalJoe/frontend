@@ -76,10 +76,10 @@ class Navigation extends PureComponent {
            {this.props.admin ?
             <MenuItem primaryText="Edit" onClick={this.goToAdmin.bind(this)}/> :
             <MenuItem primaryText="Profiel" onClick={this.goToProfile.bind(this)}/>}
-            <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
+            <MenuItem primaryText="Log uit" onClick={this.signOut.bind(this)}/>
 
           </IconMenu>           </div>:
-        <FlatButton label="Sign up" onClick={this.signUp} />
+        <FlatButton label="Registreer" onClick={this.signUp} />
 
        }
      />
