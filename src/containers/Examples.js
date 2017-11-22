@@ -13,8 +13,8 @@ class Header extends PureComponent {
       <div className="exampleContainer">
         <Title content={ this.props.title } className="example"/>
         <div className="exampleImages">
-          <img className="exampleImage" src={require("../images/exampleContract.png")} alt="exampleContract"/>
-          <img className="exampleImage" src={require("../images/exampleContract.png")} alt="exampleContract" />
+          <img className="exampleImage" src={require("../images/exampleContract1.png")} alt="exampleContract"/>
+          <img className="exampleImage" src={require("../images/exampleContract2.png")} alt="exampleContract" />
         </div>
       </div>
     )

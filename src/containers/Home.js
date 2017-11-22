@@ -20,7 +20,7 @@ class Home extends PureComponent {
           subTitle="Ik ben Joe, ik laat je binnen 24 uur weten wat een ZZP contract voor jou betekent.(Ik zorg dat je altijd aan de slag kunt na een opdracht)"
         />
         <Points />
-        <Examples title="Voorbeelden"/>
+        <Examples title="Wat ik doe"/>
         <BottomCta title="Upload your contract now"/>
       </div>
     )
