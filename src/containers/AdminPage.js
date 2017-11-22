@@ -4,7 +4,8 @@ import SignIn from './SignIn'
 import PropTypes from 'prop-types'
 import Styling from './Styling'
 import EditPoints from './EditPoints'
-import './AdminPage.css'
+import EditHeader from './EditHeader'
+import EditFooter from './EditFooter'
 
 class AdminPage extends PureComponent {
   static propTypes = {
@@ -16,7 +17,9 @@ class AdminPage extends PureComponent {
     return (
       <div>
         <Styling />
+        <EditHeader />
         <EditPoints />
+        <EditFooter />
       </div>
     )
   }

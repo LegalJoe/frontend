@@ -15,10 +15,7 @@ class Home extends PureComponent {
   render() {
     return (
       <div className="pageContent">
-        <Header
-          title="Contract Analyse"
-          subTitle="Ik ben Joe, ik laat je binnen 24 uur weten wat een ZZP contract voor jou betekent.(Ik zorg dat je altijd aan de slag kunt na een opdracht)"
-        />
+        <Header />
         <Points />
         <Examples title="Wat ik doe"/>
         <BottomCta title="Upload your contract now"/>

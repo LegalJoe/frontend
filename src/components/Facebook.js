@@ -1,21 +1,19 @@
 import React, { PureComponent } from 'react'
 import { SocialIcons } from 'react-social-icons';
-
-var urls = [
-  'https://facebook.com/'
-];
-
+import { connect } from 'react-redux'
 
 class Facebook extends PureComponent {
   render() {
     return (
       <div className="SocialIcon">
         <div className="facebook">
-        <SocialIcons urls={urls}/>
+        <SocialIcons urls={[this.props.items.urls[0]]}/>
         </div>
       </div>
     );
   }
 }
 
-export default Facebook
+const mapStateToProps = ({ items }) => ({ items })
+
+export default connect(mapStateToProps)(Facebook)

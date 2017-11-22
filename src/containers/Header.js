@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import DrawerUploadContract from './Drawer'
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
 import './Header.css'
 import { palette } from '../styles/theme'
+import { connect } from 'react-redux'
 
 const styles = {
   titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamily}`},
@@ -13,17 +13,14 @@ const styles = {
 }
 
 class Header extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string.isRequired,
-  }
   render() {
+    const { items } = this.props
     return(
       <div  className="headerContainer" style={styles.headerStyle}>
         <div className="headerText">
-          <Title content={ this.props.title } style={styles.titleHeader}/>
-          <SubTitle content={ this.props.subTitle } />
-          <p className="explanation">Ik zoek afwijkende clausules in jouw contract, zoals concurrentiebedingen, onredelijke aansprakelijkheid & vrijwaringen.</p>
+          <Title content={items.header.title} style={styles.titleHeader}/>
+          <SubTitle content={items.header.subtitle} />
+            <p className="explanation">{items.header.content}</p>
           <hr/>
         </div>
         <br/>
@@ -35,4 +32,6 @@ class Header extends PureComponent {
   }
 }
 
-export default Header
+const mapStateToProps = ({ items }) => ({ items })
+
+export default connect(mapStateToProps)(Header)
