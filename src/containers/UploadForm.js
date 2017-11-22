@@ -6,7 +6,6 @@ import { palette } from '../styles/theme'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import UploadFile from './UploadFile'
-import './UploadForm.css'
 
 
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
@@ -48,9 +47,6 @@ const secondaryStyles =
   }
 }
 
-
-
-
 class UploadForm extends PureComponent {
   static propTypes = {
     primary: PropTypes.boolean,
@@ -62,7 +58,6 @@ class UploadForm extends PureComponent {
     return (
       <div>
         <form>
-
           <div className="input" >
             <TextField
               ref="name"

@@ -11,7 +11,7 @@ import Title from '../components/ui/Title'
 import { palette } from '../styles/theme'
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`, fontFamily: 'Roboto'},
+  titleHeader: { color: `${palette.primary1Color}`},
   dialogStyle: { width: '400px', margin: '100px auto', padding: '2rem'},
   buttonStyle: { float: 'right', marginLeft: '3rem'},
 }
