@@ -1,17 +1,16 @@
 import React, { PureComponent } from 'react'
-import { SocialIcons } from 'react-social-icons';
-
-var urls = [
-  'https://www.linkedin.com/in/edouard-dopper-0426856/',
-  'https://twitter.com/realdonaldtrump'
-];
-
+import Facebook from './Facebook'
+import Twitter from './Twitter'
+import Linkedin from './Linkedin'
+import './SocialMedia.css'
 
 class SocialMedia extends PureComponent {
   render() {
     return (
       <div className="SocialIcon">
-        <SocialIcons urls={urls} />
+      <Facebook />
+      <Twitter />
+      <Linkedin />
       </div>
     );
   }

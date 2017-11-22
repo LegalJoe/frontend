@@ -19,7 +19,7 @@ export default class UploadForm extends PureComponent {
         <Title content={this.props.title} className={this.props.titleClass}/>
         <form>
           <div className="input">
-            <TextField ref="name" type="text" hintText="Naam" />
+            <TextField ref="name" type="text" hintText="Naam" defaultValue="George Clooney"/>
           </div>
           <div className="input">
             <TextField ref="email" type="email" hintText="Email" />
