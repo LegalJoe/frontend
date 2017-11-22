@@ -2,8 +2,10 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import SignIn from './SignIn'
 import PropTypes from 'prop-types'
+import Styling from './Styling'
 import EditPoints from './EditPoints'
 import './AdminPage.css'
+
 
 class AdminPage extends PureComponent {
   static propTypes = {
@@ -14,6 +16,8 @@ class AdminPage extends PureComponent {
     if (!this.props.admin) return <SignIn />
     return (
       <div>
+        <Home />
+        <Styling />
        <EditPoints />
       </div>
     )

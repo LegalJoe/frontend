@@ -123,8 +123,8 @@ class UploadForm extends PureComponent {
 }
 const mapStateToProps = ({ currentUser, admin }) => {
   return {
-  currentUser,
- }
+    currentUser,
+  }
 }
 
 export default connect(mapStateToProps, {sendContract})(UploadForm)
