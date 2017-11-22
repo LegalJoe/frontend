@@ -9,6 +9,7 @@ import FlatButton from 'material-ui/FlatButton'
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
+import { palette } from '../../styles/theme'
 
 const TITLE = 'Legal Joe'
 
@@ -19,6 +20,11 @@ const navStyle = {
   top: '0',
   color: 'white',
   textShadow:'-1px 0 black, 0 2px black, 1px 0 black, 0 -1px black',
+}
+
+const buttonStyle = {
+  marginTop: '-5%',
+  color: `${palette.alternateTextColor}`,
 }
 
 class Navigation extends PureComponent {
@@ -52,18 +58,22 @@ class Navigation extends PureComponent {
 
   render() {
     const { signedIn } = this.props
+    const { currentUser } = this.props
     console.log(this)
     return (
       <AppBar
         title={TITLE}
+        onTitleTouchTap={this.goHome}
         style={navStyle}
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
 
         iconElementRight={signedIn ?
           <div>
           <FlatButton
-          className="tings"
-          label={`${this.props.currentUser.firstName} ${this.props.currentUser.lastName}`}/>
+          className="buttonName"
+          style={buttonStyle}
+          onClick={this.goToProfile.bind(this)}
+          label={(currentUser === null || this.props.admin === true)? null : `${currentUser.firstName}`}/>
           <IconMenu
             iconButtonElement={
               <IconButton><Reorder /></IconButton>

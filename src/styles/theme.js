@@ -1,7 +1,9 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
-export const red          = '#8D6E63'
+
+export const red          = '#B72327'
+
 export const amber        = '#FFC107'
 export const errorColor   = '#FFC107'
 
