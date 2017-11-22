@@ -24,7 +24,7 @@ export default class DrawerUploadContract extends PureComponent {
 
   handleToggle = () => this.setState({open: !this.state.open});
   handleClose = () => this.setState({open: false});
-
+  
   render() {
     return (
       <div>

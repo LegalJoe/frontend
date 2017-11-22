@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react'
-
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types'
 import { palette } from '../styles/theme'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
+import UploadFile from './UploadFile'
+import './UploadForm.css'
+
 
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
 
@@ -45,21 +49,25 @@ const secondaryStyles =
 }
 
 
-export default class UploadForm extends PureComponent {
+
+
+class UploadForm extends PureComponent {
   static propTypes = {
     primary: PropTypes.boolean,
     title: PropTypes.string,
   }
 
   render() {
+    const { currentUser } = this.props
     return (
       <div>
         <form>
+
           <div className="input" >
             <TextField
               ref="name"
               type="text"
-              defaultValue="George Clooney"
+              defaultValue={(currentUser === null)? "" : `${currentUser.firstName} ${currentUser.lastName}`}
               floatingLabelText="Name"
               floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
               underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
@@ -70,6 +78,7 @@ export default class UploadForm extends PureComponent {
             <TextField
               ref="email"
               type="email"
+              defaultValue={(currentUser === null)? "": `${currentUser.email}`}
               hintText="Enter a valid email"
               floatingLabelText="Email"
               floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
@@ -90,12 +99,21 @@ export default class UploadForm extends PureComponent {
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
             />
           </div>
+            <UploadFile/>
           <RaisedButton
             label="Start Analyse"
             primary={this.props.primary} />
         </form>
+
       </div>
 
     );
   }
 }
+const mapStateToProps = ({ currentUser, admin }) => {
+  return {
+  currentUser,
+ }
+}
+
+export default connect(mapStateToProps, {push})(UploadForm)
