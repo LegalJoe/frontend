@@ -2,8 +2,7 @@
   min-height: 75vh;
   padding-top: 175px;
   padding-left: 100px;
-  background-image: linear-gradient(-200deg, #B72327 80%, #F8F8F8 60%);
-
+  /*background-image: linear-gradient(-200deg, #B72327 80%, #F8F8F8 60%);*/
 }
 
 .headerText {

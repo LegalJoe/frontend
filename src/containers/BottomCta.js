@@ -1,8 +1,15 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import UploadForm from './UploadForm'
+import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
 import './BottomCta.css'
+import { palette } from '../styles/theme'
+
+const styles = {
+  titleHeader: { color: `${palette.alternateTextColor}`},
+  containerStyle: { background: `${palette.primary1Color}`}
+}
 
 class BottomCta extends PureComponent {
   static propTypes = {
@@ -11,9 +18,10 @@ class BottomCta extends PureComponent {
   }
   render() {
     return(
-      <div className="ctaContainer">
+      <div style={ styles.containerStyle } className="ctaContainer">
+        <Title content="Upload Je Contract" style={styles.titleHeader} />
         <SubTitle content={ this.props.subTitle } />
-        <UploadForm title="Upload Je Contract" titleClass="bottomCta" primary={false} />
+        <UploadForm  />
       </div>
     )
   }
