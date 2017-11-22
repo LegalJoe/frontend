@@ -15,9 +15,10 @@ class Accept extends PureComponent {
       <section>
         <div className="dropzone">
           <Dropzone
+            className="dropflex"
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
           >
-            <p>   Of Drop De File Hier</p>
+            <p className="yoyo">   Of Drop De File Hier</p>
           </Dropzone>
         </div>
       </section>
