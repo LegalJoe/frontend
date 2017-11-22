@@ -11,14 +11,14 @@ import {
 
 const ContractTable = () => (
   <Table>
-    <TableHeader>
+    <TableHeader displaySelectAll={false} adjustForCheckbox={false} >
       <TableRow>
         <TableHeaderColumn>Upload date</TableHeaderColumn>
         <TableHeaderColumn>Name</TableHeaderColumn>
         <TableHeaderColumn>Status</TableHeaderColumn>
       </TableRow>
     </TableHeader>
-    <TableBody>
+    <TableBody displayRowCheckbox={false} showRowHover={true}>
       <TableRow>
         <TableRowColumn>26-12-2017</TableRowColumn>
         <TableRowColumn>Bol.com job</TableRowColumn>
