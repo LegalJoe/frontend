@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import './Title.css'
 
+const styles = {
+  fontFamilyTitle:"Space Mono",
+}
+
 class Title extends PureComponent {
   static propTypes = {
     content: PropTypes.string.isRequired,

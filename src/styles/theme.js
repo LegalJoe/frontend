@@ -2,7 +2,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
 
-export const red          = '#F50057'
+export const red          = '#8D6E63'
 export const amber        = '#FFC107'
 export const errorColor   = '#FFC107'
 export const darkRed      = '#C1272D'
@@ -26,6 +26,7 @@ export const palette = {
   canvasColor: white,
   borderColor: grey,
   disabledColor: grey30,
+  fontFamilyTitle: 'helvetica',
 }
 
 export default getMuiTheme({ palette })

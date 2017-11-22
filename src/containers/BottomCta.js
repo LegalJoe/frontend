@@ -7,7 +7,7 @@ import './BottomCta.css'
 import { palette } from '../styles/theme'
 
 const styles = {
-  titleHeader: { color: `${palette.alternateTextColor}`},
+    titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamily}`},
   containerStyle: { background: `${palette.primary1Color}`}
 }
 

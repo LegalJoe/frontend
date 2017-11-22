@@ -8,7 +8,7 @@ import './Header.css'
 import { palette } from '../styles/theme'
 
 const styles = {
-  titleHeader: { color: `${palette.alternateTextColor}`},
+  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamily}`},
   headerStyle: { backgroundImage: `linear-gradient(-200deg, ${palette.primary1Color} 80%, #F8F8F8 60%)`,}
 }
 
