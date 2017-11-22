@@ -56,8 +56,10 @@ class UploadForm extends PureComponent {
   render() {
     const { currentUser } = this.props
     return (
-      <div>
+      <div className="formStyle">
         <form>
+        <div className="textinput">
+
           <div className="input" >
             <TextField
               ref="name"
@@ -94,12 +96,13 @@ class UploadForm extends PureComponent {
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
             />
           </div>
-            <UploadFile/>
+        </div>
+        <UploadFile/>
+
           <RaisedButton
             label="Start Analyse"
             primary={this.props.primary} />
         </form>
-
       </div>
 
     );
