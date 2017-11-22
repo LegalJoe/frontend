@@ -6,7 +6,7 @@ import Title from '../components/ui/Title'
 import { palette } from '../styles/theme'
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`},
+  titleHeader: { color: `${palette.primary1Color}`, fontFamilyTitle:`${palette.fontFamily}`},
 }
 
 const drawerStyles = {
@@ -24,7 +24,7 @@ export default class DrawerUploadContract extends PureComponent {
 
   handleToggle = () => this.setState({open: !this.state.open});
   handleClose = () => this.setState({open: false});
-  
+
   render() {
     return (
       <div>
