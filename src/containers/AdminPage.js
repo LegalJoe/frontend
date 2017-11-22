@@ -5,8 +5,6 @@ import PropTypes from 'prop-types'
 import Styling from './Styling'
 import EditPoints from './EditPoints'
 import './AdminPage.css'
-import Home from './Home'
-
 
 class AdminPage extends PureComponent {
   static propTypes = {
