@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react'
 import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import UploadForm from './UploadForm'
-import {desiredColor} from '../styles/theme'
 
 const drawerStyles = {
   display: 'flex',

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import Title from '../components/ui/Title'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
-import Drawer from './Drawer.js'
 import PropTypes from 'prop-types'
 import './UploadForm.css'
 

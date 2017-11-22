@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import mui from 'material-ui';
 import { SocialIcons } from 'react-social-icons';
 
 var urls = [

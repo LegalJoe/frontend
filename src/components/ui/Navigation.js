@@ -15,6 +15,8 @@ const TITLE = 'Legal Joe'
 const navStyle = {
   position: 'fixed',
   boxShadow: 'none',
+  left: '0',
+  top: '0',
   textShadow:'-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
 }
 
@@ -39,6 +41,14 @@ class Navigation extends PureComponent {
     this.props.push('/')
   }
 
+  goToAdmin = () => {
+    this.props.push('/admin')
+  }
+
+  goToProfile = () => {
+    this.props.push('/user-profile')
+  }
+
   render() {
     const { signedIn } = this.props
     return (
@@ -54,7 +64,9 @@ class Navigation extends PureComponent {
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
           >
-            <MenuItem primaryText="Profiel" />
+           {this.props.admin ?
+            <MenuItem primaryText="Edit" onClick={this.goToAdmin.bind(this)}/> :
+            <MenuItem primaryText="Profiel" onClick={this.goToProfile.bind(this)}/>}
             <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
           </IconMenu> :
         <FlatButton label="Sign up" onClick={this.signUp} />
@@ -64,8 +76,11 @@ class Navigation extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
-  signedIn: (!!currentUser && !!currentUser.id)
-})
+const mapStateToProps = ({ currentUser, admin }) => {
+  return {
+  signedIn: (!!currentUser && !!currentUser.id),
+  admin: (!!currentUser && !!currentUser.id && !!currentUser.admin)
+ }
+}
 
 export default connect(mapStateToProps, { push, signOut })(Navigation)
