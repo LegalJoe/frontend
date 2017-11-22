@@ -1,6 +1,27 @@
 .ctaContainer {
-  background: #B72327;
   min-height: 400px;
   padding: 30px 100px;
+}
 
+.formStyle {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dropzone {
+}
+
+.yoyo {
+
+}
+
+.dropflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border: 1px dashed rgba(0,0,0,0.2);
+  margin-bottom: 7px;
+  border-radius: 4px;
 }

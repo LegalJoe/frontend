@@ -1,10 +1,10 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
+export const red          = '#8D6E63'
+export const amber        = '#FFC107'
+export const errorColor   = '#FFC107'
 
-export const blakka       = '#B72327' 
-export const green        = '#B72327'
-export const red          = '#5c93ed'
 export const darkRed      = '#C1272D'
 export const white        = '#ffffff'
 export const black        = '#3a3737'
@@ -16,15 +16,17 @@ export const grey30       = 'rgba(222, 222, 222, 0.7)'
 
 // Palette
 export const palette = {
-  primary1Color: blakka,
-  primary2Color: green,
-  primary3Color: green,
-  accent1Color: green,
+  primary1Color: red,
+  primary2Color: amber,
+  primary3Color: darkRed,
+  accent1Color: amber,
+  errorColor: errorColor,
   textColor: black,
   alternateTextColor: white,
   canvasColor: white,
   borderColor: grey,
   disabledColor: grey30,
+  fontFamilyTitle: 'helvetica',
 }
 
 export default getMuiTheme({ palette })
