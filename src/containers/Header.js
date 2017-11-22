@@ -5,7 +5,12 @@ import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
 import './Header.css'
+import { palette } from '../styles/theme'
 
+const styles = {
+  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamily}`},
+  headerStyle: { backgroundImage: `linear-gradient(-200deg, ${palette.primary1Color} 80%, #F8F8F8 60%)`,}
+}
 
 class Header extends PureComponent {
   static propTypes = {
@@ -14,9 +19,9 @@ class Header extends PureComponent {
   }
   render() {
     return(
-      <div className="headerContainer">
+      <div  className="headerContainer" style={styles.headerStyle}>
         <div className="headerText">
-          <Title content={ this.props.title } className="header"/>
+          <Title content={ this.props.title } style={styles.titleHeader}/>
           <SubTitle content={ this.props.subTitle } />
           <p className="explanation">Ik zoek afwijkende clausules in jouw contract, zoals concurrentiebedingen, onredelijke aansprakelijkheid & vrijwaringen.</p>
           <hr/>

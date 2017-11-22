@@ -8,16 +8,12 @@ import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import signUp from '../actions/user/sign-up'
 import Title from '../components/ui/Title'
+import { palette } from '../styles/theme'
 
-const dialogStyle = {
-  width: '400px',
-  margin: '50px auto',
-  padding: '2rem',
-}
-
-const buttonStyle = {
-  float: 'right',
-  marginLeft: '2rem',
+const styles = {
+  titleHeader: { color: `${palette.primary1Color}`},
+  dialogStyle: { width: '400px', margin: '100px auto', padding: '2rem'},
+  buttonStyle: { float: 'right', marginLeft: '3rem'},
 }
 
 export class SignUp extends PureComponent {
@@ -151,8 +147,8 @@ export class SignUp extends PureComponent {
 
   render() {
     return (
-      <Paper style={ dialogStyle }>
-        <Title content="Sign Up" level={2} />
+      <Paper style={ styles.dialogStyle }>
+        <Title content="Sign Up" style={styles.titleHeader}/>
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
@@ -186,7 +182,7 @@ export class SignUp extends PureComponent {
           onClick={ this.signIn.bind(this) }
           label="Sign in" />
         <RaisedButton
-          style={ buttonStyle }
+          style={ styles.buttonStyle }
           onClick={ this.submitForm.bind(this) }
           label="Sign up"
           primary={true} />

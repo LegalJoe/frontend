@@ -2,9 +2,16 @@ import React, { PureComponent } from 'react'
 import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import UploadForm from './UploadForm'
+import Title from '../components/ui/Title'
+import { palette } from '../styles/theme'
+
+const styles = {
+  titleHeader: { color: `${palette.primary1Color}`, fontFamilyTitle:`${palette.fontFamily}`},
+}
 
 const drawerStyles = {
   display: 'flex',
+  flexDirection: 'column',
   paddingLeft: '40px',
 }
 
@@ -33,7 +40,8 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <UploadForm title="Upload je contract" titleClass="boom" primary={true}/>
+          <Title content="Upload je contract" style={styles.titleHeader} />
+          <UploadForm primary={true}/>
         </Drawer>
       </div>
     );
