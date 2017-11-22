@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
-import Home from './Home'
 import { connect } from 'react-redux'
 import SignIn from './SignIn'
 import PropTypes from 'prop-types'
+import EditPoints from './EditPoints'
+import './AdminPage.css'
 
 class AdminPage extends PureComponent {
   static propTypes = {
@@ -12,12 +13,14 @@ class AdminPage extends PureComponent {
   render () {
     if (!this.props.admin) return <SignIn />
     return (
-      <Home />
+      <div>
+       <EditPoints />
+      </div>
     )
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
+const mapStateToProps = ({ items, currentUser }) => ({
   admin: (!!currentUser && !!currentUser.id && !!currentUser.admin)
 })
 
