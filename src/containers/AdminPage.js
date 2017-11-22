@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Styling from './Styling'
 import EditPoints from './EditPoints'
 import './AdminPage.css'
+import Home from './Home'
 
 
 class AdminPage extends PureComponent {
@@ -16,9 +17,8 @@ class AdminPage extends PureComponent {
     if (!this.props.admin) return <SignIn />
     return (
       <div>
-        <Home />
         <Styling />
-       <EditPoints />
+        <EditPoints />
       </div>
     )
   }

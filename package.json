@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "draft-js": "^0.10.4",
-    "markdown-draft-js": "^0.4.4",
     "material-ui": "^0.19.4",
     "material-ui-community-icons": "^0.15.0",
     "material-ui-icons": "^1.0.0-beta.17",
