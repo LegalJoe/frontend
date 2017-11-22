@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import DrawerUploadContract from './Drawer'
-import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
-import exampleContract from '../images/exampleContract.png'
 import './Examples.css'
 
 class Header extends PureComponent {
@@ -16,8 +13,8 @@ class Header extends PureComponent {
       <div className="exampleContainer">
         <Title content={ this.props.title } className="example"/>
         <div className="exampleImages">
-          <img className="exampleImage" src={require("../images/exampleContract.png")} />
-          <img className="exampleImage" src={require("../images/exampleContract.png")} />
+          <img className="exampleImage" src={require("../images/exampleContract.png")} alt="exampleContract"/>
+          <img className="exampleImage" src={require("../images/exampleContract.png")} alt="exampleContract" />
         </div>
       </div>
     )

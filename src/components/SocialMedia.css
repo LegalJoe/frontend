@@ -1,3 +1,10 @@
 .SocialIcon {
-  
+  display: flex;
+  max-width: 500px;
+}
+.facebook {
+  margin-right: 12px;
+}
+.twitter {
+  margin-right: 12px;
 }
