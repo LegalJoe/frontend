@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
+import UploadFile from './UploadFile'
 
 import './UploadForm.css'
 
@@ -31,10 +32,12 @@ class UploadForm extends PureComponent {
           <div className="input">
             <TextField ref="contract" type="text" multiLine={true} rows={5} hintText="Copy/Paste je contract hier"  />
           </div>
+            <UploadFile/>
           <RaisedButton
             label="Start Analyse"
             primary={this.props.primary} />
         </form>
+
       </div>
 
     );
