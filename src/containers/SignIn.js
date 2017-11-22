@@ -35,7 +35,7 @@ export class SignIn extends PureComponent {
   submitForm(event) {
     event.preventDefault()
     const user = {
-      username: this.refs.username.getValue(),
+      username: this.refs.email.getValue(),
       password: this.refs.password.getValue(),
     }
     this.props.signIn(user)
@@ -53,7 +53,7 @@ export class SignIn extends PureComponent {
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
-            <TextField ref="username" type="username" hintText="Username" />
+            <TextField ref="email" type="email" hintText="yourname@gmail.com" />
           </div>
           <div className="input">
             <TextField ref="password" type="password" hintText="Password"  />
