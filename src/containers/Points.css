@@ -1,5 +1,6 @@
 .pointSection {
   background: rgba(222, 222, 222, 0.2);
+  /*background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);*/
   padding-top: 30px;
   padding-bottom: 30px;
 }
