@@ -32,10 +32,12 @@ export class SignUp extends PureComponent {
     event.preventDefault()
     if (this.validateAll()) {
       const user = {
-        username: this.refs.name.getValue(),
-        email: this.refs.email.getValue(),
+        firstName: this.refs.firstName.getValue(),
+        lastName: this.refs.lastName.getValue(),
+        username: this.refs.email.getValue(),
         password: this.refs.password.getValue()
       }
+      console.log(user)
       this.props.signUp(user)
     }
     return false
@@ -46,24 +48,41 @@ export class SignUp extends PureComponent {
   }
 
   validateAll() {
-    return this.validateName() &&
+    return this.validateFirstName() &&
+      this.validateLastName() &&
       this.validateEmail() &&
       this.validatePassword() &&
       this.validatePasswordConfirmation()
   }
 
-  validateName() {
-    const { name } = this.refs
+  validateFirstName() {
+    const { firstName } = this.refs
 
-    if (name.getValue().length > 1) {
+    if (firstName.getValue().length > 1) {
       this.setState({
-        nameError: null
+        firstNameError: null
       })
       return true
     }
 
     this.setState({
-      nameError: 'Please provide your name'
+      firstNameError: 'Please provide your first name'
+    })
+    return false
+  }
+
+  validateLastName() {
+    const { lastName } = this.refs
+
+    if (lastName.getValue().length > 1) {
+      this.setState({
+        lastNameError: null
+      })
+      return true
+    }
+
+    this.setState({
+      lastNameError: 'Please provide your last name'
     })
     return false
   }
@@ -137,9 +156,14 @@ export class SignUp extends PureComponent {
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
-            <TextField ref="name" type="text" hintText="Your name"
-              onChange={this.validateName.bind(this)}
-              errorText={ this.state.nameError} />
+            <TextField ref="firstName" type="text" hintText="Your first name"
+              onChange={this.validateFirstName.bind(this)}
+              errorText={ this.state.firstNameError} />
+          </div>
+          <div className="input">
+            <TextField ref="lastName" type="text" hintText="Your last name"
+              onChange={this.validateLastName.bind(this)}
+              errorText={ this.state.lastNameError} />
           </div>
           <div className="input">
             <TextField ref="email" type="email" hintText="Email address"
