@@ -13,8 +13,9 @@ const api = new API()
 export default (contract) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
+    console.log(contract)
 
-  api.post('/contracts', contract)
+  api.post('/contracttext', contract)
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
