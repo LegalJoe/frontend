@@ -4,8 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types'
 import { palette } from '../styles/theme'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
 import UploadFile from './UploadFile'
+import { sendContract } from '../actions/contracts/'
 
 
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
@@ -51,6 +51,17 @@ class UploadForm extends PureComponent {
   static propTypes = {
     primary: PropTypes.boolean,
     title: PropTypes.string,
+    sendContract: PropTypes.func.isRequired,
+  }
+
+  submitForm(event) {
+  event.preventDefault()
+    const contract = {
+      email: this.refs.email.getValue(),
+      contract: this.refs.contract.getValue(),
+      altcontract: this.refs.upFile.state.accepted[0]
+    }
+    this.props.sendContract(contract)
   }
 
   render() {
@@ -97,10 +108,12 @@ class UploadForm extends PureComponent {
             />
           </div>
         </div>
-        <UploadFile/>
+        <UploadFile
+        ref="upFile"/>
 
           <RaisedButton
             label="Start Analyse"
+            onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
         </form>
       </div>
@@ -114,4 +127,4 @@ const mapStateToProps = ({ currentUser, admin }) => {
   }
 }
 
-export default connect(mapStateToProps, {push})(UploadForm)
+export default connect(mapStateToProps, {sendContract})(UploadForm)

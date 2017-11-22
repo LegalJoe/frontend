@@ -8,12 +8,16 @@ import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
 import FlatButton from 'material-ui/FlatButton'
-import { palette } from '../styles/theme'
 
-const styles = {
-  titleHeader: { color: `${palette.primary1Color}`},
-  dialogStyle: { width: '400px', margin: '100px auto', padding: '2rem'},
-  buttonStyle: { float: 'left', marginLeft: '3rem'},
+const dialogStyle = {
+  width: '400px',
+  margin: '50px auto',
+  padding: '2rem',
+}
+
+const buttonStyle = {
+  float: 'left',
+  marginLeft: '3rem',
 }
 
 export class SignIn extends PureComponent {
@@ -25,13 +29,13 @@ export class SignIn extends PureComponent {
 
   componentWillMount() {
     const { replace, signedIn } = this.props
-    if (signedIn) this.props.push('/')
+    if (signedIn) replace('/')
   }
 
   submitForm(event) {
     event.preventDefault()
     const user = {
-      username: this.refs.email.getValue(),
+      username: this.refs.username.getValue(),
       password: this.refs.password.getValue(),
     }
     this.props.signIn(user)
@@ -44,12 +48,12 @@ export class SignIn extends PureComponent {
 
   render() {
     return (
-      <Paper style={ styles.dialogStyle }>
-        <Title content="Sign In" style={ styles.titleHeader } />
+      <Paper style={ dialogStyle }>
+        <Title content="Sign In" level={2} />
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
-            <TextField ref="email" type="email" hintText="yourname@gmail.com" />
+            <TextField ref="username" type="username" hintText="Username" />
           </div>
           <div className="input">
             <TextField ref="password" type="password" hintText="Password"  />
@@ -59,7 +63,7 @@ export class SignIn extends PureComponent {
           onClick={ this.signUp.bind(this) }
           label="Sign up" />
         <RaisedButton
-          style={ styles.buttonStyle }
+          style={ buttonStyle }
           onClick={ this.submitForm.bind(this) }
           label="Sign in"
           primary={true} />
