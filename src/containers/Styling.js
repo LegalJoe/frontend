@@ -9,7 +9,7 @@ import 'rc-color-picker/assets/index.css'
 
 
 const styles = {
-  titleHeader: { color: `${palette.textColor}`, fontFamilyTitle:`${palette.fontFamily}`},
+  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamilyTitle}`},
 }
 
 
