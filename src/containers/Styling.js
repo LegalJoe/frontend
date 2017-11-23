@@ -3,12 +3,19 @@ import SubTitle from '../components/ui/SubTitle'
 import ColorPicker from 'rc-color-picker'
 import FlatButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
-
-function changeHandler(colors) {
-    console.log(colors);
-  }
+import { connect } from 'react-redux'
 
 class Styling extends PureComponent {
+
+  changeHandler(color) {
+    const { theme } = this.props
+    const newTheme = {
+      id: theme.id,
+      primaryOne: color.color,
+    }
+     this.props.updateTheme(newTheme)
+    }
+
 
   render() {
     return(
@@ -17,8 +24,8 @@ class Styling extends PureComponent {
         <div style={{ textAlign: 'center' }}>
           <ColorPicker
             id='primaryColor'
-            color={'#36c'}
-            onChange={changeHandler}
+            color={this.props.theme.primaryTwo}
+            onClose={this.changeHandler.bind(this)}
           >
           <FlatButton label="Pick" className="react-custom-trigger" />
           </ColorPicker>
@@ -28,4 +35,10 @@ class Styling extends PureComponent {
   }
 }
 
-export default Styling
+const mapStateToProps = ({theme}) => {
+  return {
+    theme,
+  }
+}
+export default connect(mapStateToProps,{ fetchTheme, updateTheme})(Styling)
+

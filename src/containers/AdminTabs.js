@@ -11,7 +11,6 @@ import Card from 'material-ui/Card'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import SignIn from './SignIn'
-import EditTheme from '../styles/EditTheme'
 
 const { canvasColor, titleColor } = palette
 const { fontFamilyTitle } = fontLibrary
@@ -42,7 +41,6 @@ class AdminTabs extends PureComponent {
             <Tab label="Edit style" style={ styles.tabStyle }>
               <div>
                 <Styling />
-                <EditTheme />
               </div>
             </Tab>
             <Tab label="Contract overview" style={ styles.tabStyle }>
