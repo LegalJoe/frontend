@@ -9,11 +9,6 @@ import Header from './Header'
 import './EditHeader.css'
 import Title from '../components/ui/Title'
 
-const buttonStyle = {
-  float: 'left',
-  marginLeft: '3rem',
-}
-
 class EditPoints extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,

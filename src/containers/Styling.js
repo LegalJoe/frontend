@@ -1,16 +1,9 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import SubTitle from '../components/ui/SubTitle'
-import { fetchTheme, updateTheme } from '../actions/theme'
-import { palette } from '../styles/theme'
 import ColorPicker from 'rc-color-picker'
 import FlatButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
 import { connect } from 'react-redux'
-
-const styles = {
-  titleStyle: { color: `${palette.alternateTitleColor}`, fontFamily:`${palette.fontFamilyTitle}`},
-}
 
 class Styling extends PureComponent {
 
@@ -48,3 +41,4 @@ const mapStateToProps = ({theme}) => {
   }
 }
 export default connect(mapStateToProps,{ fetchTheme, updateTheme})(Styling)
+
