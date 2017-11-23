@@ -36,9 +36,9 @@ export const palette = {
 }
 
 export const fontLibrary = {
-  fontFamilyTitle: 'monospace',
-  fontFamilySubTitle: "monospace",
-  fontFamilyText: "monospace",
+  fontFamilyTitle: 'Roboto Slab',
+  fontFamilySubTitle: "Roboto Slab",
+  fontFamilyText: "Lato",
 }
 
 export default getMuiTheme({ palette })

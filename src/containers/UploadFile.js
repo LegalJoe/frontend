@@ -1,5 +1,15 @@
 import React, { PureComponent } from 'react'
 import Dropzone from 'react-dropzone'
+import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
+
+const { fontFamilyText } = fontLibrary
+const { TextColor } = palette
+
+const styles = {
+  paragraph: { color: `${TextColor}`, fontFamily: `${fontFamilyText}`, fontSize: '120%'},
+  dropZone: { maxWidth: '80%' }
+}
 
 class Accept extends PureComponent {
   constructor() {
@@ -15,11 +25,12 @@ class Accept extends PureComponent {
       <section>
         <div className="dropzone">
           <Dropzone
+            style={styles.dropZone}
             className="dropflex"
             accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf"
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
           >
-            <p className="yoyo">   Of Drop De File Hier</p>
+            <p style={styles.paragraph}>Of Drop De File Hier</p>
           </Dropzone>
           <aside>
           <ul>
