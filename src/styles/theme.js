@@ -2,13 +2,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
 
-export const red          = '#B72327'
-
+export const red          = '#00796B'
 export const amber        = '#FFC107'
 export const errorColor   = '#FFC107'
-
 export const darkRed      = '#C1272D'
-export const white        = '#ffffff'
+export const white        = '#FFC107'
 export const black        = '#3a3737'
 export const darkGrey     = '#757575'
 export const grey         = '#DEDEDE'
@@ -28,7 +26,7 @@ export const palette = {
   canvasColor: white,
   borderColor: grey,
   disabledColor: grey30,
-  fontFamilyTitle: 'helvetica',
+  fontFamilyTitle: 'Roboto',
 }
 
 export default getMuiTheme({ palette })

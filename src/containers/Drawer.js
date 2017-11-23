@@ -6,7 +6,7 @@ import Title from '../components/ui/Title'
 import { palette } from '../styles/theme'
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`, fontFamilyTitle:`${palette.fontFamily}`},
+  titleHeader: { color: `${palette.primary1Color}`, fontFamily:`${palette.fontFamilyTitle}`},
 }
 
 const drawerStyles = {
