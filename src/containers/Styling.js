@@ -1,14 +1,8 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import SubTitle from '../components/ui/SubTitle'
-import { palette } from '../styles/theme'
 import ColorPicker from 'rc-color-picker'
 import FlatButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
-
-const styles = {
-  titleStyle: { color: `${palette.alternateTitleColor}`, fontFamily:`${palette.fontFamilyTitle}`},
-}
 
 function changeHandler(colors) {
     console.log(colors);
@@ -34,9 +28,4 @@ class Styling extends PureComponent {
   }
 }
 
-const mapStateToProps = ({theme}) => {
-  return {
-    theme,
-  }
-}
 export default Styling
