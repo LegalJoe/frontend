@@ -4,12 +4,15 @@ import Examples from './Examples'
 import BottomCta from './BottomCta'
 import './Home.css'
 import Points from './Points'
+import { fetchTheme } from '../actions/theme'
+import { connect } from 'react-redux'
 
 class Home extends PureComponent {
 
   componentWillMount() {
     const { replace, signedIn } = this.props
     if (signedIn) replace('/')
+    this.props.fetchTheme()
   }
 
   render() {
@@ -24,4 +27,5 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+
+export default connect(null, { fetchTheme})(Home)
