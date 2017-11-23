@@ -5,18 +5,8 @@ import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem } from '../actions/items'
-import './EditHeader.css'
-
-const dialogStyle = {
-  width: '1200px',
-  margin: '20px',
-  padding: '2rem',
-}
-
-const buttonStyle = {
-  float: 'right',
-  marginLeft: '3rem',
-}
+import Footer from '../components/ui/Footer'
+import './EditFooter.css'
 
 class EditFooter extends PureComponent {
   static propTypes = {
@@ -50,12 +40,12 @@ class EditFooter extends PureComponent {
      const { items } = this.props
      return (
          <div className="EditFooter">
-           <Paper style={ dialogStyle }>
+           <Paper className="formContainer4">
              <form onSubmit={this.submitForm.bind(this)}>
 
                <div className="input">
                  <TextField ref="content" type="text" id="content"
-                   style = {{width: 800}}
+                   style = {{width: '90%'}}
                    defaultValue={items.footer.content}
                    placeholder={items.footer.content}
                    multiLine={true}
@@ -64,24 +54,24 @@ class EditFooter extends PureComponent {
 
                <div className="input">
                   <TextField ref="urls1" type="text" defaultValue={items.urls[0]}
-                   id = "urls1" placeholder={items.urls[0]} style = {{width: 800}}/>
+                   id = "urls1" placeholder={items.urls[0]} style = {{width: '90%'}}/>
                </div>
                <div className="input">
                   <TextField ref="urls2" type="text" defaultValue={items.urls[1]}
-                   id = "urls2" placeholder={items.urls[1]}style = {{width: 800}}/>
+                   id = "urls2" placeholder={items.urls[1]}style = {{width: '90%'}}/>
                </div>
                <div className="input">
                   <TextField ref="urls3" type="text" defaultValue={items.urls[2]}
-                   id = "urls3" placeholder={items.urls[2]}style = {{width: 800}}/>
+                   id = "urls3" placeholder={items.urls[2]}style = {{width: '90%'}}/>
               </div>
               <div className="input">
                  <TextField ref="newLink" type="text" id = "newLink"
-                   placeholder="Add new link" style = {{width: 800}}/>
+                   placeholder="Add new link" style = {{width: '90%'}}/>
              </div>
               </div>
              </form>
              <RaisedButton
-               style={ buttonStyle }
+               className="saveButton"
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />

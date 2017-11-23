@@ -8,18 +8,6 @@ import { updateItem } from '../actions/items'
 import './EditExamples.css'
 import Examples from './Examples'
 
-const dialogStyle = {
-  width: '600px',
-  height: '300px',
-  marginTop: '150px',
-  padding: '2rem',
-}
-
-const buttonStyle = {
-  float: 'right',
-  marginLeft: '3rem',
-}
-
 class EditExamples extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,
@@ -48,38 +36,59 @@ class EditExamples extends PureComponent {
    render() {
      const { items } = this.props
      return (
-         <div className="EditExamples">
-         <div className="examples2">
-           <Examples />
-         </div>
-         <div className="exampleForm  ">
-           <Paper style={ dialogStyle }>
-             <form onSubmit={this.submitForm.bind(this)}>
-               <div className="input">
-                 <TextField ref="title" type="text" defaultValue={items.examples.title}
-                   id = "title" placeholder={items.examples.title}/>
+       <div className="EditExamples">
+        <Paper className="examplesContainer">
+         <Examples />
+        </Paper>
+          <Paper className="formContainer3">
+            <form onSubmit={this.submitForm.bind(this)}>
+              <div className="input">
+              <h3>Title</h3>
+                <TextField
+                  style={{width: '90%'},{margin: 'auto'}}
+                  ref="title"
+                  type="text"
+                  defaultValue={items.examples.title}
+                  id = "title"
+                  placeholder={items.examples.title}
+                />
                 </div>
 
                <div className="input">
-                  <TextField ref="urls1" type="text" defaultValue={items.photos[0]}
-                   id = "urls1" placeholder={items.photos[0]} />
+               <h3>Image URLs</h3>
+                <TextField
+                  style={{width: '90%'}, {margin: 'auto'}}
+                  ref="urls1"
+                  type="text"
+                  defaultValue={items.photos[0]}
+                  id = "urls1" placeholder={items.photos[0]}
+                />
                </div>
-               <div className="input">
-                  <TextField ref="urls2" type="text" defaultValue={items.photos[1]}
-                   id = "urls2" placeholder={items.photos[1]}/>
-               </div>
+                <div className="input">
+                  <TextField
+                    style={{width: '90%'},{margin: 'auto'}}
+                    ref="urls2"
+                    type="text"
+                    defaultValue={items.photos[1]}
+                    id = "urls2"
+                    placeholder={items.photos[1]}
+                  />
+                </div>
               <div className="input">
-                 <TextField ref="newLink" type="text" id = "newLink"
-                   placeholder="Add new link" />
-             </div>
+                <TextField
+                  ref="newLink"
+                  type="text"
+                  id = "newLink"
+                  placeholder="Add new link"
+                />
+              </div>
              </form>
              <RaisedButton
-               style={ buttonStyle }
+               className="saveButton"
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />
            </Paper>
-           </div>
        </div>
      )
    }

@@ -1,7 +1,21 @@
 .EditExamples {
   display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .examples2 {
-  max-width: 700px;
+  width: 70%;
+}
+
+.examplesContainer {
+  max-width: 75%;
+  margin: 10px;
+}
+
+.formContainer3 {
+  margin: 10px;
+  max-width: 30%;
+  padding: 20px;
+  position: relative;
 }

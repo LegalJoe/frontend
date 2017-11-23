@@ -2,7 +2,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
 
-export const red          = '#060c36'
+export const red          = '#00abeb'
 export const amber        = '#FFC107'
 export const errorColor   = '#FFC107'
 export const darkRed      = '#C1272D'
@@ -27,7 +27,7 @@ export const palette = {
   alternateSubTitleColor: white,
 
   textColor: black,
-  alternateTextColor: '#00E676',
+  alternateTextColor: amber,
 
   canvasColor: white,
   borderColor: grey,
@@ -36,7 +36,7 @@ export const palette = {
 }
 
 export const fontLibrary = {
-  fontFamilyTitle: 'Domine',
+  fontFamilyTitle: 'Roboto Slab',
   fontFamilySubTitle: "Lato",
   fontFamilyText: "Lato",
 }
