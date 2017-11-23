@@ -10,7 +10,6 @@ import Toggle from 'react-toggle'
 import './ButtonStyle.css'
 
 
-
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
 
 const primaryStyles = {
@@ -87,6 +86,7 @@ class UploadForm extends PureComponent {
 
   render() {
     const { currentUser } = this.props
+
     return (
       <div className="formStyle">
         <form>

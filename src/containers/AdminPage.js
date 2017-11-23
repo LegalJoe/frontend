@@ -6,6 +6,7 @@ import Styling from './Styling'
 import EditPoints from './EditPoints'
 import EditHeader from './EditHeader'
 import EditFooter from './EditFooter'
+import EditExamples from './EditExamples'
 
 class AdminPage extends PureComponent {
   static propTypes = {
@@ -19,6 +20,7 @@ class AdminPage extends PureComponent {
         <Styling />
         <EditHeader />
         <EditPoints />
+        <EditExamples />
         <EditFooter />
       </div>
     )
