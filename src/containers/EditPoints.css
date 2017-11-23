@@ -1,5 +1,24 @@
 .editor {
-  margin-top: 100px;
   display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
 
+.points {
+  margin: 20px;
+  width: 45%;
+  padding: 20px;
+}
+
+.formContainer {
+  margin: 20px;
+  width: 45%;
+  padding: 20px;
+  position: relative;
+}
+
+.saveButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }

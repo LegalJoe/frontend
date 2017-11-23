@@ -98,7 +98,6 @@ class UploadForm extends PureComponent {
       <div className="formStyle">
         <form>
         <div className="textinput">
-
           <div className="input" >
             <TextField
               ref="name"
