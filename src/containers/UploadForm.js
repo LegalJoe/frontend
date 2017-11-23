@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import { sendContract } from '../actions/contracts/'
 
-
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
 
 const primaryStyles = {
@@ -54,6 +53,7 @@ class UploadForm extends PureComponent {
     sendContract: PropTypes.func.isRequired,
   }
 
+
   submitForm(event) {
   event.preventDefault()
     const contract = {
@@ -66,6 +66,7 @@ class UploadForm extends PureComponent {
 
   render() {
     const { currentUser } = this.props
+
     return (
       <div className="formStyle">
         <form>

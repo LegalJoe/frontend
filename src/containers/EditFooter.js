@@ -8,13 +8,13 @@ import { updateItem } from '../actions/items'
 import './EditHeader.css'
 
 const dialogStyle = {
-  width: '600px',
+  width: '1200px',
   margin: '20px',
   padding: '2rem',
 }
 
 const buttonStyle = {
-  float: 'left',
+  float: 'right',
   marginLeft: '3rem',
 }
 
@@ -49,13 +49,13 @@ class EditFooter extends PureComponent {
    render() {
      const { items } = this.props
      return (
-       <div className="editHeader">
+         <div className="EditFooter">
            <Paper style={ dialogStyle }>
              <form onSubmit={this.submitForm.bind(this)}>
 
                <div className="input">
                  <TextField ref="content" type="text" id="content"
-                   style = {{width: 500}}
+                   style = {{width: 800}}
                    defaultValue={items.footer.content}
                    placeholder={items.footer.content}
                    multiLine={true}
@@ -64,19 +64,19 @@ class EditFooter extends PureComponent {
 
                <div className="input">
                   <TextField ref="urls1" type="text" defaultValue={items.urls[0]}
-                   id = "urls1" placeholder={items.urls[0]}/>
+                   id = "urls1" placeholder={items.urls[0]} style = {{width: 800}}/>
                </div>
                <div className="input">
                   <TextField ref="urls2" type="text" defaultValue={items.urls[1]}
-                   id = "urls2" placeholder={items.urls[1]}/>
+                   id = "urls2" placeholder={items.urls[1]}style = {{width: 800}}/>
                </div>
                <div className="input">
                   <TextField ref="urls3" type="text" defaultValue={items.urls[2]}
-                   id = "urls3" placeholder={items.urls[2]}/>
+                   id = "urls3" placeholder={items.urls[2]}style = {{width: 800}}/>
               </div>
               <div className="input">
                  <TextField ref="newLink" type="text" id = "newLink"
-                   placeholder="Add new link"/>
+                   placeholder="Add new link" style = {{width: 800}}/>
              </div>
               </div>
              </form>

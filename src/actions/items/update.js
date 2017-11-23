@@ -5,7 +5,6 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 import API from '../../api/client'
-import { push } from 'react-router-redux'
 import { fetchItems } from './index'
 
 export const UPDATE_ITEM = 'UPDATE_ITEM'
@@ -20,7 +19,6 @@ export default (item) => {
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
-        dispatch(push('/'))
         dispatch(fetchItems)
 
       })
