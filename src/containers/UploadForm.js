@@ -6,6 +6,9 @@ import { palette } from '../styles/theme'
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import { sendContract } from '../actions/contracts/'
+import Toggle from 'react-toggle'
+import './ButtonStyle.css'
+
 
 
 const { errorColor, primary1Color, alternateTextColor, textColor } = palette
@@ -48,18 +51,35 @@ const secondaryStyles =
 }
 
 class UploadForm extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      switched: false
+    };
+  }
+
+  toggleSwitch = () => {
+   this.setState(prevState => {
+     return {
+       switched: !prevState.switched
+     };
+   });
+ };
+
   static propTypes = {
     primary: PropTypes.boolean,
     title: PropTypes.string,
     sendContract: PropTypes.func.isRequired,
   }
 
+
   submitForm(event) {
   event.preventDefault()
     const contract = {
       email: this.refs.email.getValue(),
       contract: this.refs.contract.getValue(),
-      altcontract: this.refs.upFile.state.accepted[0]
+      altcontract: this.refs.upFile.state.accepted[0],
+      paid: this.state.switched
     }
     this.props.sendContract(contract)
   }
@@ -107,10 +127,19 @@ class UploadForm extends PureComponent {
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
             />
           </div>
+
         </div>
+        <h3>Hoe Veel Kost Het?</h3>
+        <h5>Ik doe het gratis als je wilt dat ik het toevoeg aan mijn database. Wil je dat niet dan betaal je eenmalig EUR 39,-.</h5>
+
+        <label>
+          <Toggle
+            defaultChecked={this.state.switched}
+            onChange={this.toggleSwitch} />
+        </label>
+        <h4>{(this.state.switched)? "Je Betaalt Wel" : "Je Betaalt Niets"}</h4>
         <UploadFile
         ref="upFile"/>
-
           <RaisedButton
             label="Start Analyse"
             onClick={this.submitForm.bind(this)}
