@@ -22,16 +22,9 @@ class Accept extends PureComponent {
             <p className="yoyo">   Of Drop De File Hier</p>
           </Dropzone>
           <aside>
-          <h2>Accepted files</h2>
           <ul>
             {
               this.state.accepted.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-            }
-          </ul>
-          <h2>Rejected files</h2>
-          <ul>
-            {
-              this.state.rejected.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
             }
           </ul>
         </aside>
