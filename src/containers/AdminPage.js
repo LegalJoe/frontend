@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import SignIn from './SignIn'
 import PropTypes from 'prop-types'
-import Styling from './Styling'
 import EditPoints from './EditPoints'
 import EditHeader from './EditHeader'
 import EditFooter from './EditFooter'
@@ -14,7 +13,7 @@ class AdminPage extends PureComponent {
   }
 
   render () {
-    if (!this.props.admin) return <SignIn />
+    if (!this.props.admin) {return <SignIn />}
     return (
       <div>
         <EditHeader />

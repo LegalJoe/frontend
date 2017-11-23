@@ -49,7 +49,7 @@ class Navigation extends PureComponent {
   }
 
   goToAdmin = () => {
-    this.props.push('/admin')
+    this.props.push('/admin-tabs')
   }
 
   goToProfile = () => {
