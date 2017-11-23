@@ -9,9 +9,10 @@ class SubTitle extends PureComponent {
     className: PropTypes.string,
   }
 
+
   render() {
     return(
-      <h2 className={ this.props.className }>
+      <h2 style={this.props.style} className={ this.props.className }>
         { this.props.content }
       </h2>
     )

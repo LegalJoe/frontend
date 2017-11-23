@@ -4,9 +4,13 @@ import RaisedButton from 'material-ui/RaisedButton';
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
+
+const { fontFamilyTitle } = fontLibrary
+const { titleColor } = palette
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`, fontFamily:`${palette.fontFamilyTitle}`},
+  titleStyle: { color: `${ titleColor }`, fontFamily:`${ fontFamilyTitle }`},
 }
 
 const drawerStyles = {
@@ -40,7 +44,7 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <Title content="Upload je contract" style={styles.titleHeader} />
+          <Title content="Upload je contract" style={styles.titleStyle} />
           <UploadForm primary={true}/>
         </Drawer>
       </div>
