@@ -82,6 +82,7 @@ class UploadForm extends PureComponent {
       paid: this.state.switched
     }
     this.props.sendContract(contract)
+
   }
 
   render() {
@@ -146,7 +147,6 @@ class UploadForm extends PureComponent {
             primary={this.props.primary} />
         </form>
       </div>
-
     );
   }
 }

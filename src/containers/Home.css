@@ -7,6 +7,7 @@
 
 .headerText {
   max-width: 50%;
+  font-family: 'Space Mono', monospace;
 }
 
 .headerText h2 {

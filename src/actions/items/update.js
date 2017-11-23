@@ -16,7 +16,7 @@ export default (item) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-    api.put(`/items/${item.id}`, item  )
+    api.patch(`/items/${item.id}`, item  )
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })

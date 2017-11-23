@@ -13,7 +13,7 @@ export default (state = initialState, { type, payload } = {}) => {
        points: payload.filter(i=>i.name === "points")[0],
        header: payload.filter(i=>i.name === "header")[0],
        footer: payload.filter(i=>i.name === "footer")[0],
-       urls: payload.filter(i=>i.name === "footer")[0].urls
+       urls:   payload.filter(i=>i.name === "footer")[0].urls
      }
 
     default :
