@@ -15,7 +15,7 @@ export default (theme) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-    api.patch(`/themes/${theme.id}`, theme  )
+    api.put(`/themes/${theme.id}`, theme  )
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })

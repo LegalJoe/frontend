@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { fontLibrary } from '../styles/theme'
 import { palette } from '../styles/theme'
 import './Point.css'
