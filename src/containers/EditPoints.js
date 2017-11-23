@@ -9,17 +9,6 @@ import Point from './Point'
 import Title from '../components/ui/Title'
 import './EditPoints.css'
 
-const dialogStyle = {
-  width: '600px',
-  margin: '20px',
-  padding: '2rem',
-}
-
-const buttonStyle = {
-  float: 'left',
-  marginLeft: '3rem',
-}
-
 class EditPoints extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,
@@ -42,37 +31,41 @@ class EditPoints extends PureComponent {
    render() {
      const { items } = this.props
       return (
-        <div className="editor">
-         <div>
-          <Title className="intro" content={items.points.title} />
-            <div className="pointsContainer">
-              <Point content={items.points.content} />
+        <div>
+          <Title content="Wie?" />
+          <div className="editor">
+           <Paper className="points">
+            <Title className="intro" content={items.points.title} />
+              <div className="pointsContainer">
+                <Point content={items.points.content} />
+              </div>
+            </Paper>
+         <Paper className="formContainer">
+           <form onSubmit={this.submitForm.bind(this)} className="form">
+             <div className="input">
+             <h3>Title</h3>
+             <TextField ref="title" type="text" defaultValue={items.points.title}
+               placeholder={items.points.title} id = "title" />
+             </div>
+             <div className="input">
+               <h3>Paragraph</h3>
+               <TextField ref="content" type="text" id="content"
+                 style = {{width: 500}}
+                 defaultValue={items.points.content}
+                 placeholder={items.points.content}
+                 multiLine={true}
+                 rows={6}
+               />
             </div>
-          </div>
-       <Paper style={ dialogStyle }>
-         <form onSubmit={this.submitForm.bind(this)} className="form">
-           <div className="input">
-           <TextField ref="title" type="text" defaultValue={items.points.title}
-             placeholder={items.points.title} id = "title" />
-
-           </div>
-           <div className="input">
-             <TextField ref="content" type="text" id="content"
-               style = {{width: 500}}
-               defaultValue={items.points.content}
-               placeholder={items.points.content}
-               multiLine={true}
-               rows={15}
-             />
-          </div>
-         </form>
-         <RaisedButton
-           style={ buttonStyle }
-           onClick={ this.submitForm.bind(this) }
-           label="Save"
-           primary={true} />
-       </Paper>
-       </div>
+           </form>
+           <RaisedButton
+             className="saveButton"
+             onClick={ this.submitForm.bind(this) }
+             label="Save"
+             primary={true} />
+         </Paper>
+         </div>
+        </div>
      )
    }
  }
