@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { fetchItems } from '../actions/items'
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`, fontFamilyTitle:`${palette.fontFamily}`},
+  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamilyTitle}`},
   headerStyle: { backgroundImage: `linear-gradient(-200deg, ${palette.primary1Color} 80%, #F8F8F8 60%)`}
 }
 

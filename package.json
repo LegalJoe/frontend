@@ -17,10 +17,13 @@
     "react-scripts": "1.0.17",
     "react-social": "^1.10.0",
     "react-social-icons": "^2.7.0",
+    "react-toggle": "^4.0.2",
+    "react-toggle-switch": "^3.0.3",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "superagent": "^3.8.1",
-    "typeface-roboto": "^0.0.45"
+    "typeface-roboto": "^0.0.45",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

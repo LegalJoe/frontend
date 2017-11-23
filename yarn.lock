@@ -5557,6 +5557,16 @@ react-social@^1.10.0:
     create-react-class "^15.6.0"
     prop-types "^15.5.10"
 
+react-toggle-switch@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/react-toggle-switch/-/react-toggle-switch-3.0.3.tgz#5c10a949aebdd9100bb0dea6390f4576143dd277"
+
+react-toggle@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-toggle/-/react-toggle-4.0.2.tgz#77f487860efb87fafd197672a2db8c885be1440f"
+  dependencies:
+    classnames "^2.2.5"
+
 react-transition-group@^1.2.0, react-transition-group@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
@@ -6813,6 +6823,10 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.2.tgz#d697b99f1f59512df2751be42769c1580b5801fe"
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
