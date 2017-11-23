@@ -17,7 +17,6 @@ class AdminPage extends PureComponent {
     if (!this.props.admin) return <SignIn />
     return (
       <div>
-        <Styling />
         <EditHeader />
         <EditPoints />
         <EditExamples />

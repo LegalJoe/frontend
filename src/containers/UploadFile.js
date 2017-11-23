@@ -4,11 +4,11 @@ import { palette } from '../styles/theme'
 import { fontLibrary } from '../styles/theme'
 
 const { fontFamilyText } = fontLibrary
-const { TextColor } = palette
+const { TextColor, grey30 } = palette
 
 const styles = {
   paragraph: { color: `${TextColor}`, fontFamily: `${fontFamilyText}`, fontSize: '120%'},
-  dropZone: { maxWidth: '80%' }
+  dropZone: { maxWidth: '80%', backgroundColor: `${grey30}` }
 }
 
 class Accept extends PureComponent {

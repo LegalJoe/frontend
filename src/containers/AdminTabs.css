@@ -1,0 +1,14 @@
+.AdminTabsContainer {
+  margin: auto;
+  min-height: calc(100%-130px);
+}
+
+.paperStyle {
+  margin: 20px auto;
+  max-width: 95%;
+}
+
+.AdminTitle {
+  margin-top: 75px;
+  margin-left: 100px;
+}

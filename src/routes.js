@@ -6,18 +6,20 @@ import {
   Home,
   SignIn,
   SignUp,
-  AdminPage
+  AdminPage,
+  AdminTabs
 } from './containers'
 
 export default class Routes extends Component {
   render() {
     return (
       <div>
-       <Route exact path="/"  component={Home} />
-       <Route path="/sign-in" component={SignIn} />
-       <Route path="/sign-up" component={SignUp} />
-       <Route path="/user-profile" component={UserProfile} />
-       <Route path="/admin"   component={AdminPage} />
+       <Route exact path="/"        component={Home} />
+       <Route path="/sign-in"       component={SignIn} />
+       <Route path="/sign-up"       component={SignUp} />
+       <Route path="/user-profile"  component={UserProfile} />
+       <Route path="/admin"         component={AdminPage} />
+       <Route path="/admin-tabs"    component={AdminTabs} />
       </div>
     )
   }
