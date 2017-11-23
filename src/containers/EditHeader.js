@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
-import { updateItem } from '../actions/items'
+import { updateItem} from '../actions/items'
 import Header from './Header'
 import './EditHeader.css'
 

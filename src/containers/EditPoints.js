@@ -36,6 +36,7 @@ class EditPoints extends PureComponent {
       content: this.refs.content.getValue(),
     }
     this.props.updateItem(item)
+    this.props.fetchItems()
   }
 
    render() {
