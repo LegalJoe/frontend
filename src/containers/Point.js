@@ -12,10 +12,6 @@ const styles = {
 }
 
 class Point extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  }
 
   render() {
     return(

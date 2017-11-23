@@ -5,11 +5,13 @@ import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem } from '../actions/items'
-import './EditHeader.css'
+import './EditExamples.css'
+import Examples from './Examples'
 
 const dialogStyle = {
-  width: '1200px',
-  margin: '20px',
+  width: '600px',
+  height: '300px',
+  marginTop: '150px',
   padding: '2rem',
 }
 
@@ -18,7 +20,7 @@ const buttonStyle = {
   marginLeft: '3rem',
 }
 
-class EditFooter extends PureComponent {
+class EditExamples extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,
   }
@@ -26,21 +28,18 @@ class EditFooter extends PureComponent {
   submitForm(event) {
     const { items } = this.props
     event.preventDefault()
-    const newUrls = items.urls
+    const newUrls = items.photos
     if (this.refs.urls1.getValue().length > 1 ) {
       newUrls[0] = this.refs.urls1.getValue()
     }
     if (this.refs.urls2.getValue().length > 1 ) {
       newUrls[1] = this.refs.urls2.getValue()
     }
-    if (this.refs.urls3.getValue().length > 1 ) {
-      newUrls[2] = this.refs.urls3.getValue()
-    }
     if (this.refs.newLink.getValue().length > 1) {
       newUrls.push(this.refs.newLink.getValue())}
     const item = {
-      id: items.footer.id,
-      content: this.refs.content.getValue(),
+      id: items.examples.id,
+      title: this.refs.title.getValue(),
       urls: newUrls
     }
     this.props.updateItem(item)
@@ -49,36 +48,30 @@ class EditFooter extends PureComponent {
    render() {
      const { items } = this.props
      return (
-         <div className="EditFooter">
+         <div className="EditExamples">
+         <div className="examples2">
+           <Examples />
+         </div>
+         <div className="exampleForm  ">
            <Paper style={ dialogStyle }>
              <form onSubmit={this.submitForm.bind(this)}>
+               <div className="input">
+                 <TextField ref="title" type="text" defaultValue={items.examples.title}
+                   id = "title" placeholder={items.examples.title}/>
+                </div>
 
                <div className="input">
-                 <TextField ref="content" type="text" id="content"
-                   style = {{width: 800}}
-                   defaultValue={items.footer.content}
-                   placeholder={items.footer.content}
-                   multiLine={true}
-                   rows={4}
-                 />
-
-               <div className="input">
-                  <TextField ref="urls1" type="text" defaultValue={items.urls[0]}
-                   id = "urls1" placeholder={items.urls[0]} style = {{width: 800}}/>
+                  <TextField ref="urls1" type="text" defaultValue={items.photos[0]}
+                   id = "urls1" placeholder={items.photos[0]} />
                </div>
                <div className="input">
-                  <TextField ref="urls2" type="text" defaultValue={items.urls[1]}
-                   id = "urls2" placeholder={items.urls[1]}style = {{width: 800}}/>
+                  <TextField ref="urls2" type="text" defaultValue={items.photos[1]}
+                   id = "urls2" placeholder={items.photos[1]}/>
                </div>
-               <div className="input">
-                  <TextField ref="urls3" type="text" defaultValue={items.urls[2]}
-                   id = "urls3" placeholder={items.urls[2]}style = {{width: 800}}/>
-              </div>
               <div className="input">
                  <TextField ref="newLink" type="text" id = "newLink"
-                   placeholder="Add new link" style = {{width: 800}}/>
+                   placeholder="Add new link" />
              </div>
-              </div>
              </form>
              <RaisedButton
                style={ buttonStyle }
@@ -86,6 +79,7 @@ class EditFooter extends PureComponent {
                label="Save"
                primary={true} />
            </Paper>
+           </div>
        </div>
      )
    }
@@ -93,4 +87,4 @@ class EditFooter extends PureComponent {
 
  const mapStateToProps = ({ items }) => ({ items })
 
- export default connect(mapStateToProps, { updateItem })(EditFooter)
+ export default connect(mapStateToProps, { updateItem })(EditExamples)
