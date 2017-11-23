@@ -1,44 +1,51 @@
 import React, { PureComponent } from 'react'
 import SubTitle from '../components/ui/SubTitle'
-import { fetchTheme, updateTheme } from '../actions/theme'
-import ColorPicker from 'rc-color-picker'
-import FlatButton from 'material-ui/FlatButton'
+import { fetchTheme } from '../actions/theme'
 import 'rc-color-picker/assets/index.css'
 import { connect } from 'react-redux'
+import { Primary1Color, Primary2Color, ErrorColor, TitleColor, TitleTwo,
+  SubtitleColor, SubtitleTwo, TextColor, TextTwo, Canvas, Border, Disabled,
+  FontTitle, FontSubtitle, FontText } from './colorPickers'
+import './Styling.css'
 
 class Styling extends PureComponent {
 
-  changeHandler(color) {
-    const { theme } = this.props
-    const newTheme = {
-      id: theme.id,
-      primaryOne: color.color,
-    }
-     this.props.updateTheme(newTheme)
-    }
-
+  componentWillMount() { this.props.fetchTheme()}
 
   render() {
     return(
       <div>
         <SubTitle content="Styling" />
-        <div style={{ textAlign: 'center' }}>
-          <ColorPicker
-            id='primaryColor'
-            color={this.props.theme.primaryOne}
-            onClose={this.changeHandler.bind(this)}
-          >
-          <FlatButton label="Pick" className="react-custom-trigger" />
-          </ColorPicker>
+        <div className="colorPickers" >
+          <div>
+            <Primary1Color />
+            <Primary2Color />
+            <ErrorColor />
+            <TitleColor />
+          </div>
+          <div>
+            <TitleTwo />
+            <SubtitleColor />
+            <SubtitleTwo />
+            <TextColor />
+          </div>
+          <div>
+            <TextTwo />
+            <Canvas />
+            <Border />
+            <Disabled />
+          </div>
+          <div>
+            <FontTitle />
+            <FontSubtitle />
+            <FontText />
+          </div>
         </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({theme}) => {
-  return {
-    theme,
-  }
-}
-export default connect(mapStateToProps,{ fetchTheme, updateTheme})(Styling)
+const mapStateToProps = ({theme}) => ({theme})
+
+export default connect(mapStateToProps,{ fetchTheme})(Styling)
