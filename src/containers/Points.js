@@ -3,12 +3,15 @@ import Title from '../components/ui/Title'
 import Point from './Point'
 import './Points.css'
 import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
 import { connect } from 'react-redux'
 import { fetchItems } from '../actions/items'
 
+const { fontFamilyTitle } = fontLibrary
+const { titleColor } = palette
+
 const styles = {
-  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamilyTitle}`},
-  headerStyle: { backgroundImage: `linear-gradient(-200deg, ${palette.primary1Color} 80%, #F8F8F8 60%)`}
+  titleStyle: { color: `${ titleColor }`, fontFamily:`${ fontFamilyTitle }`},
 }
 
 class Points extends PureComponent {
@@ -19,7 +22,7 @@ class Points extends PureComponent {
     const { items } = this.props
     return (
       <div className="pointSection">
-        <Title className="intro" style={styles.titleHeader} content={items.points.title} />
+        <Title className="intro" style={styles.titleStyle} content={items.points.title} />
         <div className="pointsContainer">
           <Point content={items.points.content} />
         </div>

@@ -3,12 +3,16 @@ import PropTypes from 'prop-types'
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
-import './BottomCta.css'
 import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
+import './BottomCta.css'
+
+const { fontFamilyTitle } = fontLibrary
+const { alternateTitleColor, primary1Color } = palette
 
 const styles = {
-    titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamily}`},
-  containerStyle: { background: `${palette.primary1Color}`}
+  titleStyle: { color: `${ alternateTitleColor }`, fontFamily:`${ fontFamilyTitle }`},
+  containerStyle: { background: `${primary1Color}`}
 }
 
 class BottomCta extends PureComponent {
@@ -19,7 +23,7 @@ class BottomCta extends PureComponent {
   render() {
     return(
       <div style={ styles.containerStyle } className="ctaContainer">
-        <Title content="Upload Je Contract" style={styles.titleHeader} />
+        <Title content="Upload Je Contract" style={styles.titleStyle} />
         <SubTitle content={ this.props.subTitle } />
         <UploadForm  />
       </div>

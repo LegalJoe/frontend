@@ -17,13 +17,13 @@ const primaryStyles = {
     color: errorColor,
   },
   underlineStyle: {
-    borderColor: primary1Color,
+    borderColor: textColor,
   },
   underlineFocusStyle: {
-    bordercolor: '#060c36',
+    bordercolor: textColor,
   },
   floatingLabelStyle: {
-    color: primary1Color,
+    color: textColor,
   },
   inputStyle: {
     color: textColor,

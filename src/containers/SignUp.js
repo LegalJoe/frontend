@@ -9,9 +9,13 @@ import FlatButton from 'material-ui/FlatButton'
 import signUp from '../actions/user/sign-up'
 import Title from '../components/ui/Title'
 import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
+
+const { titleColor } = palette
+const { fontFamilyTitle } = fontLibrary
 
 const styles = {
-  titleHeader: { color: `${palette.primary1Color}`},
+  titleStyle: { color: `${titleColor}`, fontFamily:`${ fontFamilyTitle }`},
   dialogStyle: { width: '400px', margin: '100px auto', padding: '2rem'},
   buttonStyle: { float: 'right', marginLeft: '3rem'},
 }
@@ -148,7 +152,7 @@ export class SignUp extends PureComponent {
   render() {
     return (
       <Paper style={ styles.dialogStyle }>
-        <Title content="Sign Up" style={styles.titleHeader}/>
+        <Title content="Sign Up" style={styles.titleStyle}/>
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">

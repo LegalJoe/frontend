@@ -1,19 +1,16 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import SubTitle from '../components/ui/SubTitle'
-import './Header.css'
 import { palette } from '../styles/theme'
 import ColorPicker from 'rc-color-picker'
 import FlatButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
 
-
 const styles = {
-  titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamilyTitle}`},
+  titleStyle: { color: `${palette.alternateTitleColor}`, fontFamily:`${palette.fontFamilyTitle}`},
 }
 
-
-  function changeHandler(colors) {
+function changeHandler(colors) {
     console.log(colors);
   }
 
