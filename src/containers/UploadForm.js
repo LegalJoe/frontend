@@ -15,8 +15,8 @@ const { errorColor, alternateTextColor, textColor } = palette
 const { fontFamilyText } = fontLibrary
 
 const styles = {
-  paragraph: { color: `${textColor}`, fontFamily: `${fontFamilyText}` },
-  alternateParagraph: { color: `${alternateTextColor}`, fontFamily: `${fontFamilyText}` }
+  paragraph: { color: `${textColor}`, fontFamily: `${fontFamilyText}`, maxWidth: '80%' },
+  alternateParagraph: { color: `${alternateTextColor}`, fontFamily: `${fontFamilyText}, maxWidth: '80%'` }
 }
 
 const primaryStyles = {
@@ -118,7 +118,7 @@ class UploadForm extends PureComponent {
               defaultValue={(currentUser === null)? "": `${currentUser.email}`}
               hintText="Enter a valid email"
               floatingLabelText="Email"
-              style={styles.alternateParagraph}
+              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
               floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
               underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
