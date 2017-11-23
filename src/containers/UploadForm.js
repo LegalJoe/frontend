@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types'
 import { palette } from '../styles/theme'
+import { fontLibrary } from '../styles/theme'
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import { sendContract } from '../actions/contracts/'
@@ -10,7 +11,13 @@ import Toggle from 'react-toggle'
 import './ButtonStyle.css'
 
 
-const { errorColor, primary1Color, alternateTextColor, textColor } = palette
+const { errorColor, alternateTextColor, textColor } = palette
+const { fontFamilyText } = fontLibrary
+
+const styles = {
+  paragraph: { color: `${textColor}`, fontFamily: `${fontFamilyText}` },
+  alternateParagraph: { color: `${alternateTextColor}`, fontFamily: `${fontFamilyText}` }
+}
 
 const primaryStyles = {
   errorStyle: {
@@ -98,6 +105,7 @@ class UploadForm extends PureComponent {
               type="text"
               defaultValue={(currentUser === null)? "" : `${currentUser.firstName} ${currentUser.lastName}`}
               floatingLabelText="Name"
+              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
               floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
               underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
@@ -110,6 +118,7 @@ class UploadForm extends PureComponent {
               defaultValue={(currentUser === null)? "": `${currentUser.email}`}
               hintText="Enter a valid email"
               floatingLabelText="Email"
+              style={styles.alternateParagraph}
               floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
               underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
@@ -123,6 +132,7 @@ class UploadForm extends PureComponent {
               rows={5}
               hintText="Copy/Paste je contract hier"
               floatingLabelText="Contract"
+              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
               floatingLabelFocusStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
               underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
@@ -130,17 +140,19 @@ class UploadForm extends PureComponent {
           </div>
 
         </div>
-        <h3>Hoe Veel Kost Het?</h3>
-        <h5>Ik doe het gratis als je wilt dat ik het toevoeg aan mijn database. Wil je dat niet dan betaal je eenmalig EUR 39,-.</h5>
+        <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Hoe Veel Kost Het?</h3>
+        <h5 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Ik doe het gratis als je wilt dat ik je contract toevoeg aan mijn database. Wil je dat niet dan betaal je eenmalig EUR 39,-.</h5>
 
-        <label>
-          <Toggle
-            defaultChecked={this.state.switched}
-            onChange={this.toggleSwitch} />
-        </label>
-        <h4>{(this.state.switched)? "Je Betaalt Wel" : "Je Betaalt Niets"}</h4>
-        <UploadFile
-        ref="upFile"/>
+          <label>
+            <Toggle
+              defaultChecked={this.state.switched}
+              onChange={this.toggleSwitch} />
+          </label>
+
+          <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{(this.state.switched)? "Je Betaalt Wel" : "Je Betaalt Niets"}</h3>
+          <UploadFile
+            ref="upFile"
+          />
           <RaisedButton
             label="Start Analyse"
             onClick={this.submitForm.bind(this)}
