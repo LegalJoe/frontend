@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import SubTitle from '../components/ui/SubTitle'
+import { fetchTheme, updateTheme } from '../actions/theme'
 import ColorPicker from 'rc-color-picker'
 import FlatButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
@@ -24,7 +25,7 @@ class Styling extends PureComponent {
         <div style={{ textAlign: 'center' }}>
           <ColorPicker
             id='primaryColor'
-            color={this.props.theme.primaryTwo}
+            color={this.props.theme.primaryOne}
             onClose={this.changeHandler.bind(this)}
           >
           <FlatButton label="Pick" className="react-custom-trigger" />
@@ -41,4 +42,3 @@ const mapStateToProps = ({theme}) => {
   }
 }
 export default connect(mapStateToProps,{ fetchTheme, updateTheme})(Styling)
-
