@@ -27,10 +27,6 @@ class EditPoints extends PureComponent {
 
   componentWillMount() { this.props.fetchItems() }
 
-  componentWillReceiveProps(nextProps) {
-    this.props.fetchItems()
-  }
-
   submitForm(event) {
     const { items } = this.props
     event.preventDefault()
@@ -40,6 +36,7 @@ class EditPoints extends PureComponent {
       content: this.refs.content.getValue(),
     }
     this.props.updateItem(item)
+    this.props.fetchItems()
   }
 
    render() {

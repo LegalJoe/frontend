@@ -19,7 +19,7 @@ export default (item) => {
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
-        dispatch(fetchItems)
+        dispatch(fetchItems())
 
       })
       .catch((error) => {
