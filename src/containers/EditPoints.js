@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { replace, push } from 'react-router-redux'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem, fetchItems } from '../actions/items'
-import FlatButton from 'material-ui/FlatButton'
 import Point from './Point'
 import Title from '../components/ui/Title'
+import './EditPoints.css'
 
 const dialogStyle = {
-  width: '400px',
-  margin: '50px auto',
+  width: '600px',
+  margin: '20px',
   padding: '2rem',
 }
 
@@ -43,12 +42,13 @@ class EditPoints extends PureComponent {
      const { items } = this.props
       return (
         <div className="editor">
+         <div>
           <Title className="intro" content={items.points.title} />
             <div className="pointsContainer">
               <Point content={items.points.content} />
             </div>
+          </div>
        <Paper style={ dialogStyle }>
-
          <form onSubmit={this.submitForm.bind(this)} className="form">
            <div className="input">
            <TextField ref="title" type="text" defaultValue={items.points.title}
@@ -57,10 +57,11 @@ class EditPoints extends PureComponent {
            </div>
            <div className="input">
              <TextField ref="content" type="text" id="content"
+               style = {{width: 500}}
                defaultValue={items.points.content}
                placeholder={items.points.content}
                multiLine={true}
-               rows={20}
+               rows={15}
              />
           </div>
          </form>

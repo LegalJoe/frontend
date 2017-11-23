@@ -3,6 +3,8 @@ import Title from '../components/ui/Title'
 import Point from './Point'
 import './Points.css'
 import { palette } from '../styles/theme'
+import { connect } from 'react-redux'
+import { fetchItems } from '../actions/items'
 
 const styles = {
   titleHeader: { color: `${palette.alternateTextColor}`, fontFamilyTitle:`${palette.fontFamilyTitle}`},
@@ -11,16 +13,21 @@ const styles = {
 
 class Points extends PureComponent {
 
+  componentWillMount() { this.props.fetchItems() }
+
   render() {
+    const { items } = this.props
     return (
       <div className="pointSection">
-        <Title className="intro" style={styles.titleHeader} content="Wie ben ik?" />
+        <Title className="intro" style={styles.titleHeader} content={items.points.title} />
         <div className="pointsContainer">
-          <Point content={"Ik ben een Artificial Intelligence bot, die tekst kan lezen. Hoe meer contracten ik lees hoe sneller ik analyseer. Ik heb al honderden contracten gelezen. Inmiddels zie ik heel snel het verschil tussen een goed contract en eenzijdig contract. Als je wilt dat er na de analyse een advocaat naar kijkt kunnen we je koppelen aan een advocaat. (via Legalmatters.coms) Ik kan .docx documenten en pdf lezen. Liever Docx"} />
+          <Point content={items.points.content} />
         </div>
       </div>
     )
   }
 }
 
-export default Points
+const mapStateToProps = ({ items }) => ({ items })
+
+export default connect(mapStateToProps, { fetchItems})(Points)

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Footer.css'
 import LegalSpeak from '../LegalSpeak'
 import SocialMedia from '../SocialMedia'
+import { connect } from 'react-redux'
 
 class Footer extends PureComponent {
   static propTypes = {
@@ -12,13 +13,16 @@ class Footer extends PureComponent {
   }
 
   render() {
+    const { items } = this.props
     return(
       <div className="footerContainer">
-        <LegalSpeak className="legalities" content="LegalJoe is een initiatief van Edouard Dopper die een voorliefde heeft voor Legal tech in samenwerking met AI applied. Joe is een AI bot."/>
+        <LegalSpeak className="legalities" content={items.footer.content}/>
         <SocialMedia/>
       </div>
     )
   }
 }
 
-export default Footer
+const mapStateToProps = ({ items }) => ({ items })
+
+export default connect(mapStateToProps)(Footer)
