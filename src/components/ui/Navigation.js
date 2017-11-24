@@ -44,7 +44,8 @@ class Navigation extends PureComponent {
   }
 
   goToProfile = () => {
-    this.props.push('/user-profile')
+    const userId = this.props.currentUser.id
+    this.props.push(`/profile/${userId}`)
   }
 
   render() {
