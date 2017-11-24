@@ -1,30 +1,28 @@
-import API from '../../api/client'
 import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
   LOAD_SUCCESS
 } from '../loading'
-
-export const SEND_CONTRACT = 'SEND_CONTRACT'
+import API from '../../api/client'
+export const FETCH_CONTRACTS = 'FETCH_CONTRACTS'
 
 const api = new API()
 
-export default (result) => {
+export default (email) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-  api.post('/userdocs', (result))
+  api.post(`/docs`, email)
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
-      dispatch({
-        type: SEND_CONTRACT,
-        payload: result.body
 
+      dispatch({
+        type: FETCH_CONTRACTS,
+        payload: result.body
       })
     })
-
     .catch((error) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({
