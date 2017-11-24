@@ -21,7 +21,7 @@ export default (state = initialState, { type, payload } = {}) => {
        form:   payload.filter(i=>i.name === "form")[0],
        drawer: payload.filter(i=>i.name === "drawer")[0],
 
-       pay: payload.filter(i=>i.name === "form")[0].urls,
+       pay:  payload.filter(i=>i.name === "form")[0].urls,
        urls: payload.filter(i=>i.name === "footer")[0].urls,
        examples: payload.filter(i=>i.name === "examples")[0],
        photos: payload.filter(i=>i.name === "examples")[0].urls
