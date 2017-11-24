@@ -40,7 +40,7 @@ class EditFooter extends PureComponent {
      const { items } = this.props
      return (
          <div className="EditFooter">
-           <Paper className="formContainer4">
+           <div className="formContainer4">
              <form onSubmit={this.submitForm.bind(this)}>
 
                <div className="input">
@@ -75,7 +75,7 @@ class EditFooter extends PureComponent {
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />
-           </Paper>
+           </div>
        </div>
      )
    }

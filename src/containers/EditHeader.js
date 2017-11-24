@@ -36,10 +36,10 @@ class EditPoints extends PureComponent {
      return (
        <div>
        <div className="editHeader">
-       <Paper className="header2">
+       <div className="header2">
          <Header />
-       </Paper>
-           <Paper className="formContainer1">
+       </div>
+           <div className="formContainer1">
              <form onSubmit={this.submitForm.bind(this)}>
                <div className="input">
                <h3>Title</h3>
@@ -72,7 +72,7 @@ class EditPoints extends PureComponent {
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />
-           </Paper>
+           </div>
        </div>
        </div>
      )

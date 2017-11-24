@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 
 .examples2 {
@@ -10,11 +11,9 @@
 
 .examplesContainer {
   max-width: 75%;
-  margin: 10px;
 }
 
 .formContainer3 {
-  margin: 10px;
   max-width: 30%;
   padding: 20px;
   position: relative;

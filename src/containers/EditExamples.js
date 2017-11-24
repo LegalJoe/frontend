@@ -37,10 +37,10 @@ class EditExamples extends PureComponent {
      const { items } = this.props
      return (
        <div className="EditExamples">
-        <Paper className="examplesContainer">
+        <div className="examplesContainer">
          <Examples />
-        </Paper>
-          <Paper className="formContainer3">
+        </div>
+          <div className="formContainer3">
             <form onSubmit={this.submitForm.bind(this)}>
               <div className="input">
               <h3>Title</h3>
@@ -88,7 +88,7 @@ class EditExamples extends PureComponent {
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />
-           </Paper>
+           </div>
        </div>
      )
    }

@@ -31,7 +31,7 @@ class AdminTabs extends PureComponent {
     if (!this.props.admin) return <SignIn />
     return(
       <div className='AdminTabsContainer'>
-        <Card className='paperStyle' zDepth={3} >
+        <Card className='paperStyle' zDepth={1} >
           <Tabs style={styles.tabContentStyle}>
             <Tab label="Edit text" style={ styles.tabStyle } >
               <div>

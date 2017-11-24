@@ -50,7 +50,7 @@ export class SignIn extends PureComponent {
   render() {
     return (
       <Paper style={ styles.dialogStyle }>
-        <Title content="Sign In" style={ styles.titleStyle } />
+        <Title content="Sign In" style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}} />
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
@@ -73,8 +73,9 @@ export class SignIn extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
+const mapStateToProps = ({ currentUser, theme }) => ({
   signedIn: !!currentUser && !!currentUser.id,
+  theme
 })
 
 export default connect(mapStateToProps, { signIn, replace, push })(SignIn)
