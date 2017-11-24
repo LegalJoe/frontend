@@ -1,31 +1,30 @@
 import API from '../../api/client'
+import axios from 'axios'
+import { push } from 'react-router-redux'
 import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
   LOAD_SUCCESS
 } from '../loading'
-import { push } from 'react-router-redux'
 
-export const SEND_CONTRACT = 'SEND_CONTRACT'
+
+export const UPLOAD_FILE = 'UPLOAD_FILE'
 
 const api = new API()
 
-export default (contract) => {
+export default (formData) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
-    console.log(contract)
+    console.log(formData)
 
 
-  api.post('/userdocs', contract)
+  axios.post("https://api.cloudinary.com/v1_1/ernesto/raw/upload", formData, {headers: { "X-Requested-With": "XMLHttpRequest" },})
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
-      dispatch({
-        type: SEND_CONTRACT,
-        payload: result.body
+      dispatch(push('/'))
 
-      })
     })
 
     .catch((error) => {
