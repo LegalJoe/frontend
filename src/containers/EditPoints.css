@@ -4,13 +4,8 @@
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 
-.points {
-  width: 50%;
-  padding: 20px;
-}
-
 .formContainer2 {
-  width: 50%;
+  width: 100%;
   padding: 20px 20px 70px 20px;
   position: relative;
 }

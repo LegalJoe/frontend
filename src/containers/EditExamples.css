@@ -1,10 +1,10 @@
-.EditExamples {
+.examplesContainer {
   display: flex;
   align-items: stretch;
 }
 
 .formContainer3 {
-  max-width: 50%;
+  width: 100%;
   padding: 20px;
   position: relative;
 }
