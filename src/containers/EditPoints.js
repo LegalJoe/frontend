@@ -32,12 +32,6 @@ class EditPoints extends PureComponent {
       return (
         <div>
           <div className="editor">
-           <div className="points">
-            <Title className="intro" content={items.points.title} />
-              <div className="pointsContainer">
-                <Point content={items.points.content} />
-              </div>
-            </div>
          <div className="formContainer2">
            <form onSubmit={this.submitForm.bind(this)} className="form">
              <div className="input">
