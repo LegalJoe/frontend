@@ -3,16 +3,14 @@ import Title from '../../components/ui/Title'
 import Navigation from '../../components/ui/Navigation'
 import ContractTable from './ContractTable'
 import './UserProfile.css'
+import { connect } from 'react-redux'
 
 
 class UserProfile extends PureComponent {
 
-  componentWillMount() {
-    const { replace, signedIn } = this.props
-    if (signedIn) replace('/')
-  }
-
   render() {
+    const { signedIn } = this.props
+    if (!signedIn) return null
     return (
       <div>
         <Navigation />
@@ -27,4 +25,9 @@ class UserProfile extends PureComponent {
   }
 }
 
-export default UserProfile
+const mapStateToProps = ({ currentUser }) => ({
+  currentUser,
+  signedIn: !!currentUser && !!currentUser.id
+})
+
+export default connect(mapStateToProps)(UserProfile)

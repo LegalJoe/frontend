@@ -16,7 +16,7 @@ export default class Routes extends Component {
        <Route exact path="/"        component={Home} />
        <Route path="/sign-in"       component={SignIn} />
        <Route path="/sign-up"       component={SignUp} />
-       <Route path="/user-profile"  component={UserProfile} />
+       <Route path="/profile/:id"  component={UserProfile} />
        <Route path="/admin-tabs"    component={AdminTabs} />
       </div>
     )
