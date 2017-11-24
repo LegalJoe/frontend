@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import fetchContracts from '../../actions/user/fetch'
 
 
 import {
@@ -11,43 +14,36 @@ import {
 } from 'material-ui/Table';
 
 
-const ContractTable = () => (
+class ContractTable extends PureComponent {
+
+  static propTypes = {
+    fetchContracts: PropTypes.func.isRequired,
+  }
+
+  componentWillMount() { this.props.fetchContracts({email: this.props.currentUser.email})}
+
+  render(){
+    const { contracts } = this.props
+    console.log(contracts.map(c=>c.cloudinaryFileName)[0])
+    return(
+
   <Table>
     <TableHeader displaySelectAll={false} adjustForCheckbox={false} >
       <TableRow>
         <TableHeaderColumn>Upload date</TableHeaderColumn>
-        <TableHeaderColumn>Name</TableHeaderColumn>
-        <TableHeaderColumn>Status</TableHeaderColumn>
       </TableRow>
     </TableHeader>
     <TableBody displayRowCheckbox={false} showRowHover={true}>
+    {contracts.map((c) =>
       <TableRow>
-        <TableRowColumn>26-12-2017</TableRowColumn>
-        <TableRowColumn>Bol.com job</TableRowColumn>
-        <TableRowColumn>checked</TableRowColumn>
+        <TableRowColumn>Created At:<a href={c.cloudinaryURL}>{c.createdAt.substr(0,10)}</a></TableRowColumn>
       </TableRow>
-      <TableRow>
-        <TableRowColumn>26-12-2017</TableRowColumn>
-        <TableRowColumn>Hema</TableRowColumn>
-        <TableRowColumn>Not checked</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>26-12-2017</TableRowColumn>
-        <TableRowColumn>V&D</TableRowColumn>
-        <TableRowColumn>Not checked</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>26-12-2017</TableRowColumn>
-        <TableRowColumn>V&D</TableRowColumn>
-        <TableRowColumn>Not checked</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>26-12-2017</TableRowColumn>
-        <TableRowColumn>Tesla</TableRowColumn>
-        <TableRowColumn>Not checked</TableRowColumn>
-      </TableRow>
+    )}
     </TableBody>
   </Table>
-);
+)
+}
+}
+const mapStateToProps = ({ currentUser, contracts }) => ({ currentUser, contracts })
 
-export default ContractTable;
+export default connect(mapStateToProps, { fetchContracts })(ContractTable)
