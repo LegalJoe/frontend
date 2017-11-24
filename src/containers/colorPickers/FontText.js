@@ -24,13 +24,13 @@ class FontText extends PureComponent {
       fontText: value
     }
     this.props.updateTheme(newTheme)
-    console.log(this.state.value)
+
   }
 
   render() {
     return(
         <div>
-          <h3>Title Font</h3>
+          <h3>Text Font</h3>
           <DropDownMenu
             value={this.props.theme.fontText}
             onChange={this.handleChange}

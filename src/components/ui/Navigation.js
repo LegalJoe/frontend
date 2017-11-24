@@ -50,7 +50,7 @@ class Navigation extends PureComponent {
   render() {
     const { signedIn } = this.props
     const { currentUser } = this.props
-    console.log(this)
+
     return (
       <AppBar
         title={TITLE}
