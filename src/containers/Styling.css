@@ -1,6 +1,28 @@
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.webpageContainer {
+  height: 80vh;
+  width: 60%;
+  overflow-y: scroll;
+}
+
+.stylesContainer {
+  height: 80vh;
+  overflow-y: scroll;
+  width: 40%;
+  padding: 20px;
+}
+
 .colorPickers {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   margin-bottom: 20px;
+}
+
+.colorContainer {
+  margin: 30px
 }

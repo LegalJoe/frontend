@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react'
 import SubTitle from '../../components/ui/SubTitle'
 import { updateTheme } from '../../actions/theme'
 import ColorPicker from 'rc-color-picker'
-import FlatButton from 'material-ui/FlatButton'
+import FloatingActionButton from 'material-ui/FlatButton'
 import 'rc-color-picker/assets/index.css'
 import { connect } from 'react-redux'
+import { TableRowColumn } from 'material-ui/Table';
 
-class Border extends PureComponent {
+class PickerOfColors extends PureComponent {
 
   changeHandler(color) {
     const { theme, name } = this.props
@@ -20,25 +21,22 @@ class Border extends PureComponent {
 
 
   render() {
-    const { name, title } = this.props
+    const { name } = this.props
     return(
-      <div>
-        <SubTitle content={title} />
-        <div>
+      <TableRowColumn>
           <ColorPicker
-            id="border"
+            id={ name }
             color={this.props.theme[name]}
             onClose={this.changeHandler.bind(this)}
           >
-          <FlatButton label="Pick"
+          <FloatingActionButton mini={true}
             className="react-custom-trigger" />
           </ColorPicker>
-        </div>
-      </div>
+      </TableRowColumn>
     )
   }
 }
 
 const mapStateToProps = ({theme}) => ({theme})
 
-export default connect(mapStateToProps, { updateTheme })(Border)
+export default connect(mapStateToProps, { updateTheme })(PickerOfColors)

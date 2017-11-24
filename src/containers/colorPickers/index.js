@@ -13,6 +13,7 @@ import Disabled from './Disabled'
 import FontTitle from './FontTitle'
 import FontSubtitle from './FontSubtitle'
 import FontText from './FontText'
+import PickerOfColors from './ColorPicker'
 
 export {
   Primary1Color,
@@ -30,4 +31,5 @@ export {
   FontTitle,
   FontSubtitle,
   FontText,
+  PickerOfColors,
 }
