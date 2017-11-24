@@ -11,13 +11,11 @@ export const SEND_CONTRACT = 'SEND_CONTRACT'
 
 const api = new API()
 
-export default (contract) => {
+export default (result) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
-    console.log(contract)
 
-
-  api.post('/userdocs', contract)
+  api.post('/userdocs', (result))
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
