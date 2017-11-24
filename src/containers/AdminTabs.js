@@ -18,7 +18,6 @@ const { fontFamilyTitle } = fontLibrary
 const styles = {
   tabStyle: {background: `#f8f8f8`},
   tabContentStyle: {minHeight: `50vh`},
-  titleStyle: {color: `${ titleColor }`, fontFamily: `${ fontFamilyTitle}`}
 }
 
 class AdminTabs extends PureComponent {
