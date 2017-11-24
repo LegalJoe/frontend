@@ -1,5 +1,5 @@
 // src/actions/user/sign-in.js
-import { replace } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import API from '../../api/client'
 import {
   APP_LOADING,
@@ -25,15 +25,15 @@ export default ({ username, password}) => {
 
         api.storeToken(jwt)
 
-        dispatch(replace('/'))
-
         return api.get('/users/me')
+
       })
       .then((res) => {
         dispatch({
           type: USER_SIGNED_IN,
           payload: res.body
         })
+        dispatch(push('/'))
       })
       .catch((error) => {
         dispatch({ type: APP_DONE_LOADING })

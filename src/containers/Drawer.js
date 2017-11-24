@@ -32,20 +32,21 @@ export default class DrawerUploadContract extends PureComponent {
   render() {
     return (
       <div>
-        <RaisedButton
-          label="Start Analyse"
-          alternateTextColor={true}
-          onClick={this.handleToggle}
-        />
+          <RaisedButton
+            label="Start Analyse"
+            alternateTextColor={true}
+            onClick={this.handleToggle}
+          />
         <Drawer
           width={400}
+          docked={false}
           openSecondary={true}
           onRequestChange={(open) => this.setState({open})}
           open={this.state.open}
           containerStyle={drawerStyles}
         >
           <Title content="Upload je contract" style={styles.titleStyle} />
-          <UploadForm primary={true}/>
+          <UploadForm primary={true} />
         </Drawer>
       </div>
     );
