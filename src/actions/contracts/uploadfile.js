@@ -1,5 +1,6 @@
 import API from '../../api/client'
 import axios from 'axios'
+import { push } from 'react-router-redux'
 import {
   APP_LOADING,
   APP_DONE_LOADING,
@@ -22,6 +23,8 @@ export default (formData) => {
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
+      dispatch(push('/'))
+
     })
 
     .catch((error) => {

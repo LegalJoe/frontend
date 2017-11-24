@@ -30,7 +30,6 @@ export default (contract) => {
 
     .catch((error) => {
       dispatch({ type: APP_DONE_LOADING })
-      dispatch(push('/user-profile'))
       dispatch({
         type: LOAD_ERROR,
         payload: error.message
