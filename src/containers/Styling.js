@@ -15,7 +15,9 @@ class Styling extends PureComponent {
   render() {
     return(
       <div>
-        <SubTitle content="Styling" />
+        <SubTitle
+          content="Styling"
+          style={{color:this.props.theme.subtitle, fontFamily: this.props.theme.fontSubtitle }}  />
         <div className="colorPickers" >
           <div>
             <Primary1Color />

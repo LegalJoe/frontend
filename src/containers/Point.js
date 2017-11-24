@@ -19,7 +19,7 @@ class Point extends PureComponent {
         <h3 className='pointTitle'>
           { this.props.title }
         </h3>
-        <p className='point' style={{color:this.props.theme.text, fontFamily: this.props.theme.fontText}} >
+        <p className='point' style={{color:this.props.theme.textColor, fontFamily: this.props.theme.fontText}} >
           { this.props.content }
         </p>
      </div>

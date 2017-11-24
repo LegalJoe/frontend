@@ -152,7 +152,10 @@ export class SignUp extends PureComponent {
   render() {
     return (
       <Paper style={ styles.dialogStyle }>
-        <Title content="Sign Up" style={styles.titleStyle}/>
+        <Title
+          content="Sign Up"
+          style={{color:this.props.theme.textColor, fontFamily: this.props.theme.fontText}}
+        />
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
@@ -195,4 +198,6 @@ export class SignUp extends PureComponent {
   }
 }
 
-export default connect(null, { signUp, push })(SignUp)
+const mapStateToProps = ({ theme }) => ({ theme })
+
+export default connect(mapStateToProps, { signUp, push })(SignUp)

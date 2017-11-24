@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
+import { connect } from 'react-redux'
 import { palette } from '../styles/theme'
 import { fontLibrary } from '../styles/theme'
 import './BottomCta.css'
@@ -22,13 +23,25 @@ class BottomCta extends PureComponent {
   }
   render() {
     return(
-      <div style={ styles.containerStyle } className="ctaContainer">
-        <Title content="Upload Je Contract" style={styles.titleStyle} />
-        <SubTitle content={ this.props.subTitle } />
+      <div
+        style={{ background: this.props.theme.primaryOne }}
+        className="ctaContainer"
+      >
+        <Title content= "Upload je contract"
+          style={{color:this.props.theme.titleTwo, fontFamily: this.props.theme.fontTitle}}
+        />
+
+        <SubTitle
+          content={ this.props.subTitle }
+          style={{color:this.props.theme.subtitle, fontFamily: this.props.theme.fontSubtitle}}
+        />
+
         <UploadForm  />
       </div>
     )
   }
 }
 
-export default BottomCta
+const mapStateToProps = ({ items, theme }) => ({ items, theme })
+
+export default connect(mapStateToProps)(BottomCta)
