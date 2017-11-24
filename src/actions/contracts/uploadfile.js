@@ -1,6 +1,7 @@
 import API from '../../api/client'
 import axios from 'axios'
 import { push } from 'react-router-redux'
+import sendContract from './create'
 import {
   APP_LOADING,
   APP_DONE_LOADING,
@@ -25,6 +26,7 @@ export default (formData) => {
       dispatch({ type: LOAD_SUCCESS })
       dispatch(push('/'))
 
+      dispatch(sendContract(result))
     })
 
     .catch((error) => {
