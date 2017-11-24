@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Dropzone from 'react-dropzone'
 import { palette } from '../styles/theme'
 import { fontLibrary } from '../styles/theme'
+import { connect } from 'react-redux'
 
 const { fontFamilyText } = fontLibrary
 const { TextColor, grey30 } = palette
@@ -30,7 +31,7 @@ class Accept extends PureComponent {
             accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf"
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
           >
-            <p style={styles.paragraph}>Of Drop De File Hier</p>
+            <p style={styles.paragraph}>{this.props.items.drawer.content}</p>
           </Dropzone>
           <aside>
           <ul>
@@ -45,4 +46,6 @@ class Accept extends PureComponent {
   }
 }
 
-export default Accept
+const mapStateToProps = ({ items }) => ({ items })
+
+export default connect(mapStateToProps)(Accept)

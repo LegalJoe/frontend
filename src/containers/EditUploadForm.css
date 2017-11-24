@@ -1,0 +1,8 @@
+.editForm {
+  display: flex;
+
+}
+
+.bottom {
+  max-width: 500px;
+}

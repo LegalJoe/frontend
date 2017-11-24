@@ -26,7 +26,7 @@ class Header extends PureComponent {
           <Title content={ items.header.title } className="header"
             style={{color:this.props.theme.titleTwo, fontFamily: this.props.theme.fontTitle}}/>
 
-          <SubTitle content={items.header.subtitle} style={{color:this.props.theme.subtitle, fontFamily: this.props.theme.fontSubtitle}}/>
+          <SubTitle content={items.header.subtitle} style={{color:this.props.theme.subtitleTwo, fontFamily: this.props.theme.fontSubtitle}}/>
             <p style={{color:this.props.theme.textTwo, fontFamily: this.props.theme.fontText}}>{ items.header.content }</p>
           <hr/>
         </div>

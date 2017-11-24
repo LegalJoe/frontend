@@ -125,8 +125,8 @@ class UploadForm extends PureComponent {
             />
           </div>
         </div>
-        <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Hoe Veel Kost Het?</h3>
-        <h5 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Ik doe het gratis als je wilt dat ik je contract toevoeg aan mijn database. Wil je dat niet dan betaal je eenmalig EUR 39,-.</h5>
+        <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{this.props.items.form.title}</h3>
+        <h5 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{this.props.items.form.content}</h5>
 
           <label>
             <Toggle
@@ -134,12 +134,13 @@ class UploadForm extends PureComponent {
               onChange={this.toggleSwitch} />
           </label>
 
-          <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{(this.state.switched)? "Je Betaalt Wel" : "Je Betaalt Niets"}</h3>
+          <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{(this.state.switched)?
+             `${this.props.items.pay[1]}` : `${this.props.items.pay[0]}`}</h3>
           <UploadFile
             ref="upFile"
           />
           <RaisedButton
-            label="Start Analyse"
+            label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
         </form>
@@ -147,9 +148,10 @@ class UploadForm extends PureComponent {
     );
   }
 }
-const mapStateToProps = ({ currentUser, admin }) => {
+const mapStateToProps = ({ currentUser, admin, items }) => {
   return {
     currentUser,
+    items
   }
 }
 
