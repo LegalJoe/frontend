@@ -63,7 +63,6 @@ class Styling extends PureComponent {
     return(
       <div className="contentContainer">
         <div className="webpageContainer">
-          <Navbar />
           <Home />
         </div>
         <div className="stylesContainer">
