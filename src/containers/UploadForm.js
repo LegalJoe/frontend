@@ -6,9 +6,10 @@ import { palette } from '../styles/theme'
 import { fontLibrary } from '../styles/theme'
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
-import { sendContract } from '../actions/contracts/'
 import Toggle from 'react-toggle'
 import './ButtonStyle.css'
+import { sendContract, uploadFile } from '../actions/contracts/'
+var FormData = require('form-data');
 
 
 const { errorColor, alternateTextColor, textColor } = palette
@@ -68,9 +69,9 @@ class UploadForm extends PureComponent {
    this.setState(prevState => {
      return {
        switched: !prevState.switched
-     };
-   });
- };
+     }
+   })
+  }
 
   static propTypes = {
     primary: PropTypes.boolean,
@@ -79,17 +80,19 @@ class UploadForm extends PureComponent {
   }
 
 
-  submitForm(event) {
+submitForm(event) {
   event.preventDefault()
-    const contract = {
-      email: this.refs.email.getValue(),
-      contract: this.refs.contract.getValue(),
-      altcontract: this.refs.upFile.state.accepted[0],
-      paid: this.state.switched
-    }
-    this.props.sendContract(contract)
+  //switch to file upload:
+  const formData = new FormData();
+  console.log(this.refs.upFile.state.accepted[0])
+  formData.append("file", this.refs.upFile.state.accepted[0]);
+  formData.append("tags", `some email`);
+  formData.append("upload_preset", "lgrd6srs"); // Replace the preset name with your own
+  formData.append("api_key", "545935239366884"); // Replace API key with your own Cloudinary key
+  formData.append("timestamp", (Date.now() / 1000) | 0);
 
-  }
+  this.props.uploadFile(formData)
+}
 
   render() {
     const { currentUser } = this.props
@@ -123,21 +126,6 @@ class UploadForm extends PureComponent {
               inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
             />
           </div>
-          <div className="input">
-            <TextField
-              ref="contract"
-              type="text"
-              multiline={true}
-              rows={5}
-              hintText="Copy/Paste je contract hier"
-              floatingLabelText="Contract"
-              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
-              floatingLabelFocusStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
-              underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
-              inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
-            />
-          </div>
-
         </div>
         <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Hoe Veel Kost Het?</h3>
         <h5 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>Ik doe het gratis als je wilt dat ik je contract toevoeg aan mijn database. Wil je dat niet dan betaal je eenmalig EUR 39,-.</h5>
@@ -167,4 +155,4 @@ const mapStateToProps = ({ currentUser, admin }) => {
   }
 }
 
-export default connect(mapStateToProps, {sendContract})(UploadForm)
+export default connect(mapStateToProps, {sendContract , uploadFile})(UploadForm)
