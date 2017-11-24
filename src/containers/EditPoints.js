@@ -32,29 +32,28 @@ class EditPoints extends PureComponent {
       return (
         <div>
           <div className="editor">
-           <div className="points">
-            <Title className="intro" content={items.points.title} />
-              <div className="pointsContainer">
-                <Point content={items.points.content} />
-              </div>
-            </div>
          <div className="formContainer2">
            <form onSubmit={this.submitForm.bind(this)} className="form">
              <div className="input">
-             <h3>Title</h3>
-             <TextField ref="title" type="text" defaultValue={items.points.title}
-               placeholder={items.points.title} id = "title" />
+               <h3>Title</h3>
+               <TextField
+                  style={{width: '90%'}}
+                  ref="title"
+                  type="text"
+                  defaultValue={items.points.title}
+                  placeholder={items.points.title}
+                  id = "title"
+               />
              </div>
              <div className="input">
                <h3>Paragraph</h3>
                <TextField ref="content"
                  type="text"
                  id="content"
-                 style = {{width: '100%'}}
+                 style={{width: '90%'}}
                  defaultValue={items.points.content}
                  placeholder={items.points.content}
-                 multiLine={true}
-                 rows={6}
+                 multiLine
                />
             </div>
            </form>

@@ -36,16 +36,13 @@ class EditExamples extends PureComponent {
    render() {
      const { items } = this.props
      return (
-       <div className="EditExamples">
-        <div className="examplesContainer">
-         <Examples />
-        </div>
+       <div className="examplesContainer">
           <div className="formContainer3">
             <form onSubmit={this.submitForm.bind(this)}>
               <div className="input">
               <h3>Title</h3>
                 <TextField
-                  style={{width: '90%'},{margin: 'auto'}}
+                  style={{width: '90%'}}
                   ref="title"
                   type="text"
                   defaultValue={items.examples.title}
@@ -57,7 +54,7 @@ class EditExamples extends PureComponent {
                <div className="input">
                <h3>Image URLs</h3>
                 <TextField
-                  style={{width: '90%'}, {margin: 'auto'}}
+                  style={{width: '90%'}}
                   ref="urls1"
                   type="text"
                   defaultValue={items.photos[0]}
@@ -66,7 +63,7 @@ class EditExamples extends PureComponent {
                </div>
                 <div className="input">
                   <TextField
-                    style={{width: '90%'},{margin: 'auto'}}
+                    style={{width: '90%'}}
                     ref="urls2"
                     type="text"
                     defaultValue={items.photos[1]}
@@ -76,6 +73,7 @@ class EditExamples extends PureComponent {
                 </div>
               <div className="input">
                 <TextField
+                  style={{width: '90%'}}
                   ref="newLink"
                   type="text"
                   id = "newLink"

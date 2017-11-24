@@ -7,6 +7,10 @@ import EditHeader from './EditHeader'
 import EditFooter from './EditFooter'
 import EditExamples from './EditExamples'
 import EditUploadForm from './EditUploadForm'
+import Home from './Home'
+import Navigation from '../components/ui/Navigation'
+import Footer from '../components/ui/Footer'
+import './AdminPage.css'
 
 class AdminPage extends PureComponent {
   static propTypes = {
@@ -16,12 +20,19 @@ class AdminPage extends PureComponent {
   render () {
     if (!this.props.admin) {return <SignIn />}
     return (
-      <div>
-        <EditHeader />
-        <EditPoints />
-        <EditExamples />
-        <EditUploadForm />
-        <EditFooter />
+      <div className="adminPage">
+        <div className="pageContainer">
+          <Navigation />
+          <Home />
+          <Footer />
+        </div>
+        <div className="formsContainer">
+          <EditHeader />
+          <EditPoints />
+          <EditExamples />
+          <EditUploadForm />
+          <EditFooter />
+        </div>
       </div>
     )
   }

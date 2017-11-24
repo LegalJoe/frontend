@@ -1,0 +1,15 @@
+.adminPage {
+  display: flex;
+}
+
+.pageContainer {
+  width: 65%;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.formsContainer {
+  width: 35%;
+  height: 80vh;
+  overflow-y: scroll;
+}
