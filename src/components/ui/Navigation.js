@@ -13,15 +13,6 @@ import { palette } from '../../styles/theme'
 
 const TITLE = 'Legal Joe'
 
-const navStyle = {
-  position: 'fixed',
-  boxShadow: 'none',
-  left: '0',
-  top: '0',
-  color: 'white',
-  textShadow:'-1px 0 black, 0 2px black, 1px 0 black, 0 -1px black',
-}
-
 const buttonStyle = {
   marginTop: '-5%',
   color: `${palette.alternateTextColor}`,
@@ -64,7 +55,16 @@ class Navigation extends PureComponent {
       <AppBar
         title={TITLE}
         onTitleTouchTap={this.goHome}
-        style={navStyle}
+        style=
+        {{
+          position: 'fixed',
+          boxShadow: '0',
+          left: '0',
+          top: '0',
+          color: 'white',
+          textShadow:'-1px 0 black, 0 2px black, 1px 0 black, 0 -1px black',
+          background: `${this.props.theme.primaryOne}`
+        }}
         iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
 
         iconElementRight={signedIn ?
@@ -97,11 +97,12 @@ class Navigation extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser, admin }) => {
+const mapStateToProps = ({ currentUser, admin, theme }) => {
   return {
   currentUser,
   signedIn: (!!currentUser && !!currentUser.id),
-  admin: (!!currentUser && !!currentUser.id && !!currentUser.admin)
+  admin: (!!currentUser && !!currentUser.id && !!currentUser.admin),
+  theme
  }
 }
 

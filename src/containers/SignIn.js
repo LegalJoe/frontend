@@ -8,18 +8,11 @@ import RaisedButton from 'material-ui/RaisedButton'
 import signIn from '../actions/user/sign-in'
 import Title from '../components/ui/Title'
 import FlatButton from 'material-ui/FlatButton'
-import { palette } from '../styles/theme'
-import { fontLibrary } from '../styles/theme'
-
-const { titleColor } = palette
-const { fontFamilyTitle } = fontLibrary
 
 const styles = {
-  titleStyle: { color: `${titleColor}`, fontFamily:`${ fontFamilyTitle }`},
   dialogStyle: { width: '400px', margin: '100px auto', padding: '2rem'},
   buttonStyle: { float: 'left', marginLeft: '3rem'},
 }
-
 
 export class SignIn extends PureComponent {
   static propTypes = {
@@ -50,8 +43,10 @@ export class SignIn extends PureComponent {
   render() {
     return (
       <Paper style={ styles.dialogStyle }>
-        <Title content="Sign In" style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}} />
-
+        <Title
+          content="Sign In"
+          style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}}
+        />
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
             <TextField ref="username" type="username" hintText="Username" />
