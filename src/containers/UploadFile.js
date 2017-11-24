@@ -31,7 +31,7 @@ class Accept extends PureComponent {
             accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf"
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
           >
-            <p style={styles.paragraph}>{this.props.items.drawer.content}</p>
+            <p style={styles.paragraph}>{this.props.drawerContent}</p>
           </Dropzone>
           <aside>
           <ul>
@@ -46,6 +46,6 @@ class Accept extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ items }) => ({ items })
 
-export default connect(mapStateToProps)(Accept)
+
+export default Accept

@@ -136,7 +136,7 @@ class UploadForm extends PureComponent {
 
           <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{(this.state.switched)?
              `${this.props.items.pay[1]}` : `${this.props.items.pay[0]}`}</h3>
-          <UploadFile
+          <UploadFile drawerContent={this.props.items.drawer.content}
             ref="upFile"
           />
           <RaisedButton
