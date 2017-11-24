@@ -11,9 +11,7 @@ import Card from 'material-ui/Card'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import SignIn from './SignIn'
-
-const { grey, titleColor } = palette
-const { fontFamilyTitle } = fontLibrary
+import AdminTable from './AdminTable'
 
 const styles = {
   tabStyle: {background: `#f8f8f8`},
@@ -43,7 +41,7 @@ class AdminTabs extends PureComponent {
             </Tab>
             <Tab label="Contract overview" style={ styles.tabStyle }>
               <div>
-                <UserProfile />
+                <AdminTable />
               </div>
             </Tab>
           </Tabs>
