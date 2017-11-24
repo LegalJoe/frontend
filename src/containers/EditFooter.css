@@ -1,0 +1,13 @@
+.EditExamples {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.formContainer4 {
+
+  max-width: 30%;
+  padding: 20px 20px 70px 20px;
+  position: relative;
+}

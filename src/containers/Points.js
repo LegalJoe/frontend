@@ -22,7 +22,7 @@ class Points extends PureComponent {
     const { items } = this.props
     return (
       <div className="pointSection">
-        <Title className="intro" style={styles.titleStyle} content={items.points.title} />
+        <Title className="intro" style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}} content={items.points.title} />
         <div className="pointsContainer">
           <Point content={items.points.content} />
         </div>
@@ -31,6 +31,6 @@ class Points extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ items }) => ({ items })
+const mapStateToProps = ({ items, theme }) => ({ items, theme })
 
 export default connect(mapStateToProps, { fetchItems})(Points)

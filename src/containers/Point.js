@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { fontLibrary } from '../styles/theme'
 import { palette } from '../styles/theme'
 import './Point.css'
+import { connect } from 'react-redux'
 
 const { fontFamilyText } = fontLibrary
 const { textColor } = palette
@@ -18,7 +19,7 @@ class Point extends PureComponent {
         <h3 className='pointTitle'>
           { this.props.title }
         </h3>
-        <p className='point' style={ styles.textStyle }>
+        <p className='point' style={{color:this.props.theme.text, fontFamily: this.props.theme.fontText}} >
           { this.props.content }
         </p>
      </div>
@@ -27,4 +28,6 @@ class Point extends PureComponent {
   }
 }
 
-export default Point
+const mapStateToProps = ({ theme }) => ({ theme })
+
+export default connect(mapStateToProps)(Point)

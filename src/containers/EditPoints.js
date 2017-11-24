@@ -32,15 +32,14 @@ class EditPoints extends PureComponent {
      const { items } = this.props
       return (
         <div>
-          <Title content="Wie?" />
           <div className="editor">
-           <Paper className="points">
+           <div className="points">
             <Title className="intro" content={items.points.title} />
               <div className="pointsContainer">
                 <Point content={items.points.content} />
               </div>
-            </Paper>
-         <Paper className="formContainer">
+            </div>
+         <div className="formContainer2">
            <form onSubmit={this.submitForm.bind(this)} className="form">
              <div className="input">
              <h3>Title</h3>
@@ -49,8 +48,10 @@ class EditPoints extends PureComponent {
              </div>
              <div className="input">
                <h3>Paragraph</h3>
-               <TextField ref="content" type="text" id="content"
-                 style = {{width: 500}}
+               <TextField ref="content"
+                 type="text"
+                 id="content"
+                 style = {{width: '100%'}}
                  defaultValue={items.points.content}
                  placeholder={items.points.content}
                  multiLine={true}
@@ -63,7 +64,7 @@ class EditPoints extends PureComponent {
              onClick={ this.submitForm.bind(this) }
              label="Save"
              primary={true} />
-         </Paper>
+         </div>
          </div>
         </div>
      )

@@ -12,11 +12,11 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import SignIn from './SignIn'
 
-const { canvasColor, titleColor } = palette
+const { grey, titleColor } = palette
 const { fontFamilyTitle } = fontLibrary
 
 const styles = {
-  tabStyle: {background: `${canvasColor}`},
+  tabStyle: {background: `#f8f8f8`},
   tabContentStyle: {minHeight: `50vh`},
   titleStyle: {color: `${ titleColor }`, fontFamily: `${ fontFamilyTitle}`}
 }
@@ -30,7 +30,6 @@ class AdminTabs extends PureComponent {
     if (!this.props.admin) return <SignIn />
     return(
       <div className='AdminTabsContainer'>
-        <Title content='Admin page' style={styles.titleStyle} className='AdminTitle'/>
         <Card className='paperStyle' zDepth={1} >
           <Tabs style={styles.tabContentStyle}>
             <Tab label="Edit text" style={ styles.tabStyle } >

@@ -1,20 +1,20 @@
 .editor {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: stretch;
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 
 .points {
-  margin: 20px;
-  width: 45%;
+  width: 50%;
   padding: 20px;
 }
 
-.formContainer {
-  margin: 20px;
-  width: 45%;
-  padding: 20px;
+.formContainer2 {
+  width: 50%;
+  padding: 20px 20px 70px 20px;
   position: relative;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .saveButton {

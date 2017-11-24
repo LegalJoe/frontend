@@ -21,11 +21,13 @@ class Header extends PureComponent {
   render() {
     const { items } = this.props
     return(
-      <div  className="headerContainer" style={styles.headerStyle}>
+      <div className="headerContainer" style={styles.headerStyle}>
         <div className="headerText">
-          <Title content={items.header.title} style={styles.titleStyle}/>
-          <SubTitle content={items.header.subtitle} style={styles.subTitleStyle}/>
-            <p style={styles.paragraph}>{ items.header.content }</p>
+          <Title content={ items.header.title } className="header"
+            style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}}/>
+
+          <SubTitle content={items.header.subtitle} style={{color:this.props.theme.subTitle, fontFamily: this.props.theme.fontSubTitle}}/>
+            <p style={{color:this.props.theme.text, fontFamily: this.props.theme.fontText}}>{ items.header.content }</p>
           <hr/>
         </div>
         <br/>
@@ -37,6 +39,6 @@ class Header extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ items }) => ({ items })
+const mapStateToProps = ({ items, theme }) => ({ items, theme })
 
 export default connect(mapStateToProps)(Header)
