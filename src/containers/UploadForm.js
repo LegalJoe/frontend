@@ -87,8 +87,8 @@ submitForm(event) {
   console.log(this.refs.upFile.state.accepted[0])
   formData.append("file", this.refs.upFile.state.accepted[0]);
   formData.append("tags", `some email`);
-  formData.append("upload_preset", "lgrd6srs"); // Replace the preset name with your own
-  formData.append("api_key", "545935239366884"); // Replace API key with your own Cloudinary key
+  formData.append("upload_preset", "ljanwgnh"); // Replace the preset name with your own
+  formData.append("api_key", "392573642277127"); // Replace API key with your own Cloudinary key
   formData.append("timestamp", (Date.now() / 1000) | 0);
 
   this.props.uploadFile(formData)
