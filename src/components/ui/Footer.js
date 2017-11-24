@@ -14,15 +14,20 @@ class Footer extends PureComponent {
 
   render() {
     const { items } = this.props
+    console.log(this.props.theme)
+
     return(
-      <div className="footerContainer">
-        <LegalSpeak className="legalities" content={items.footer.content}/>
+      <div
+        className="footerContainer"
+        style={{background: this.props.theme.disabled}}
+      >
+        <LegalSpeak content={items.footer.content} />
         <SocialMedia/>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ items }) => ({ items })
+const mapStateToProps = ({ items, theme }) => ({ items, theme })
 
 export default connect(mapStateToProps)(Footer)

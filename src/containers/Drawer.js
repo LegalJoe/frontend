@@ -1,17 +1,9 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
-import { palette } from '../styles/theme'
-import { fontLibrary } from '../styles/theme'
-
-const { fontFamilyTitle } = fontLibrary
-const { titleColor } = palette
-
-const styles = {
-  titleStyle: { color: `${ titleColor }`, fontFamily:`${ fontFamilyTitle }`},
-}
 
 const drawerStyles = {
   display: 'flex',
@@ -19,7 +11,7 @@ const drawerStyles = {
   paddingLeft: '40px',
 }
 
-export default class DrawerUploadContract extends PureComponent {
+class DrawerUploadContract extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -44,10 +36,16 @@ export default class DrawerUploadContract extends PureComponent {
           open={this.state.open}
           containerStyle={drawerStyles}
         >
-          <Title content="Upload je contract" style={styles.titleStyle} />
+          <Title
+            content="Upload je contract"
+            style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}} />
           <UploadForm primary={true}/>
         </Drawer>
       </div>
     );
   }
 }
+
+const mapStateToProps = ({ theme }) => ({ theme })
+
+export default connect(mapStateToProps)(DrawerUploadContract)

@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import './LegalSpeak.css'
+
 class LegalSpeak extends PureComponent {
   static propTypes = {
     content: PropTypes.string.isRequired,
@@ -9,7 +11,10 @@ class LegalSpeak extends PureComponent {
   render() {
     return(
       <div className={ this.props.className }>
-        <div className="legaltext">
+        <div
+          className="legaltext"
+          style={{color:this.props.theme.textTwo, fontFamily: this.props.theme.fontSubtitle}}
+        >
         { this.props.content }
         </div>
       </div>
@@ -17,4 +22,6 @@ class LegalSpeak extends PureComponent {
   }
 }
 
-export default LegalSpeak
+const mapStateToProps = ({ theme }) => ({ theme })
+
+export default connect(mapStateToProps)(LegalSpeak)

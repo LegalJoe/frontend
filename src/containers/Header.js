@@ -21,13 +21,13 @@ class Header extends PureComponent {
   render() {
     const { items } = this.props
     return(
-      <div className="headerContainer" style={styles.headerStyle}>
+      <div className="headerContainer" style={{ backgroundImage: `linear-gradient(-200deg, ${this.props.theme.primaryOne} 85%, #f8f8f8 0%)`}}>
         <div className="headerText">
           <Title content={ items.header.title } className="header"
-            style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}}/>
+            style={{color:this.props.theme.titleTwo, fontFamily: this.props.theme.fontTitle}}/>
 
-          <SubTitle content={items.header.subtitle} style={{color:this.props.theme.subTitle, fontFamily: this.props.theme.fontSubTitle}}/>
-            <p style={{color:this.props.theme.text, fontFamily: this.props.theme.fontText}}>{ items.header.content }</p>
+          <SubTitle content={items.header.subtitle} style={{color:this.props.theme.subtitle, fontFamily: this.props.theme.fontSubtitle}}/>
+            <p style={{color:this.props.theme.textTwo, fontFamily: this.props.theme.fontText}}>{ items.header.content }</p>
           <hr/>
         </div>
         <br/>
