@@ -4,10 +4,8 @@ import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem} from '../actions/items'
-import Header from './Header'
-import './EditHeader.css'
 
-class EditPoints extends PureComponent {
+class EditDrawer extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,
   }
@@ -16,7 +14,7 @@ class EditPoints extends PureComponent {
     const { items } = this.props
     event.preventDefault()
     const item = {
-      id: items.header.id,
+      id: items.drawer.id,
       title: this.refs.title.getValue(),
       subtitle: this.refs.subtitle.getValue(),
       content: this.refs.content.getValue(),
@@ -29,35 +27,22 @@ class EditPoints extends PureComponent {
      return (
        <div>
        <div className="editHeader">
-       <div className="header2">
-         <Header />
-       </div>
            <div className="formContainer1">
              <form onSubmit={this.submitForm.bind(this)}>
                <div className="input">
                <h3>Title</h3>
-                 <TextField ref="title" type="text" defaultValue={items.header.title}
-                  id = "title" placeholder={items.header.title}/>
+                 <TextField ref="title" type="text" defaultValue={items.drawer.title}
+                  id = "title" placeholder={items.drawer.title}/>
                </div>
                <div className="input">
                <h3>Subtitle</h3>
-                 <TextField ref="subtitle" type="text" id="subtitle"
-                   style = {{width: '100%'}}
-                   defaultValue={items.header.subtitle}
-                   placeholder={items.header.subtitle}
-                   multiLine={true}
-                   rows={4}
-                 />
+                 <TextField ref="subtitle" type="text" defaultValue={items.drawer.subtitle}
+                  id = "subtitle" placeholder={items.drawer.subtitle}/>
               </div>
                <div className="input">
                <h3>Paragraph</h3>
-                 <TextField ref="content" type="text" id="content"
-                   style = {{width: '100%'}}
-                   defaultValue={items.header.content}
-                   placeholder={items.header.content}
-                   multiLine={true}
-                   rows={4}
-                 />
+                 <TextField ref="content" type="text" defaultValue={items.drawer.content}
+                  id = "content" placeholder={items.drawer.content}/>
               </div>
              </form>
              <RaisedButton
@@ -74,4 +59,4 @@ class EditPoints extends PureComponent {
 
  const mapStateToProps = ({ items }) => ({ items })
 
- export default connect(mapStateToProps, { updateItem })(EditPoints)
+ export default connect(mapStateToProps, { updateItem })(EditDrawer)

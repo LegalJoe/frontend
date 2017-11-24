@@ -25,7 +25,7 @@ class DrawerUploadContract extends PureComponent {
     return (
       <div>
           <RaisedButton
-            label="Start Analyse"
+            label={this.props.items.drawer.subtitle}
             alternateTextColor={true}
             onClick={this.handleToggle}
           />
@@ -38,7 +38,7 @@ class DrawerUploadContract extends PureComponent {
           containerStyle={drawerStyles}
         >
           <Title
-            content="Upload je contract"
+            content={this.props.items.drawer.title}
             style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}} />
           <UploadForm primary={true}/>
         </Drawer>
@@ -47,6 +47,6 @@ class DrawerUploadContract extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ theme }) => ({ theme })
+const mapStateToProps = ({ theme, items }) => ({ theme, items })
 
 export default connect(mapStateToProps)(DrawerUploadContract)

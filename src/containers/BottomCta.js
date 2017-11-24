@@ -27,7 +27,7 @@ class BottomCta extends PureComponent {
         style={{ background: this.props.theme.primaryOne }}
         className="ctaContainer"
       >
-        <Title content= "Upload je contract"
+        <Title content= {this.props.items.drawer.title}
           style={{color:this.props.theme.titleTwo, fontFamily: this.props.theme.fontTitle}}
         />
 
