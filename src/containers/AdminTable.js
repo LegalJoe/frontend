@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchUsers from '../actions/user/fetchUsers'
-
+import Checkbox from 'material-ui/Checkbox'
+import AdminUpload from './AdminUpload'
 import {
   Table,
   TableBody,
@@ -12,6 +13,14 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+}
 
 class AdminTable extends PureComponent {
 
@@ -31,6 +40,7 @@ class AdminTable extends PureComponent {
             <TableHeaderColumn>File name</TableHeaderColumn>
             <TableHeaderColumn>User</TableHeaderColumn>
             <TableHeaderColumn>User email</TableHeaderColumn>
+            <TableHeaderColumn>Status</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} showRowHover={true}>
@@ -40,6 +50,14 @@ class AdminTable extends PureComponent {
             <TableRowColumn><a href={c.cloudinaryURL}>{c.cloudinaryFileName}</a></TableRowColumn>
             <TableRowColumn>{c.name}</TableRowColumn>
             <TableRowColumn>{c.email}</TableRowColumn>
+            <TableRowColumn>
+              <Checkbox
+               label={c.checked? "Checked" : "Not checked"}
+               checked={c.checked}
+               style={styles.checkbox}
+               />
+            </TableRowColumn>
+            <AdminUpload email={c.email} name={c.name} id={c.id}/>
           </TableRow>
 
         )}

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchContracts from '../../actions/user/fetch'
+import Checkbox from 'material-ui/Checkbox'
 
 
 import {
@@ -12,6 +13,15 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+}
 
 
 class ContractTable extends PureComponent {
@@ -37,6 +47,13 @@ class ContractTable extends PureComponent {
     {contracts.map((c) =>
       <TableRow>
         <TableRowColumn>Created At:<a href={c.cloudinaryURL}>{c.createdAt.substr(0,10)}</a></TableRowColumn>
+        <TableRowColumn>
+          <Checkbox
+           label={c.checked? "Checked" : "Not checked"}
+           checked={c.checked}
+           style={styles.checkbox}
+           />
+        </TableRowColumn>
       </TableRow>
     )}
     </TableBody>
