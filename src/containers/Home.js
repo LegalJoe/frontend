@@ -21,7 +21,7 @@ class Home extends PureComponent {
         <Header />
         <Points />
         <Examples />
-        <BottomCta title="Upload your contract now"/>
+        <BottomCta />
       </div>
     )
   }

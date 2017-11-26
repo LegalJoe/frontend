@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
-import './ButtonStyle.css'
+import './AdminUpload.css'
 import { uploadContract } from '../actions/contracts/'
 var FormData = require('form-data');
 
@@ -23,15 +23,20 @@ class AdminUpload extends PureComponent {
 
   render() {
     return (
-      <div className="formStyle">
-        <form>
+      <div >
+        <form className="adminUpload">
+        <div className="upload">
           <UploadFile drawerContent="Upload"
             ref="upFile"
           />
+        </div>
+        <div className="send">
           <RaisedButton
             label="Send"
             onClick={this.submitForm.bind(this)}
-            primary={this.props.primary} />
+            primary={this.props.primary}
+          />
+        </div>
         </form>
       </div>
     );
