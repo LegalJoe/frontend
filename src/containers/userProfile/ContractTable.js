@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchContracts from '../../actions/user/fetch'
 import Checkbox from 'material-ui/Checkbox'
-
+import { fetchTheme } from '../../actions/theme'
+import File from 'material-ui/svg-icons/action/description'
 
 import {
   Table,
@@ -30,7 +31,10 @@ class ContractTable extends PureComponent {
     fetchContracts: PropTypes.func.isRequired,
   }
 
-  componentWillMount() { this.props.fetchContracts({email: this.props.currentUser.email})}
+  componentWillMount() {
+    this.props.fetchContracts({email: this.props.currentUser.email})
+    this.props.fetchTheme()
+  }
 
   render(){
     const { contracts } = this.props
@@ -40,13 +44,16 @@ class ContractTable extends PureComponent {
   <Table>
     <TableHeader displaySelectAll={false} adjustForCheckbox={false} >
       <TableRow>
-        <TableHeaderColumn>Upload date</TableHeaderColumn>
+        <TableHeaderColumn>Date </TableHeaderColumn>
+        <TableHeaderColumn>File </TableHeaderColumn>
+        <TableHeaderColumn>Status </TableHeaderColumn>
       </TableRow>
     </TableHeader>
     <TableBody displayRowCheckbox={false} showRowHover={true}>
     {contracts.map((c) =>
       <TableRow>
-        <TableRowColumn>Created At:<a href={c.cloudinaryURL}>{c.createdAt.substr(0,10)}</a></TableRowColumn>
+        <TableRowColumn>{c.createdAt.substr(0,10)}</TableRowColumn>
+        <TableRowColumn><a href={c.cloudinaryURL}><File /></a></TableRowColumn>
         <TableRowColumn>
           <Checkbox
            label={c.checked? "Checked" : "Not checked"}
@@ -63,4 +70,4 @@ class ContractTable extends PureComponent {
 }
 const mapStateToProps = ({ currentUser, contracts }) => ({ currentUser, contracts })
 
-export default connect(mapStateToProps, { fetchContracts })(ContractTable)
+export default connect(mapStateToProps, { fetchContracts, fetchTheme })(ContractTable)

@@ -1,0 +1,11 @@
+.adminUpload {
+  display: flex;
+}
+
+.upload {
+  width: 100%;
+}
+
+.send {
+  align-self: center;
+}

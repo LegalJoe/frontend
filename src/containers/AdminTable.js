@@ -41,6 +41,7 @@ class AdminTable extends PureComponent {
             <TableHeaderColumn>User</TableHeaderColumn>
             <TableHeaderColumn>User email</TableHeaderColumn>
             <TableHeaderColumn>Status</TableHeaderColumn>
+            <TableHeaderColumn>Upload</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} showRowHover={true}>
