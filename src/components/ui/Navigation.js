@@ -47,6 +47,24 @@ class Navigation extends PureComponent {
     this.props.push(`/profile/${userId}`)
   }
 
+  handleScroll = function(event) {
+  let color
+    if( document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight ){
+      color = 'black'
+    } else { color = 'white'}
+      this.setState({color})
+  }.bind(this)
+
+ componentDidMount= function() {
+   console.log('componentDidMount invoked');
+   window.addEventListener('scroll', this.handleScroll);
+ }
+
+ componentWillUnmount = function() {
+   window.removeEventListener('scroll', this.handleScroll)
+ }
+
+
   render() {
     const { signedIn } = this.props
     const { currentUser } = this.props
@@ -70,14 +88,16 @@ class Navigation extends PureComponent {
           <FlatButton
           className="buttonName"
           style={{buttonStyle,color: '#3acc77'} }
+
           onClick={this.goToProfile.bind(this)}
-          label={(currentUser === null || this.props.admin === true)? null : `${currentUser.firstName}`}/>
+          label={(currentUser === null) ? null : `${currentUser.firstName}`}/>
           <IconMenu
             iconButtonElement={
               <IconButton><Reorder /></IconButton>
             }
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+            iconStyle={this.state}
           >
 
 
@@ -103,5 +123,6 @@ const mapStateToProps = ({ currentUser, admin, theme }) => {
   theme
  }
 }
+
 
 export default connect(mapStateToProps, { push, signOut })(Navigation)
