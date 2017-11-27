@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import './AdminUpload.css'
