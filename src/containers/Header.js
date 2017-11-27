@@ -11,10 +11,19 @@ const { fontFamilyTitle, fontFamilySubTitle, fontFamilyText } = fontLibrary
 const { alternateTitleColor, alternateSubTitleColor, alternateTextColor, primary1Color } = palette
 
 const styles = {
-  titleStyle: { color: `${alternateTitleColor}`, fontFamily:`${fontFamilyTitle}`, fontSize: '4em'},
-  subTitleStyle: { color: `${alternateSubTitleColor}`, fontFamily: `${fontFamilySubTitle}`},
-  paragraph: { color: `${alternateTextColor}`, fontFamily: `${fontFamilyText}`, fontSize: '120%'},
-  headerStyle: { backgroundImage: `linear-gradient(-200deg, ${primary1Color} 100%, #F8F8F8 100%)`,}
+  titleStyle: {
+    color: `${alternateTitleColor}`,
+    fontFamily:`${fontFamilyTitle}`,
+    fontSize: '4em'},
+  subTitleStyle: {
+    color: `${alternateSubTitleColor}`,
+    fontFamily: `${fontFamilySubTitle}`},
+  paragraph: {
+    color: `${alternateTextColor}`,
+    fontFamily: `${fontFamilyText}`,
+    fontSize: '120%'},
+  headerStyle: {
+    backgroundImage: `linear-gradient(-200deg, ${primary1Color} 100%, #F8F8F8 100%)`,}
 }
 
 class Header extends PureComponent {
