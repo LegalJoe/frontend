@@ -8,7 +8,12 @@
   align-items: center;
 }
 
-img {
+.exampleImage1 {
+  max-width: 35%;
+  margin: 20px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.6);
+}
+.exampleImage2 {
   max-width: 35%;
   margin: 20px;
   box-shadow: 0px 1px 10px rgba(0,0,0,0.6);

@@ -19,8 +19,8 @@ class Examples extends PureComponent {
           style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}}/>
 
         <div className="exampleImages">
-          <img className="exampleImage" src={ items.photos[0]} alt="exampleContract"/>
-          <img className="exampleImage" src={ items.photos[1]} alt="exampleContract" />
+          <img className="exampleImage1" src={ items.photos[0]} alt="exampleContract"/>
+          <img className="exampleImage2" src={ items.photos[1]} alt="exampleContract" />
         </div>
       </div>
     )

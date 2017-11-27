@@ -9,6 +9,7 @@ import UploadFile from './UploadFile'
 import Toggle from 'react-toggle'
 import './ButtonStyle.css'
 import { sendContract, uploadFile } from '../actions/contracts/'
+import ConfirmDialog from '../components/ui/ConfirmDialog'
 var FormData = require('form-data');
 
 
@@ -79,7 +80,6 @@ class UploadForm extends PureComponent {
     sendContract: PropTypes.func.isRequired,
   }
 
-
   submitForm(event) {
     event.preventDefault()
     const formData = new FormData();
@@ -89,8 +89,10 @@ class UploadForm extends PureComponent {
     formData.append("api_key", "392573642277127"); // Replace API key with your own Cloudinary key
     formData.append("timestamp", (Date.now() / 1000) | 0);
 
-  this.props.uploadFile(formData)
-}
+    this.props.uploadFile(formData)
+    this.refs.upFile.state.accepted = [];
+    this.refs.confirmPopup.handleOpen();
+  }
 
   render() {
     const { currentUser } = this.props
@@ -143,6 +145,7 @@ class UploadForm extends PureComponent {
             label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
+          <ConfirmDialog ref="confirmPopup"/>
         </form>
       </div>
     );
