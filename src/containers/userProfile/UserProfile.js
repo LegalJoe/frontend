@@ -17,7 +17,8 @@ class UserProfile extends PureComponent {
       <div className="profilePage">
         <div className="profileContent">
           <div className="contractContainer">
-            <Title content="Your contracts:"/>
+            <Title style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}}
+              content="Your contracts:"/>
             <ContractTable />
           </div>
         </div>
@@ -29,9 +30,10 @@ class UserProfile extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
+const mapStateToProps = ({ currentUser, theme }) => ({
   currentUser,
-  signedIn: !!currentUser && !!currentUser.id
+  signedIn: !!currentUser && !!currentUser.id,
+  theme
 })
 
 export default connect(mapStateToProps, {fetchItems})(UserProfile)
