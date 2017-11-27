@@ -33,7 +33,7 @@ class UploadForm extends PureComponent {
     sendContract: PropTypes.func.isRequired,
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillUpdate(nextProps) {
     if ( nextProps.upload.received === "true") {
       nextProps.upload.received = "false"
       this.refs.upFile.state.accepted = [];
