@@ -1,30 +1,28 @@
-import axios from 'axios'
-import { push } from 'react-router-redux'
-import sendContract from './create'
 import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
   LOAD_SUCCESS
 } from '../loading'
+import API from '../../api/client'
+export const FETCH_EMAIL = 'FETCH_EMAIL'
 
+const api = new API()
 
-export const UPLOAD_FILE = 'UPLOAD_FILE'
-
-export default (formData) => {
+export default () => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-
-  axios.post("https://api.cloudinary.com/v1_1/legaljoecloud/raw/upload", formData, {headers: { "X-Requested-With": "XMLHttpRequest" },})
+  api.get('/emails')
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
-      dispatch(push('/'))
 
-      dispatch(sendContract(result))
+      dispatch({
+        type: FETCH_EMAIL,
+        payload: result.body
+      })
     })
-
     .catch((error) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({
