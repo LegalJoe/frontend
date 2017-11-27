@@ -12,6 +12,7 @@ class EditEmails extends PureComponent {
   submitForm(event) {
     event.preventDefault()
     const newEmail = {
+      id: this.props.email.id,
       subjectOne: this.refs.subjectOne.getValue(),
       textPaid: this.refs.textPaid.getValue(),
       textFree: this.refs.textFree.getValue(),

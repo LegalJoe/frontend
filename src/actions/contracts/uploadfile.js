@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { push } from 'react-router-redux'
 import sendContract from './create'
 import {
   APP_LOADING,
@@ -20,7 +19,6 @@ export default (formData) => {
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })
-      dispatch(push('/'))
 
       dispatch(sendContract(result))
     })

@@ -8,7 +8,7 @@ import { fetchItems } from '../../actions/items'
 
 class UserProfile extends PureComponent {
 
-  componentWillMount() { this.props.fetchItems()}
+  componentWillMount() {this.props.fetchItems()}
 
   render() {
     const { signedIn } = this.props
