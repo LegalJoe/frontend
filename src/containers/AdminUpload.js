@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import './AdminUpload.css'
 import { uploadContract } from '../actions/contracts/'
+import IconButton from 'material-ui/IconButton';
+import Upload from 'material-ui/svg-icons/file/cloud-upload';
 var FormData = require('form-data');
 
 
@@ -31,11 +33,12 @@ class AdminUpload extends PureComponent {
           />
         </div>
         <div className="send">
-          <RaisedButton
-            label="Send"
+          <IconButton
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary}
-          />
+          >
+            <Upload color={this.props.theme.primaryTwo} hoverColor={this.props.theme.primaryOne}/>
+          </IconButton>
         </div>
         </form>
       </div>
@@ -43,5 +46,6 @@ class AdminUpload extends PureComponent {
   }
 }
 
+const mapStateToProps = ({ theme }) => ({theme})
 
-export default connect(null, {uploadContract})(AdminUpload)
+export default connect(mapStateToProps, {uploadContract})(AdminUpload)

@@ -1,0 +1,10 @@
+.emailForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.editEmails h2 {
+  text-align: center;
+}

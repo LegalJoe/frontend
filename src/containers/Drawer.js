@@ -26,8 +26,11 @@ class DrawerUploadContract extends PureComponent {
       <div>
           <RaisedButton
             label={this.props.items.drawer.subtitle}
-            alternateTextColor={true}
+            backgroundColor={this.props.theme.primaryTwo}
+            labelColor={this.props.theme.subtitle}
             onClick={this.handleToggle}
+            style={{width: '200px', height: '30px'}}
+            labelStyle={{fontSize: '1.3rem', color: this.props.theme.textTwo}}
           />
         <Drawer
           width={400}
@@ -39,8 +42,8 @@ class DrawerUploadContract extends PureComponent {
         >
           <Title
             content={this.props.items.drawer.title}
-            style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}} />
-          <UploadForm primary={true}/>
+            style={{color: this.props.theme.titleTwo, fontFamily: this.props.theme.fontTitle}} />
+          <UploadForm />
         </Drawer>
       </div>
     );

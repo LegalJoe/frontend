@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { replace, push } from 'react-router-redux'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Title from '../../components/ui/Title'
@@ -12,12 +9,6 @@ const styles = {
 }
 
 class ProfileSection extends PureComponent {
-
-  componentWillMount() {
-    const { replace, signedIn } = this.props
-    if (signedIn) replace('/')
-  }
-
   render() {
     return (
       <div className="profileForm">

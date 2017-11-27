@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types'
-import { palette } from '../styles/theme'
-import { fontLibrary } from '../styles/theme'
 import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import Toggle from 'react-toggle'
@@ -12,51 +10,6 @@ import { sendContract, uploadFile } from '../actions/contracts/'
 import ConfirmDialog from '../components/ui/ConfirmDialog'
 var FormData = require('form-data');
 
-
-const { errorColor, alternateTextColor, textColor } = palette
-const { fontFamilyText } = fontLibrary
-
-const styles = {
-  paragraph: { color: `${textColor}`, fontFamily: `${fontFamilyText}`, maxWidth: '80%' },
-  alternateParagraph: { color: `${alternateTextColor}`, fontFamily: `${fontFamilyText}, maxWidth: '80%'` }
-}
-
-const primaryStyles = {
-  errorStyle: {
-    color: errorColor,
-  },
-  underlineStyle: {
-    borderColor: textColor,
-  },
-  underlineFocusStyle: {
-    bordercolor: textColor,
-  },
-  floatingLabelStyle: {
-    color: textColor,
-  },
-  inputStyle: {
-    color: textColor,
-  }
-};
-
-const secondaryStyles =
-{
-  errorStyle: {
-    color: errorColor,
-  },
-  underlineStyle: {
-    borderColor: alternateTextColor,
-  },
-  underlineFocusStyle: {
-    bordercolor: alternateTextColor,
-  },
-  floatingLabelStyle: {
-    color: alternateTextColor,
-  },
-  inputStyle: {
-    color: alternateTextColor,
-  }
-}
 
 class UploadForm extends PureComponent {
   constructor(props) {
@@ -102,7 +55,7 @@ class UploadForm extends PureComponent {
 
   render() {
     const { currentUser } = this.props
-
+    const { theme } = this.props
     return (
       <div className="formStyle">
         <form>
@@ -113,10 +66,11 @@ class UploadForm extends PureComponent {
               type="text"
               defaultValue={(currentUser === null)? "" : `${currentUser.firstName} ${currentUser.lastName}`}
               floatingLabelText="Name"
-              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
-              floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
-              underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
-              inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
+              style={this.props.primary ? {color: theme.textColor, font: theme.fontText, maxWidth: '80%'} :
+                {color: theme.textTwo, font: theme.fontText, maxWidth: '80%'}}
+              floatingLabelStyle={this.props.primary ? {color: theme.textColor} : {color: theme.textTwo}}
+              underlineFocusStyle={this.props.primary ? {borderColor: theme.textColor} : {borderColor: theme.textTwo}}
+              inputStyle={this.props.primary ? {color: theme.textColor} : {color: theme.textTwo}}
             />
           </div>
           <div className="input">
@@ -126,15 +80,18 @@ class UploadForm extends PureComponent {
               defaultValue={(currentUser === null)? "": `${currentUser.email}`}
               hintText="Enter a valid email"
               floatingLabelText="Email"
-              style={this.props.primary ? styles.paragraph : styles.alternateParagraph}
-              floatingLabelStyle={this.props.primary ? primaryStyles.floatingLabelStyle : secondaryStyles.floatingLabelStyle}
-              underlineFocusStyle={this.props.primary ? primaryStyles.underlineFocusStyle : secondaryStyles.underlineFocusStyle}
-              inputStyle={this.props.primary ? primaryStyles.inputStyle : secondaryStyles.inputStyle}
+              style={this.props.primary ? {color: theme.textColor, font: theme.fontText, maxWidth: '80%'} :
+                {color: theme.textTwo, font: theme.fontText, maxWidth: '80%'}}
+              floatingLabelStyle={this.props.primary ? {color: theme.textColor} : {color: theme.textTwo}}
+              underlineFocusStyle={this.props.primary ? {borderColor: theme.textColor} : {borderColor: theme.textTwo}}
+              inputStyle={this.props.primary ? {color: theme.textColor} : {color: theme.textTwo}}
             />
           </div>
         </div>
-        <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{this.props.items.form.title}</h3>
-        <h5 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{this.props.items.form.content}</h5>
+        <h3 style={this.props.primary ? {color: theme.textColor, font: theme.fontText, maxWidth: '80%'} :
+          {color: theme.textTwo, font: theme.fontText, maxWidth: '80%'}}>{this.props.items.form.title}</h3>
+        <h5 style={this.props.primary ?{color: theme.textColor, font: theme.fontText, maxWidth: '80%'} :
+          {color: theme.textTwo, font: theme.fontText, maxWidth: '80%'}}>{this.props.items.form.content}</h5>
 
           <label>
             <Toggle
@@ -142,26 +99,34 @@ class UploadForm extends PureComponent {
               onChange={this.toggleSwitch} />
           </label>
 
-          <h3 style={this.props.primary ? styles.paragraph : styles.alternateParagraph}>{(this.state.switched)?
+          <h3 style={this.props.primary ? {color: theme.textColor, font: theme.fontText, maxWidth: '80%'} :
+            {color: theme.textTwo, font: theme.fontText, maxWidth: '80%'}}>{(this.state.switched)?
              `${this.props.items.pay[1]}` : `${this.props.items.pay[0]}`}</h3>
           <UploadFile drawerContent={this.props.items.drawer.content}
+            passColor={theme.textColor}
+            passFont={theme.fontText}
             ref="upFile"
           />
           <RaisedButton
+            backgroundColor={ theme.primaryTwo }
+            labelColor={ theme.subtitle }
             label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
           <ConfirmDialog ref="confirmPopup" dialogContent={this.props.upload}/>
+
         </form>
       </div>
     );
   }
 }
-const mapStateToProps = ({ currentUser, admin, items, upload }) => {
+
+const mapStateToProps = ({ currentUser, admin, items, upload, theme }) => {
   return {
     currentUser,
     items,
-    upload
+    upload,
+    theme,
   }
 }
 

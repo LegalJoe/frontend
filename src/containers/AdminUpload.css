@@ -1,11 +1,11 @@
 .adminUpload {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 10px;
 }
 
 .upload {
-  width: 100%;
-}
-
-.send {
-  align-self: center;
+  min-width: 80px;
+  height: 50px;
 }

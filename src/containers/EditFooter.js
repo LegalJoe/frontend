@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem } from '../actions/items'
-import Footer from '../components/ui/Footer'
 import './EditFooter.css'
 
 class EditFooter extends PureComponent {
@@ -26,8 +24,6 @@ class EditFooter extends PureComponent {
     if (this.refs.urls3.getValue().length > 1 ) {
       newUrls[2] = this.refs.urls3.getValue()
     }
-    if (this.refs.newLink.getValue().length > 1) {
-      newUrls.push(this.refs.newLink.getValue())}
     const item = {
       id: items.footer.id,
       content: this.refs.content.getValue(),
@@ -64,10 +60,6 @@ class EditFooter extends PureComponent {
                   <TextField ref="urls3" type="text" defaultValue={items.urls[2]}
                    id = "urls3" placeholder={items.urls[2]}style = {{width: '90%'}}/>
               </div>
-              <div className="input">
-                 <TextField ref="newLink" type="text" id = "newLink"
-                   placeholder="Add new link" style = {{width: '90%'}}/>
-             </div>
               </div>
              </form>
              <RaisedButton
