@@ -33,6 +33,14 @@ class UploadForm extends PureComponent {
     sendContract: PropTypes.func.isRequired,
   }
 
+  componentWillReceiveProps(nextProps) {
+    if ( nextProps.upload.received === "true") {
+      this.refs.upFile.state.accepted = [];
+      this.refs.confirmPopup.handleOpen();
+      this.refs.upFile.forceUpdate()
+    }
+  }
+
   submitForm(event) {
     event.preventDefault()
     const formData = new FormData();
@@ -43,8 +51,6 @@ class UploadForm extends PureComponent {
     formData.append("timestamp", (Date.now() / 1000) | 0);
 
     this.props.uploadFile(formData)
-    this.refs.upFile.state.accepted = [];
-    this.refs.confirmPopup.handleOpen();
   }
 
   render() {
@@ -106,18 +112,21 @@ class UploadForm extends PureComponent {
             labelColor={ theme.subtitle }
             label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
-             />
-          <ConfirmDialog ref="confirmPopup"/>
+            primary={this.props.primary} />
+          <ConfirmDialog ref="confirmPopup" dialogContent={this.props.upload}/>
+
         </form>
       </div>
     );
   }
 }
-const mapStateToProps = ({ currentUser, items, theme }) => {
+
+const mapStateToProps = ({ currentUser, admin, items, upload, theme }) => {
   return {
     currentUser,
     items,
-    theme
+    upload,
+    theme,
   }
 }
 
