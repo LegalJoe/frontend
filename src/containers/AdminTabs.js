@@ -1,8 +1,5 @@
 import React, { PureComponent } from 'react'
-import { palette } from '../styles/theme'
-import { fontLibrary } from '../styles/theme'
 import {Tabs, Tab} from 'material-ui/Tabs'
-import Title from '../components/ui/Title'
 import './AdminTabs.css'
 import AdminPage from './AdminPage'
 import Styling from './Styling'
