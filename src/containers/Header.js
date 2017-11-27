@@ -9,7 +9,7 @@ class Header extends PureComponent {
   render() {
     const { items } = this.props
     return(
-      <div className="headerContainer">
+      <div className="headerContainer" style={{backgroundImage: `url(${items.background})`}}>
         <div className="overlay">
           <div className="headerText">
             <Title content={ items.header.title } className="header"
