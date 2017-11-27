@@ -13,7 +13,7 @@ class LegalSpeak extends PureComponent {
       <div className={ this.props.className }>
         <div
           className="legaltext"
-          style={{color:this.props.theme.textTwo, fontFamily: this.props.theme.fontSubtitle}}
+          style={{color:this.props.theme.canvas, fontFamily: this.props.theme.fontSubtitle}}
         >
         { this.props.content }
         </div>

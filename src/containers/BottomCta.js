@@ -4,17 +4,7 @@ import UploadForm from './UploadForm'
 import Title from '../components/ui/Title'
 import SubTitle from '../components/ui/SubTitle'
 import { connect } from 'react-redux'
-import { palette } from '../styles/theme'
-import { fontLibrary } from '../styles/theme'
 import './BottomCta.css'
-
-const { fontFamilyTitle } = fontLibrary
-const { alternateTitleColor, primary1Color } = palette
-
-const styles = {
-  titleStyle: { color: `${ alternateTitleColor }`, fontFamily:`${ fontFamilyTitle }`},
-  containerStyle: { background: `${primary1Color}`}
-}
 
 class BottomCta extends PureComponent {
   static propTypes = {
