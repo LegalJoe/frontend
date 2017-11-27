@@ -14,7 +14,6 @@ class Footer extends PureComponent {
 
   render() {
     const { items } = this.props
-    console.log(this.props.theme)
 
     return(
       <div

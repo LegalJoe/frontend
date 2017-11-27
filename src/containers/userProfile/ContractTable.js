@@ -38,7 +38,6 @@ class ContractTable extends PureComponent {
 
   render(){
     const { contracts } = this.props
-    console.log(contracts.map(c=>c.cloudinaryFileName)[0])
     return(
 
   <Table>

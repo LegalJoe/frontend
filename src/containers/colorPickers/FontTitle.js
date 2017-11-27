@@ -24,7 +24,6 @@ class FontTitle extends PureComponent {
       fontTitle: value
     }
     this.props.updateTheme(newTheme)
-    console.log(this.state.value)
   }
 
   render() {

@@ -15,7 +15,7 @@ class UploadForm extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      switched: false
+      switched: false,
     };
   }
 
@@ -37,7 +37,7 @@ class UploadForm extends PureComponent {
     if ( nextProps.upload.received === "true") {
       this.refs.upFile.state.accepted = [];
       this.refs.confirmPopup.handleOpen();
-      this.refs.upFile.forceUpdate()
+      this.refs.upFile.forceUpdate();
     }
   }
 
@@ -113,8 +113,7 @@ class UploadForm extends PureComponent {
             label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
-          <ConfirmDialog ref="confirmPopup" dialogContent={this.props.upload}/>
-
+          <ConfirmDialog ref="confirmPopup" dialogContent={this.props.upload.received}/>
         </form>
       </div>
     );
