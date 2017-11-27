@@ -24,7 +24,6 @@ class FontSubtitle extends PureComponent {
       fontSubtitle: value
     }
     this.props.updateTheme(newTheme)
-    console.log(this.state.value)
   }
 
   render() {

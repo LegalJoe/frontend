@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import SubTitle from '../../components/ui/SubTitle'
 import { updateTheme } from '../../actions/theme'
 import ColorPicker from 'rc-color-picker'
 import FloatingActionButton from 'material-ui/FlatButton'

@@ -15,7 +15,6 @@ import './Navigation.css'
 
 const buttonStyle = {
   marginTop: '-5%',
-  color: `${palette.alternateTextColor}`,
 }
 
 class Navigation extends PureComponent {
@@ -88,8 +87,10 @@ class Navigation extends PureComponent {
           <div>
           <FlatButton
           className="buttonName"
+          style={{buttonStyle,color: '#3acc77'} }
+
           onClick={this.goToProfile.bind(this)}
-          label={(currentUser === null || this.props.admin === true)? null : `${currentUser.firstName}`}/>
+          label={(currentUser === null) ? null : `${currentUser.firstName}`}/>
           <IconMenu
             iconButtonElement={
               <IconButton><Reorder /></IconButton>

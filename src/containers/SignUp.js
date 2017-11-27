@@ -37,7 +37,6 @@ export class SignUp extends PureComponent {
         username: this.refs.email.getValue(),
         password: this.refs.password.getValue()
       }
-      console.log(user)
       this.props.signUp(user)
     }
     return false
