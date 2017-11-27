@@ -32,7 +32,7 @@ class ContractTable extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.fetchContracts({email: this.props.currentUser.email})
+    this.props.fetchContracts({id: this.props.currentUser.id})
     this.props.fetchTheme()
   }
 

@@ -9,11 +9,11 @@ export const FETCH_CONTRACTS = 'FETCH_CONTRACTS'
 
 const api = new API()
 
-export default (email) => {
+export default (id) => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-  api.post(`/docs`, email)
+  api.post(`/docs`, id)
     .then((result) => {
       dispatch({ type: APP_DONE_LOADING })
       dispatch({ type: LOAD_SUCCESS })

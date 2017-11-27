@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
-import { updateItem} from '../actions/items'
+import { updateItem } from '../actions/items'
 import './EditHeader.css'
 
 class EditPoints extends PureComponent {
