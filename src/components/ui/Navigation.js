@@ -62,7 +62,7 @@ class Navigation extends PureComponent {
           top: '0',
           color: 'white',
           textShadow:'-1px 0 black, 0 2px black, 1px 0 black, 0 -1px black',
-          background: `${this.props.theme.primaryOne}`
+          background: 'none',
         }}
         iconElementLeft={<img src={ Logo } className="logo" alt="hiugijhbjihbv" onClick={this.goHome}/>}
 

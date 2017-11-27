@@ -25,8 +25,9 @@ class EditEmails extends PureComponent {
      const { email } = this.props
      return (
        <div>
-       <h2> Edit Automatic Response </h2>
+
        <div className="editEmails">
+         <h2> Edit Automatic Response </h2>
            <div className="emails">
              <form onSubmit={this.submitForm.bind(this)} className="emailForm">
              <div className="uploadedContract">
