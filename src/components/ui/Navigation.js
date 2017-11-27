@@ -10,7 +10,8 @@ import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
 import { palette } from '../../styles/theme'
-
+import Logo from '../../images/legal-joe-green.svg'
+import './Navigation.css'
 const TITLE = 'Legal Joe'
 
 const buttonStyle = {
@@ -54,8 +55,6 @@ class Navigation extends PureComponent {
 
     return (
       <AppBar
-        title={TITLE}
-        onTitleTouchTap={this.goHome}
         style=
         {{
           position: 'fixed',
@@ -66,7 +65,7 @@ class Navigation extends PureComponent {
           textShadow:'-1px 0 black, 0 2px black, 1px 0 black, 0 -1px black',
           background: `${this.props.theme.primaryOne}`
         }}
-        iconElementLeft={<IconButton onClick={this.goHome}></IconButton>}
+        iconElementLeft={<img src={ Logo } className="logo" alt="hiugijhbjihbv" onClick={this.goHome}/>}
 
         iconElementRight={signedIn ?
           <div>
