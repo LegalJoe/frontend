@@ -21,7 +21,6 @@ export default (result) => {
       dispatch({
         type: SEND_CONTRACT,
         payload: result.body
-
       })
     })
 
