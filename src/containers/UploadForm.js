@@ -9,6 +9,7 @@ import UploadFile from './UploadFile'
 import Toggle from 'react-toggle'
 import './ButtonStyle.css'
 import { sendContract, uploadFile } from '../actions/contracts/'
+import ConfirmDialog from '../components/ui/ConfirmDialog'
 var FormData = require('form-data');
 
 
@@ -79,7 +80,6 @@ class UploadForm extends PureComponent {
     sendContract: PropTypes.func.isRequired,
   }
 
-
   submitForm(event) {
     event.preventDefault()
     const formData = new FormData();
@@ -91,7 +91,7 @@ class UploadForm extends PureComponent {
 
     this.props.uploadFile(formData)
     this.refs.upFile.state.accepted = [];
-    this.refs.upFile.forceUpdate()
+    this.refs.confirmPopup.handleOpen();
   }
 
   render() {
@@ -145,6 +145,7 @@ class UploadForm extends PureComponent {
             label={ this.props.items.drawer.subtitle}
             onClick={this.submitForm.bind(this)}
             primary={this.props.primary} />
+          <ConfirmDialog ref="confirmPopup"/>
         </form>
       </div>
     );
