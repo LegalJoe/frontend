@@ -10,7 +10,6 @@ class Examples extends PureComponent {
     title: PropTypes.string.isRequired,
   }
   render() {
-    console.log(this.props.theme.primaryTwo)
     const { items } = this.props
     return(
       <div className="exampleContainer">
