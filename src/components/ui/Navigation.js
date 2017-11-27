@@ -72,7 +72,7 @@ class Navigation extends PureComponent {
           className="buttonName"
           style={{buttonStyle,color: '#3acc77'} }
           onClick={this.goToProfile.bind(this)}
-          label={(currentUser === null || this.props.admin === true)? null : `${currentUser.firstName}`}/>
+          label={(currentUser === null)? null : `${currentUser.firstName}`}/>
           <IconMenu
             iconButtonElement={
               <IconButton><Reorder /></IconButton>

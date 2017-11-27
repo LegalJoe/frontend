@@ -45,8 +45,11 @@ class UploadForm extends PureComponent {
   submitForm(event) {
     event.preventDefault()
     const formData = new FormData();
+    var id = "z"
+    if (this.props.currentUser) { id= this.props.currentUser.id}
     formData.append("file", this.refs.upFile.state.accepted[0]);
-    formData.append("tags", `${this.refs.name.getValue()} , ${this.refs.email.getValue()}, ${this.state.switched}`);
+    formData.append("tags", `${this.refs.name.getValue()} , ${this.refs.email.getValue()}, ${this.state.switched},
+      ${id}`);
     formData.append("upload_preset", "ljanwgnh"); // Replace the preset name with your own
     formData.append("api_key", "392573642277127"); // Replace API key with your own Cloudinary key
     formData.append("timestamp", (Date.now() / 1000) | 0);
