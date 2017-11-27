@@ -11,7 +11,7 @@ import AdminTable from './AdminTable'
 import EditEmails from './EditEmails'
 
 const styles = {
-  tabStyle: {background: `#f8f8f8`, borderRadius: '0'},
+  tabStyle: {background: `#f8f8f8`, borderRadius: '0', color: '#591c1c'},
   tabContentStyle: {minHeight: `50vh`},
 }
 

@@ -14,11 +14,16 @@ class EditPoints extends PureComponent {
   submitForm(event) {
     const { items } = this.props
     event.preventDefault()
+    var background = []
+    if (this.refs.background.getValue().length > 1 ) {
+      background.push(this.refs.background.getValue())
+    }
     const item = {
       id: items.header.id,
       title: this.refs.title.getValue(),
       subtitle: this.refs.subtitle.getValue(),
       content: this.refs.content.getValue(),
+      urls: background
     }
     this.props.updateItem(item)
   }
@@ -46,7 +51,8 @@ class EditPoints extends PureComponent {
                  style={{width: '90%'}}
                  defaultValue={items.header.subtitle}
                  placeholder={items.header.subtitle}
-                 multiLine
+                 multiLine={true}
+                 rows={3}
                />
             </div>
              <div className="input">
@@ -58,6 +64,11 @@ class EditPoints extends PureComponent {
                  multiLine={true}
                  rows={4}
                />
+            </div>
+            <div className="input">
+            <h3>Background Photo</h3>
+               <TextField ref="background" type="text" defaultValue={items.background}
+                id = "background" placeholder={items.background} style = {{width: '90%'}}/>
             </div>
            </form>
            <RaisedButton

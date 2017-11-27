@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem } from '../actions/items'
 import './EditExamples.css'
+
 class EditExamples extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,
@@ -20,8 +21,6 @@ class EditExamples extends PureComponent {
     if (this.refs.urls2.getValue().length > 1 ) {
       newUrls[1] = this.refs.urls2.getValue()
     }
-    if (this.refs.newLink.getValue().length > 1) {
-      newUrls.push(this.refs.newLink.getValue())}
     const item = {
       id: items.examples.id,
       title: this.refs.title.getValue(),
@@ -68,15 +67,6 @@ class EditExamples extends PureComponent {
                     placeholder={items.photos[1]}
                   />
                 </div>
-              <div className="input">
-                <TextField
-                  style={{width: '90%'}}
-                  ref="newLink"
-                  type="text"
-                  id = "newLink"
-                  placeholder="Add new link"
-                />
-              </div>
              </form>
              <RaisedButton
                className="saveButton"
