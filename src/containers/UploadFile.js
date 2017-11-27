@@ -34,12 +34,10 @@ class Accept extends PureComponent {
             <p style={styles.paragraph}>{this.props.drawerContent}</p>
           </Dropzone>
           <aside>
-          <ul>
-            {
-              this.state.accepted.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-            }
-          </ul>
-        </aside>
+            <ul>
+              {this.state.accepted.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}
+            </ul>
+          </aside>
         </div>
       </section>
     );

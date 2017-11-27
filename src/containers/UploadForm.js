@@ -89,8 +89,10 @@ class UploadForm extends PureComponent {
     formData.append("api_key", "392573642277127"); // Replace API key with your own Cloudinary key
     formData.append("timestamp", (Date.now() / 1000) | 0);
 
-  this.props.uploadFile(formData)
-}
+    this.props.uploadFile(formData)
+    this.refs.upFile.state.accepted = [];
+    this.refs.upFile.forceUpdate()
+  }
 
   render() {
     const { currentUser } = this.props
