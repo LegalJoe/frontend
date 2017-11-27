@@ -1,13 +1,10 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem } from '../actions/items'
 import './EditExamples.css'
-import Examples from './Examples'
-
 class EditExamples extends PureComponent {
   static propTypes = {
     updateItem: PropTypes.func.isRequired,

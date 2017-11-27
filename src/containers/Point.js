@@ -1,15 +1,6 @@
 import React, { PureComponent } from 'react'
-import { fontLibrary } from '../styles/theme'
-import { palette } from '../styles/theme'
 import './Point.css'
 import { connect } from 'react-redux'
-
-const { fontFamilyText } = fontLibrary
-const { textColor } = palette
-
-const styles = {
-  textStyle: { color: `${ textColor }`, fontFamily:`${ fontFamilyText }`},
-}
 
 class Point extends PureComponent {
 
