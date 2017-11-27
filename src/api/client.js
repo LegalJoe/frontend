@@ -2,7 +2,7 @@ import request from 'superagent'
 
 export default class ApiClient {
   defaultOptions = {
-    tokenStorageKey: 'evaluationApiJWT'
+    tokenStorageKey: 'legaljoeApiJWT'
   }
 
   constructor(host, options = {}) {
