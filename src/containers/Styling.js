@@ -3,11 +3,8 @@ import SubTitle from '../components/ui/SubTitle'
 import { fetchTheme } from '../actions/theme'
 import 'rc-color-picker/assets/index.css'
 import { connect } from 'react-redux'
-import { Primary1Color, Primary2Color, ErrorColor, TitleColor, TitleTwo,
-  SubtitleColor, SubtitleTwo, TextColor, TextTwo, Canvas, Border, Disabled,
-  FontTitle, FontSubtitle, FontText, PickerOfColors } from './colorPickers'
+import { FontTitle, FontSubtitle, FontText, PickerOfColors } from './colorPickers'
 import Home from './Home'
-import Navbar from '../components/ui/Navigation'
 import './Styling.css'
 import {
   Table,
@@ -17,8 +14,6 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
 
 class Styling extends PureComponent {
 

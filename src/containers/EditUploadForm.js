@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import BottomCta from './BottomCta'
 import EditForm from './EditForm'
 import EditDrawer from './EditDrawer'
 import './EditUploadForm.css'

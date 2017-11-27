@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateItem, fetchItems } from '../actions/items'
-import Point from './Point'
-import Title from '../components/ui/Title'
 import './EditPoints.css'
 
 class EditPoints extends PureComponent {
