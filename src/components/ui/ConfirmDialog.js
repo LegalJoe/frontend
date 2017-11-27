@@ -34,7 +34,7 @@ export default class ConfirmDialog extends React.Component {
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
-          {( this.props.dialogContent === "true" ) ? "Uw bestand is succesvol verzonden." : "Een moment, bestand wordt verstuurd."}
+          "Uw bestand is succesvol verzonden, u ontvangt een link naar het bestand per email."
         </Dialog>
       </div>
     );
