@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import fetchUsers from '../actions/user/fetchUsers'
 import Checkbox from 'material-ui/Checkbox'
 import AdminUpload from './AdminUpload'
+import './AdminTable.css'
 import {
   Table,
   TableBody,
@@ -17,8 +18,8 @@ const styles = {
   block: {
     maxWidth: 250,
   },
-  checkbox: {
-    marginBottom: 16,
+  colWidth: {
+    maxWidth: '100px',
   },
 }
 
@@ -36,29 +37,32 @@ class AdminTable extends PureComponent {
       <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false} >
           <TableRow>
-            <TableHeaderColumn>Upload date</TableHeaderColumn>
-            <TableHeaderColumn>File name</TableHeaderColumn>
-            <TableHeaderColumn>User</TableHeaderColumn>
-            <TableHeaderColumn>User email</TableHeaderColumn>
-            <TableHeaderColumn>Status</TableHeaderColumn>
+            <TableHeaderColumn style={styles.colWidth}>Upload date</TableHeaderColumn>
+            <TableHeaderColumn style={styles.colWidth}>File name</TableHeaderColumn>
+            <TableHeaderColumn style={styles.colWidth}>User</TableHeaderColumn>
+            <TableHeaderColumn style={styles.colWidth}>User email</TableHeaderColumn>
+            <TableHeaderColumn style={styles.colWidth}>Status</TableHeaderColumn>
             <TableHeaderColumn>Upload</TableHeaderColumn>
           </TableRow>
         </TableHeader>
-        <TableBody displayRowCheckbox={false} showRowHover={true}>
+        <TableBody displayRowCheckbox={false} showRowHover={true} className="headerColumn">
         {contracts.map((c) =>
-          <TableRow>
-            <TableRowColumn>{c.createdAt.substr(0,10)}</TableRowColumn>
-            <TableRowColumn><a href={c.cloudinaryURL}>{c.cloudinaryFileName}</a></TableRowColumn>
-            <TableRowColumn>{c.name}</TableRowColumn>
-            <TableRowColumn>{c.email}</TableRowColumn>
-            <TableRowColumn>
+          <TableRow className="headerColumn">
+            <TableRowColumn style={styles.colWidth}>{c.createdAt.substr(0,10)}</TableRowColumn>
+            <TableRowColumn ><a href={c.cloudinaryURL}>{c.cloudinaryFileName}</a></TableRowColumn>
+            <TableRowColumn style={styles.colWidth}>{c.name}</TableRowColumn>
+            <TableRowColumn style={styles.colWidth}>{c.email}</TableRowColumn>
+            <TableRowColumn style={styles.colWidth}>
               <Checkbox
                label={c.checked? "Checked" : "Not checked"}
                checked={c.checked}
-               style={styles.checkbox}
+               style={styles.colWidth}
+
                />
             </TableRowColumn>
-            <AdminUpload email={c.email} name={c.name} id={c.id}/>
+            <TableRowColumn>
+              <AdminUpload email={c.email} name={c.name} id={c.id}/>
+            </TableRowColumn>
           </TableRow>
 
         )}
