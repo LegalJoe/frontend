@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import SignIn from './SignIn'
 import AdminTable from './AdminTable'
+import EditEmails from './EditEmails'
 
 const styles = {
   tabStyle: {background: `#f8f8f8`},
@@ -38,6 +39,11 @@ class AdminTabs extends PureComponent {
             <Tab label="Contract overview" style={ styles.tabStyle }>
               <div>
                 <AdminTable />
+              </div>
+            </Tab>
+            <Tab label="Edit Automatic Response" style={ styles.tabStyle }>
+              <div>
+                <EditEmails />
               </div>
             </Tab>
           </Tabs>

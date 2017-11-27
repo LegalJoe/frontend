@@ -10,7 +10,6 @@ import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
 import { palette } from '../../styles/theme'
-
 const TITLE = 'Legal Joe'
 
 const buttonStyle = {
