@@ -4,6 +4,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateEmail, fetchEmail } from '../actions/email'
 import './EditEmails.css'
+import EditWelcomeEmail from './EditWelcomeEmail'
 
 class EditEmails extends PureComponent {
 
@@ -12,7 +13,7 @@ class EditEmails extends PureComponent {
   submitForm(event) {
     event.preventDefault()
     const newEmail = {
-      id: this.props.email.id,
+      id: this.props.email.email2.id,
       subjectOne: this.refs.subjectOne.getValue(),
       textPaid: this.refs.textPaid.getValue(),
       textFree: this.refs.textFree.getValue(),
@@ -28,50 +29,55 @@ class EditEmails extends PureComponent {
        <div>
 
        <div className="editEmails">
-         <h2> Edit Automatic Response </h2>
            <div className="emails">
              <form onSubmit={this.submitForm.bind(this)} className="emailForm">
              <div className="uploadedContract">
-               <h3>Uploaded Contract</h3>
+               <h2>Uploaded Contract</h2>
                <div className="input">
                <h3>Subject</h3>
-                 <TextField ref="subjectOne" type="text" defaultValue={email.subjectOne}
-                  id = "subjectOne" placeholder={email.subjectOne}/>
+                 <TextField ref="subjectOne" type="text" defaultValue={email.email2.subjectOne}
+                  id = "subjectOne" placeholder={email.email2.subjectOne}/>
                </div>
                <div className="input">
                <h3>Text for Paid Contracts</h3>
-                 <TextField ref="textPaid" type="text" defaultValue={email.textPaid}
-                  id = "textPaid" placeholder={email.textPaid} style={{width: '100%'}}
+                 <TextField ref="textPaid" type="text" defaultValue={email.email2.textPaid}
+                  id = "textPaid" placeholder={email.email2.textPaid} style={{width: '100%'}}
                   multiLine={true} rows={3}/>
               </div>
                <div className="input">
                <h3>Text for Free Contracts</h3>
-                 <TextField ref="textFree" type="text" defaultValue={email.textFree}
-                  id = "content" placeholder={email.textFree} style={{width: '100%'}}
+                 <TextField ref="textFree" type="text" defaultValue={email.email2.textFree}
+                  id = "content" placeholder={email.email2.textFree} style={{width: '100%'}}
                   multiLine={true} rows={3}/>
               </div>
               </div>
               <div className="checkedContract">
-                <h3>Checked Contract</h3>
+                <h2>Checked Contract</h2>
                 <div className="input">
                 <h3>Subject</h3>
-                  <TextField ref="subjectTwo" type="text" defaultValue={email.subjectTwo}
-                   id = "subjectTwo" placeholder={email.subjectTwo}/>
+                  <TextField ref="subjectTwo" type="text" defaultValue={email.email2.subjectTwo}
+                   id = "subjectTwo" placeholder={email.email2.subjectTwo}/>
                 </div>
                 <div className="input">
                 <h3>Text</h3>
-                  <TextField ref="textChecked" type="text" defaultValue={email.textChecked}
-                   id = "textChecked" placeholder={email.textChecked} style={{width: '100%'}}
+                  <TextField ref="textChecked" type="text" defaultValue={email.email2.textChecked}
+                   id = "textChecked" placeholder={email.email2.textChecked} style={{width: '100%'}}
                    multiLine={true} rows={3}/>
                </div>
+               <RaisedButton
+                 className = "saveE"
+                 onClick={ this.submitForm.bind(this) }
+                 label="Save"
+                 primary={true} />
                </div>
              </form>
              <RaisedButton
-               className = "saveButton"
+               className = "saveEmails"
                onClick={ this.submitForm.bind(this) }
                label="Save"
                primary={true} />
            </div>
+           <EditWelcomeEmail />
        </div>
        </div>
      )
