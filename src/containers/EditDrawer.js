@@ -46,10 +46,12 @@ class EditDrawer extends PureComponent {
               </div>
              </form>
              <RaisedButton
+               backgroundColor={this.props.theme.primaryTwo}
+               labelColor={this.props.theme.subtitle}
                className = "saveButton"
                onClick={ this.submitForm.bind(this) }
                label="Save"
-               primary={true} />
+              />
            </div>
        </div>
        </div>
@@ -57,6 +59,6 @@ class EditDrawer extends PureComponent {
    }
  }
 
- const mapStateToProps = ({ items }) => ({ items })
+ const mapStateToProps = ({ items, theme }) => ({ items, theme })
 
  export default connect(mapStateToProps, { updateItem })(EditDrawer)

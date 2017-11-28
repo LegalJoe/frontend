@@ -66,13 +66,14 @@ class EditFooter extends PureComponent {
                className="saveButton"
                onClick={ this.submitForm.bind(this) }
                label="Save"
-               primary={true} />
+               backgroundColor={this.props.theme.primaryTwo}
+               labelColor={this.props.theme.subtitle} />
            </div>
        </div>
      )
    }
  }
 
- const mapStateToProps = ({ items }) => ({ items })
+ const mapStateToProps = ({ items, theme }) => ({ items, theme })
 
  export default connect(mapStateToProps, { updateItem })(EditFooter)

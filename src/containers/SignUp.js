@@ -153,7 +153,7 @@ export class SignUp extends PureComponent {
       <Paper style={ styles.dialogStyle }>
         <Title
           content="Sign Up"
-          style={{color:this.props.theme.textColor, fontFamily: this.props.theme.fontText}}
+          style={{color:this.props.theme.title, fontFamily: this.props.theme.fontTitle}}
         />
 
         <form onSubmit={this.submitForm.bind(this)}>
@@ -189,9 +189,11 @@ export class SignUp extends PureComponent {
           label="Sign in" />
         <RaisedButton
           style={ styles.buttonStyle }
+          labelColor={this.props.theme.subtitle}
+          backgroundColor={this.props.theme.primaryTwo}
           onClick={ this.submitForm.bind(this) }
           label="Sign up"
-          primary={true} />
+        />
       </Paper>
     )
   }

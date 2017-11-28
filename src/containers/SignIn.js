@@ -60,9 +60,11 @@ export class SignIn extends PureComponent {
           label="Sign up" />
         <RaisedButton
           style={ styles.buttonStyle }
+          backgroundColor={this.props.theme.primaryTwo}
+          labelColor={this.props.theme.subtitle}
           onClick={ this.submitForm.bind(this) }
           label="Sign in"
-          primary={true} />
+         />
       </Paper>
     )
   }
