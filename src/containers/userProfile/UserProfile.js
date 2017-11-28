@@ -8,6 +8,7 @@ import { push } from 'react-router-redux'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import Card from 'material-ui/Card'
 import '../AdminTabs.css'
+import fetchContracts from '../../actions/user/fetch'
 
 const styles = {
   tabStyle: {background: `#f8f8f8`, borderRadius: '0', color: '#591c1c'},
@@ -18,6 +19,10 @@ class UserProfile extends PureComponent {
 
   componentWillMount() { this.props.fetchItems() }
 
+  handleChange = () => {
+  this.props.fetchContracts({id: this.props.currentUser.id})
+}
+
   render() {
     const { signedIn, admin } = this.props
     if (!signedIn) return null
@@ -25,8 +30,8 @@ class UserProfile extends PureComponent {
     return (
       <div className='AdminTabsContainer'>
         <Card className='paperStyle' zDepth={1} >
-          <Tabs style={styles.tabContentStyle}>
-            <Tab label="Contracts overview" style={ styles.tabStyle } >
+          <Tabs style={styles.tabContentStyle} onChange={this.handleChange}>
+            <Tab label="Contracts overview" style={ styles.tabStyle }>
               <div className="contractTable">
                 <ContractTable />
               </div>
@@ -43,11 +48,12 @@ class UserProfile extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser, theme }) => ({
+const mapStateToProps = ({ currentUser, theme, contracts }) => ({
   currentUser,
   signedIn: !!currentUser && !!currentUser.id,
   admin: !!currentUser && currentUser.admin === true,
-  theme
+  theme,
+  contracts
 })
 
-export default connect(mapStateToProps, {fetchItems, push})(UserProfile)
+export default connect(mapStateToProps, {fetchItems, push, fetchContracts})(UserProfile)
