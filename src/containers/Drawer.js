@@ -29,8 +29,8 @@ class DrawerUploadContract extends PureComponent {
             backgroundColor={this.props.theme.primaryTwo}
             labelColor={this.props.theme.subtitle}
             onClick={this.handleToggle}
-            style={{width: '200px', height: '30px'}}
-            labelStyle={{fontSize: '1.3rem', color: this.props.theme.textTwo}}
+            style={{width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+            labelStyle={{fontWeight: 'bold', fontSize: '1.2em', color: this.props.theme.textTwo}}
           />
         <Drawer
           width={400}

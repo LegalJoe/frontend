@@ -35,7 +35,7 @@ class EditDrawer extends PureComponent {
                   id = "title" placeholder={items.drawer.title}/>
                </div>
                <div className="input">
-               <h3>Subtitle</h3>
+               <h3>Button text</h3>
                  <TextField ref="subtitle" type="text" defaultValue={items.drawer.subtitle}
                   id = "subtitle" placeholder={items.drawer.subtitle}/>
               </div>
