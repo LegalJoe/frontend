@@ -57,7 +57,6 @@ class Navigation extends PureComponent {
   }.bind(this)
 
  componentDidMount= function() {
-   console.log('componentDidMount invoked');
    window.addEventListener('scroll', this.handleScroll);
  }
 
@@ -101,7 +100,7 @@ class Navigation extends PureComponent {
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
             iconStyle={this.state}
-            menuStyle={{minWidth: '200px', maxWidth: '100%'}}
+            menuStyle={{minWidth: '250px', maxWidth: '100%'}}
           >
 
 
