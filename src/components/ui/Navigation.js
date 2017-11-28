@@ -50,7 +50,7 @@ class Navigation extends PureComponent {
   let color
     if( document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight ){
       color = 'black'
-    } else if(window.location.pathname !== ""){ color = 'black'
+    } else if(window.location.pathname !== "/"){ color = 'black'
     } else { color = 'white'}
 
       this.setState({color})
