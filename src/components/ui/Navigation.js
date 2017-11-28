@@ -9,7 +9,6 @@ import FlatButton from 'material-ui/FlatButton'
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
-import { palette } from '../../styles/theme'
 import Logo from '../../images/legal-joe-green.svg'
 import './Navigation.css'
 
@@ -107,7 +106,7 @@ class Navigation extends PureComponent {
             <MenuItem primaryText="Log uit" onClick={this.signOut.bind(this)}/>
 
           </IconMenu>           </div>:
-        <FlatButton label="Registreer" onClick={this.signUp} />
+        <FlatButton label="Meld je aan" onClick={this.signUp} />
 
        }
      />
