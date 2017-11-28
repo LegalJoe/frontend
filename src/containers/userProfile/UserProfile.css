@@ -5,3 +5,7 @@
 .userPageUpload {
   width: 100%;
 }
+
+.paperStyle {
+  min-height: 65vh;
+}
