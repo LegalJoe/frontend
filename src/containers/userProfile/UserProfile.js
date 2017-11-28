@@ -5,14 +5,19 @@ import './UserProfile.css'
 import { connect } from 'react-redux'
 import UploadForm from '../UploadForm'
 import { fetchItems } from '../../actions/items'
+import { push } from 'react-router-redux'
 
 class UserProfile extends PureComponent {
 
-  componentWillMount() {this.props.fetchItems()}
+  componentWillMount() {
+    this.props.fetchItems()
+
+  }
 
   render() {
-    const { signedIn } = this.props
+    const { signedIn, admin } = this.props
     if (!signedIn) return null
+    if (!!admin) {this.props.push('/admin-tabs')}
     return (
       <div className="profilePage">
         <div className="profileContent">
@@ -33,7 +38,8 @@ class UserProfile extends PureComponent {
 const mapStateToProps = ({ currentUser, theme }) => ({
   currentUser,
   signedIn: !!currentUser && !!currentUser.id,
+  admin: !!currentUser && currentUser.admin === true,
   theme
 })
 
-export default connect(mapStateToProps, {fetchItems})(UserProfile)
+export default connect(mapStateToProps, {fetchItems, push})(UserProfile)

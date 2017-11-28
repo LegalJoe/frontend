@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const host = process.env.NODE_ENV === 'production'
+const host = process.env.NODE_ENV === 'development'
   ? 'https://legaljoe.herokuapp.com' // WITHOUT the / !!!
   : 'http://localhost:3030'
 
