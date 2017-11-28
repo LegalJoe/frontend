@@ -50,7 +50,9 @@ class Navigation extends PureComponent {
   let color
     if( document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight ){
       color = 'black'
+    } else if(window.location.pathname !== ""){ color = 'black'
     } else { color = 'white'}
+
       this.setState({color})
   }.bind(this)
 
@@ -99,6 +101,7 @@ class Navigation extends PureComponent {
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
             iconStyle={this.state}
+            menuStyle={{minWidth: '200px', maxWidth: '100%'}}
           >
 
 
