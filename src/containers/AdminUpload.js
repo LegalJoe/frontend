@@ -4,6 +4,7 @@ import UploadFile from './UploadFile'
 import './AdminUpload.css'
 import { uploadContract } from '../actions/contracts/'
 import IconButton from 'material-ui/IconButton';
+import RaisedButton from 'material-ui/RaisedButton'
 import Upload from 'material-ui/svg-icons/file/cloud-upload';
 var FormData = require('form-data');
 
@@ -26,18 +27,20 @@ class AdminUpload extends PureComponent {
     return (
       <div >
         <form className="adminUpload">
+        <div className="send">
+          <RaisedButton
+            label="Send"
+            labelPosition="before"
+            onClick={this.submitForm.bind(this)}
+            primary={this.props.primary}
+            icon={<Upload color={this.props.theme.textTwo}/>}
+            style={{background: this.props.theme.primaryOne, color: this.props.theme.textTwo, margin: '12'}}
+          />
+        </div>
         <div className="upload">
           <UploadFile drawerContent="Upload"
             ref="upFile"
           />
-        </div>
-        <div className="send">
-          <IconButton
-            onClick={this.submitForm.bind(this)}
-            primary={this.props.primary}
-          >
-            <Upload color={this.props.theme.primaryTwo} hoverColor={this.props.theme.primaryOne}/>
-          </IconButton>
         </div>
         </form>
       </div>

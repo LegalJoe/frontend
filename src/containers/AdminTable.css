@@ -1,3 +1,3 @@
-.headerColumn {
-  margin: auto;
+.smallColumn {
+  width: calc(100%/7)
 }
