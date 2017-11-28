@@ -6,7 +6,7 @@ import { palette } from '../styles/theme'
 const { grey30 } = palette
 
 const styles = {
-  dropZone: { Width: '80%', backgroundColor: `${grey30}` }
+  dropZone: { width: '80%', backgroundColor: `${grey30}` }
 }
 
 class Accept extends PureComponent {
