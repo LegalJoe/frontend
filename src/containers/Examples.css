@@ -23,3 +23,8 @@
   color: #B72327;
   text-align: center;
 }
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+}
