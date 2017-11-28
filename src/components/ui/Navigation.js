@@ -11,6 +11,8 @@ import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
 import Logo from '../../images/legal-joe-green.svg'
 import './Navigation.css'
+import { fetchTheme } from '../../actions/theme'
+import { fetchItems } from '../../actions/items'
 
 const buttonStyle = {
   marginTop: '-5%',
@@ -21,6 +23,11 @@ class Navigation extends PureComponent {
     signedIn: PropTypes.bool.isRequired,
     push: PropTypes.func.isRequired,
     signOut: PropTypes.func.isRequired,
+  }
+
+  componentWillMount() {
+    this.props.fetchTheme()
+    this.props.fetchItems()
   }
 
   signOut = (event) => {
@@ -128,4 +135,4 @@ const mapStateToProps = ({ currentUser, admin, theme }) => {
 }
 
 
-export default connect(mapStateToProps, { push, signOut })(Navigation)
+export default connect(mapStateToProps, { push, signOut, fetchTheme, fetchItems })(Navigation)

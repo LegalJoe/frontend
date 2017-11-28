@@ -42,13 +42,14 @@ class EditWelcomeEmail extends PureComponent {
                className = "saveButton"
                onClick={ this.submitForm.bind(this) }
                label="Save"
-               primary={true} />
+               backgroundColor={this.props.theme.primaryTwo}
+               labelColor={this.props.theme.subtitle} />
            </div>
        </div>
      )
    }
  }
 
- const mapStateToProps = ({ email }) => ({ email })
+ const mapStateToProps = ({ email, theme }) => ({ email, theme })
 
  export default connect(mapStateToProps, { updateEmail, fetchEmail })(EditWelcomeEmail)
