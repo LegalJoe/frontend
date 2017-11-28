@@ -9,7 +9,7 @@ import FlatButton from 'material-ui/FlatButton'
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import Reorder from 'material-ui/svg-icons/action/reorder'
-import Logo from '../../images/legal-joe-green.svg'
+import Logo from '../../images/legal-joe-black.svg'
 import './Navigation.css'
 
 const buttonStyle = {
