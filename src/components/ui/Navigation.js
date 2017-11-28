@@ -94,7 +94,7 @@ class Navigation extends PureComponent {
           <div>
           <FlatButton
           className="buttonName"
-          style={{buttonStyle,color: '#3acc77'} }
+          style={{buttonStyle,color: this.props.theme.title} }
 
           onClick={this.goToProfile.bind(this)}
 

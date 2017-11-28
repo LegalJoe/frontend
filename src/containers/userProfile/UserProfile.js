@@ -1,35 +1,43 @@
 import React, { PureComponent } from 'react'
-import Title from '../../components/ui/Title'
 import ContractTable from './ContractTable'
 import './UserProfile.css'
 import { connect } from 'react-redux'
-import UploadForm from '../UploadForm'
+import BottomCta from '../BottomCta'
 import { fetchItems } from '../../actions/items'
 import { push } from 'react-router-redux'
+import {Tabs, Tab} from 'material-ui/Tabs'
+import Card from 'material-ui/Card'
+import '../AdminTabs.css'
+
+const styles = {
+  tabStyle: {background: `#f8f8f8`, borderRadius: '0', color: '#591c1c'},
+  tabContentStyle: {minHeight: `50vh`},
+}
 
 class UserProfile extends PureComponent {
 
-  componentWillMount() {
-    this.props.fetchItems()
-
-  }
+  componentWillMount() { this.props.fetchItems() }
 
   render() {
     const { signedIn, admin } = this.props
     if (!signedIn) return null
     if (!!admin) {this.props.push('/admin-tabs')}
     return (
-      <div className="profilePage">
-        <div className="profileContent">
-          <div className="contractContainer">
-            <Title style={{color: this.props.theme.title, fontFamily: this.props.theme.fontTitle}}
-              content="Your contracts:"/>
-            <ContractTable />
-          </div>
-        </div>
-        <div className="userUpload">
-         <UploadForm />
-        </div>
+      <div className='AdminTabsContainer'>
+        <Card className='paperStyle' zDepth={1} >
+          <Tabs style={styles.tabContentStyle}>
+            <Tab label="Contracts overview" style={ styles.tabStyle } >
+              <div className="contractTable">
+                <ContractTable />
+              </div>
+            </Tab>
+            <Tab label="Upload" style={ styles.tabStyle }>
+              <div className="userPageUpload">
+                <BottomCta />
+              </div>
+            </Tab>
+          </Tabs>
+        </Card>
       </div>
     )
   }

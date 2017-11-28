@@ -1,33 +1,7 @@
-.profileContent {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+.contractTable {
+  margin-bottom: 10%;
 }
 
-.profileForm {
-  width: 25%;
-}
-
-.input {
-  min-width: 80%;
-}
-
-.contractContainer {
-  width: 60%;
-  margin-top: 50px;
-  margin-left: 20px;
-  align-self: center;
-}
-
-.profilePage {
-  display: flex;
-}
-
-.userUpload {
-  align-self: center;
-  margin-right: 20px;
-  border-left: 1px solid black;
-  padding-left: 20px;
+.userPageUpload {
+  width: 100%;
 }

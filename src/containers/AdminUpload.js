@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import UploadFile from './UploadFile'
 import './AdminUpload.css'
 import { uploadContract } from '../actions/contracts/'
-import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton'
 import Upload from 'material-ui/svg-icons/file/cloud-upload';
 var FormData = require('form-data');
