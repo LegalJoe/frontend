@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react'
 import Dropzone from 'react-dropzone'
+import './UploadFile.css'
 import { palette } from '../styles/theme'
 
 const { grey30 } = palette
 
 const styles = {
-  dropZone: { maxWidth: '80%', backgroundColor: `${grey30}` }
+  dropZone: { Width: '80%', backgroundColor: `${grey30}` }
 }
 
 class Accept extends PureComponent {
@@ -13,7 +14,7 @@ class Accept extends PureComponent {
     super()
     this.state = {
       accepted: [],
-      rejected: []
+      rejected: [],
     }
   }
 
@@ -23,18 +24,14 @@ class Accept extends PureComponent {
         <div className="dropzone">
           <Dropzone
             style={styles.dropZone}
-            className="dropflex"
+            className={(this.state.accepted != 0)? "hideDrop" : "dropflex"}
             accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf"
             onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
           >
             <p style={{color: this.props.passColor, fontFamily: this.props.passFont, fontSize: '120%'}}>
               {this.props.drawerContent}</p>
           </Dropzone>
-          <aside>
-            <ul>
-              {this.state.accepted.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}
-            </ul>
-          </aside>
+              {this.state.accepted.map(f => <p key={f.name}>{f.name}</p>)}
         </div>
       </section>
     );
