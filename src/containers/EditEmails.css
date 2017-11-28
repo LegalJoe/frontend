@@ -1,18 +1,15 @@
-.emailForm {
+.editEmails {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
+  align-items: stretch;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .editEmails h2 {
   text-align: left;
   margin-bottom: 20%;
-}
-
-.editEmails {
-  display: flex;
-  justify-content: space-around;
 }
 
 .uploadedContract {
@@ -23,6 +20,6 @@
   margin-left: 20%;
 }
 
-.saveE {
-  
+.mailForm {
+  display: flex;
 }

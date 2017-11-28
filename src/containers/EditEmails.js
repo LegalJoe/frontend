@@ -26,11 +26,9 @@ class EditEmails extends PureComponent {
    render() {
      const { email } = this.props
      return (
-       <div>
+        <div className="editEmails">
+          <form onSubmit={this.submitForm.bind(this)} className="mailForm" >
 
-       <div className="editEmails">
-           <div className="emails">
-             <form onSubmit={this.submitForm.bind(this)} className="emailForm">
              <div className="uploadedContract">
                <h2>Uploaded Contract</h2>
                <div className="input">
@@ -49,8 +47,15 @@ class EditEmails extends PureComponent {
                  <TextField ref="textFree" type="text" defaultValue={email.email2.textFree}
                   id = "content" placeholder={email.email2.textFree} style={{width: '100%'}}
                   multiLine={true} rows={3}/>
+                  <RaisedButton
+                    className = "saveEmails"
+                    onClick={ this.submitForm.bind(this) }
+                    label="Save"
+                    backgroundColor={this.props.theme.primaryTwo}
+                    labelColor={this.props.theme.subtitle} />
               </div>
               </div>
+
               <div className="checkedContract">
                 <h2>Checked Contract</h2>
                 <div className="input">
@@ -63,24 +68,17 @@ class EditEmails extends PureComponent {
                   <TextField ref="textChecked" type="text" defaultValue={email.email2.textChecked}
                    id = "textChecked" placeholder={email.email2.textChecked} style={{width: '100%'}}
                    multiLine={true} rows={3}/>
+                   <RaisedButton
+                     className = "saveEmails"
+                     onClick={ this.submitForm.bind(this) }
+                     label="Save"
+                     backgroundColor={this.props.theme.primaryTwo}
+                     labelColor={this.props.theme.subtitle} />
                </div>
-               <RaisedButton
-                 className = "saveE"
-                 onClick={ this.submitForm.bind(this) }
-                 label="Save"
-                 backgroundColor={this.props.theme.primaryTwo}
-                 labelColor={this.props.theme.subtitle} />
                </div>
+
              </form>
-             <RaisedButton
-               className = "saveEmails"
-               onClick={ this.submitForm.bind(this) }
-               label="Save"
-               backgroundColor={this.props.theme.primaryTwo}
-               labelColor={this.props.theme.subtitle} />
-           </div>
-           <EditWelcomeEmail />
-       </div>
+            <EditWelcomeEmail />
        </div>
      )
    }
