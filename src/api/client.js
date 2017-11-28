@@ -1,15 +1,13 @@
 import request from 'superagent'
 
+const host = 'https://legaljoe.herokuapp.com'
+
 export default class ApiClient {
   defaultOptions = {
-    tokenStorageKey: 'evaluationApiJWT'
+    tokenStorageKey: 'legaljoeApiJWT'
   }
 
-  constructor(host, options = {}) {
-    this.host = process.env.NODE_ENV === 'production'
-      ? 'https://expert-chinbone.codaisseur.cloud' // WITHOUT the / !!!
-      : (host || 'http://localhost:3030')
-
+  constructor(options = {}) {
     this.options = { ...this.defaultOptions, ...options }
   }
 
@@ -71,7 +69,7 @@ export default class ApiClient {
   }
 
   createUrl(path) {
-    return [this.host, path].join('')
+    return [host, path].join('')
   }
 
   getToken() {
