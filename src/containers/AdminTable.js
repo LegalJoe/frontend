@@ -37,22 +37,22 @@ class AdminTable extends PureComponent {
       <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false} >
           <TableRow>
-            <TableHeaderColumn style={styles.colWidth}>Upload date</TableHeaderColumn>
-            <TableHeaderColumn style={styles.colWidth}>File name</TableHeaderColumn>
-            <TableHeaderColumn style={styles.colWidth}>User</TableHeaderColumn>
-            <TableHeaderColumn style={styles.colWidth}>User email</TableHeaderColumn>
-            <TableHeaderColumn style={styles.colWidth}>Status</TableHeaderColumn>
+            <TableHeaderColumn className="smallColumn">Upload date</TableHeaderColumn>
+            <TableHeaderColumn className="smallColumn">File name</TableHeaderColumn>
+            <TableHeaderColumn className="smallColumn">User</TableHeaderColumn>
+            <TableHeaderColumn className="smallColumn">User email</TableHeaderColumn>
+            <TableHeaderColumn className="smallColumn">Status</TableHeaderColumn>
             <TableHeaderColumn>Upload</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} showRowHover={true} className="headerColumn">
         {contracts.map((c) =>
           <TableRow className="headerColumn">
-            <TableRowColumn style={styles.colWidth}>{c.createdAt.substr(0,10)}</TableRowColumn>
-            <TableRowColumn ><a href={c.cloudinaryURL}>{c.cloudinaryFileName}</a></TableRowColumn>
-            <TableRowColumn style={styles.colWidth}>{c.name}</TableRowColumn>
-            <TableRowColumn style={styles.colWidth}>{c.email}</TableRowColumn>
-            <TableRowColumn style={styles.colWidth}>
+            <TableRowColumn className="smallColumn">{c.createdAt.substr(0,10)}</TableRowColumn>
+            <TableRowColumn className="smallColumn"><a href={c.cloudinaryURL}>{c.cloudinaryFileName}</a></TableRowColumn>
+            <TableRowColumn className="smallColumn">{c.name}</TableRowColumn>
+            <TableRowColumn className="smallColumn">{c.email}</TableRowColumn>
+            <TableRowColumn className="smallColumn">
               <Checkbox
                label={c.checked? "Checked" : "Not checked"}
                checked={c.checked}
