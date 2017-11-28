@@ -6,5 +6,23 @@
 }
 
 .editEmails h2 {
-  text-align: center;
+  text-align: left;
+  margin-bottom: 20%;
+}
+
+.editEmails {
+  display: flex;
+  justify-content: space-around;
+}
+
+.uploadedContract {
+  margin-left: 10%;
+}
+
+.checkedContract {
+  margin-left: 20%;
+}
+
+.saveE {
+  
 }
