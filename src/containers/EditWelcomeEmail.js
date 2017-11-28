@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { updateEmail, fetchEmail } from '../actions/email'
-import './EditWelcomeEmail.css'
 
 class EditWelcomeEmail extends PureComponent {
 
@@ -39,7 +38,7 @@ class EditWelcomeEmail extends PureComponent {
                </div>
              </form>
              <RaisedButton
-               className = "saveButton"
+               className = "save"
                onClick={ this.submitForm.bind(this) }
                label="Save"
                backgroundColor={this.props.theme.primaryTwo}
