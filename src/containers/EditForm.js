@@ -47,7 +47,8 @@ class EditForm extends PureComponent {
                    style = {{width: '90%'}}
                    defaultValue={items.form.content}
                    placeholder={items.form.content}
-                   multiLine
+                   multiLine={true}
+                   rows={4}
                  />
 
                <div className="input">
