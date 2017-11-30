@@ -48,10 +48,11 @@ class EditPoints extends PureComponent {
                <TextField ref="content"
                  type="text"
                  id="content"
-                 style={{width: '90%'}}
+                 style={{width: '100%'}}
                  defaultValue={items.points.content}
                  placeholder={items.points.content}
-                 multiLine
+                 multiLine={true}
+                 rows={6}
                />
             </div>
            </form>

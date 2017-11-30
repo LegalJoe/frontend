@@ -24,6 +24,7 @@ class EditExamples extends PureComponent {
     const item = {
       id: items.examples.id,
       title: this.refs.title.getValue(),
+      content: this.refs.content.getValue(),
       urls: newUrls
     }
     this.props.updateItem(item)
@@ -46,7 +47,18 @@ class EditExamples extends PureComponent {
                   placeholder={items.examples.title}
                 />
                 </div>
-
+                <div className="input">
+                  <h3>Paragraph</h3>
+                  <TextField ref="content"
+                    type="text"
+                    id="content"
+                    style={{width: '90%'}}
+                    defaultValue={items.examples.content}
+                    placeholder={items.examples.content}
+                    multiLine={true}
+                    rows={5}
+                  />
+               </div>
                <div className="input">
                <h3>Image URLs</h3>
                 <TextField
