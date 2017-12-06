@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const host = 'https://legaljoe.herokuapp.com'
+const host = 'https://legaljoe-api.herokuapp.com'
 
 export default class ApiClient {
   defaultOptions = {
