@@ -7,7 +7,6 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
-
 export const UPLOAD_FILE = 'UPLOAD_FILE'
 
 export default (formData) => {
